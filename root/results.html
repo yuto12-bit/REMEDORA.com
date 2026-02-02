@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results | REMEDORA</title>
+  <meta name="description" content="REMEDORAの実装事例と技術検証レポート。採用LPにおける計測イベント設計の実例や、MEO対策の検証状況。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">REMEDORA</a>
+      <nav class="nav-list">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="service.html" class="nav-link">Service</a>
+        <a href="results.html" class="nav-link active">Results</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="btn btn-small">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="メニューを開く">☰</button>
+    </div>
+  </header>
+
+  <div class="nav-overlay">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="service.html" class="nav-link">Service</a>
+    <a href="results.html" class="nav-link active">Results</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="company.html" class="nav-link">Company</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+
+    <section class="section" style="padding-top: 180px; padding-bottom: 100px;">
+      <div class="container reveal">
+        <h1 class="hero-title">
+          <span>PROVEN</span>
+          RESULTS.
+        </h1>
+        <div class="grid-2">
+          <div class="sp-hidden"></div> <div>
+            <p style="font-size: 1.1rem; color: var(--text-main); line-height: 2;">
+              REMEDORAの実装事例と、技術検証の記録。<br>
+              私たちは「何を作ったか」よりも<br>
+              「どう計測し、どう改善したか」を重視します。
+            </p>
+            <p style="font-size: 0.8rem; color: var(--text-mute); margin-top: 20px;">
+              ※クライアント名は守秘義務に基づき非公開、またはデモデータを使用しています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container reveal">
+        
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 0;">
+          <span style="font-size: 0.8rem; color: var(--text-mute); letter-spacing: 0.1em;">CASE STUDIES</span>
+        </div>
+
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 60px 0;">
+          <div class="grid-2" style="align-items: flex-start;">
+            
+            <div>
+              <div style="margin-bottom: 20px;">
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: #fff;">DEMO IMPLEMENTATION</span>
+              </div>
+              <h2 style="font-size: 2rem; margin-bottom: 20px; line-height: 1.2;">
+                介護施設向け<br>採用LP 計測基盤
+              </h2>
+              <div style="font-size: 0.9rem; color: var(--text-mute);">Target: Nursing Home / Osaka</div>
+            </div>
+
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 20px; color: var(--text-main);">課題と実装</h3>
+              <p style="font-size: 0.9rem; line-height: 1.8; color: var(--text-body); margin-bottom: 40px;">
+                「応募が来ない」原因が、アクセス数不足なのか離脱なのか不明確な状態。
+                1ページ完結型の採用LPを構築し、Google Analytics 4 (GA4) による詳細なイベントトラッキングを実装しました。
+              </p>
+
+              <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 30px;">
+                <h4 style="font-size: 0.9rem; color: var(--text-mute); margin-bottom: 16px; text-transform: uppercase;">Tracking Points</h4>
+                <ul style="font-size: 0.9rem; color: var(--text-main); line-height: 2;">
+                  <li><strong>01. Scroll Depth:</strong> 読了率（25%, 50%, 75%, 100%）</li>
+                  <li><strong>02. Click Event:</strong> 「電話する」「LINE相談」ボタン</li>
+                  <li><strong>03. Form Engagement:</strong> 入力開始から完了までの推移</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 60px 0;">
+          <div class="grid-2" style="align-items: flex-start;">
+            
+            <div>
+              <div style="margin-bottom: 20px;">
+                <span class="badge" style="border-color: var(--accent-sub); color: var(--accent-sub);">VERIFYING</span>
+              </div>
+              <h2 style="font-size: 2rem; margin-bottom: 20px; line-height: 1.2;">
+                建設業向け<br>Googleマップ最適化
+              </h2>
+              <div style="font-size: 0.9rem; color: var(--text-mute);">Target: Construction / MEO</div>
+            </div>
+
+            <div>
+              <h3 style="font-size: 1.1rem; margin-bottom: 20px; color: var(--text-main);">施策と検証</h3>
+              <p style="font-size: 0.9rem; line-height: 1.8; color: var(--text-body); margin-bottom: 40px;">
+                地域密着型の建設業において、地図検索からの流入を強化。
+                正確な情報整備と、現場風景の定期投稿によるインサイト数値の変動をモニタリング中。
+              </p>
+
+              <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 30px;">
+                <h4 style="font-size: 0.9rem; color: var(--text-mute); margin-bottom: 16px; text-transform: uppercase;">Monitoring Items</h4>
+                <ul style="font-size: 0.9rem; color: var(--text-main); line-height: 2;">
+                  <li><strong>01. Discovery:</strong> マップ検索経由の表示回数</li>
+                  <li><strong>02. Action:</strong> 「ルート検索」「通話」ボタンのタップ数</li>
+                  <li><strong>03. Content:</strong> 投稿写真の閲覧数推移</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="bg-text" style="left: -5%; bottom: 10%;">TECH</div>
+      
+      <div class="container reveal">
+        <div class="offset-layout">
+          <div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 40px;">
+              Not Magic,<br>Just Logic.
+            </h2>
+            <p style="margin-bottom: 30px; color: var(--text-body);">
+              REMEDORAは「魔法」のような集客は約束しません。<br>
+              しかし、「論理」に基づいた改善は約束します。
+            </p>
+            <p style="color: var(--text-body);">
+              すべての施策は仮説検証のサイクルに基づいており、<br>
+              失敗すらも「データ」として次の成功の糧にします。
+            </p>
+          </div>
+
+          <div class="offset-content">
+            <div class="glass-panel" style="padding: 40px; text-align: center;">
+               <div style="font-size: 3rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px;">100%</div>
+               <div style="font-size: 0.9rem; color: var(--text-mute); letter-spacing: 0.1em; margin-bottom: 40px;">DATA TRANSPARENCY</div>
+               
+               <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.8;">
+                 お客様も同じ管理画面（GA4）を閲覧可能にし、<br>
+                 ブラックボックスを作らない運用を徹底しています。
+               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="glass-panel reveal" style="text-align: center; padding: 100px 20px;">
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">
+            技術的な裏付けのある提案を。
+          </h2>
+          <p style="margin-bottom: 40px; color: var(--text-body);">
+            「なんとなく」の提案はいたしません。<br>
+            貴社の現状を数値で把握するための診断からスタートします。
+          </p>
+          <a href="contact.html" class="btn">無料診断を申し込む</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <div style="text-align: center; font-size: 0.75rem; color: var(--text-mute);">
+        &copy; 2026 REMEDORA. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

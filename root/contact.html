@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | REMEDORA</title>
+  <meta name="description" content="無料診断のお申し込み、ご相談フォーム。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">REMEDORA</a>
+      <nav class="nav-list">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="service.html" class="nav-link">Service</a>
+        <a href="results.html" class="nav-link">Results</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="btn btn-small">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="メニューを開く">☰</button>
+    </div>
+  </header>
+
+  <div class="nav-overlay">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="service.html" class="nav-link">Service</a>
+    <a href="results.html" class="nav-link">Results</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="company.html" class="nav-link">Company</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+
+  <main>
+    <section class="section" style="padding-top: 180px;">
+      <div class="container">
+        
+        <div class="offset-layout reveal">
+          
+          <div style="align-self: flex-start;">
+            <h1 class="hero-title" style="font-size: clamp(3rem, 6vw, 5rem);">
+              <span>GET IN</span>
+              TOUCH.
+            </h1>
+            <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 40px; line-height: 2;">
+              Webサイトの診断、採用導線のご相談。<br>
+              強引な営業は一切いたしません。<br>
+              現状の課題をフラットにご相談ください。
+            </p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+              <div style="font-size: 0.8rem; color: var(--text-mute); margin-bottom: 10px;">DIRECT EMAIL</div>
+              <div style="font-size: 1.2rem; color: var(--text-main);">[TODO: contact@remedora.com]</div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+              <a href="[TODO: LINE URL]" class="btn" style="background: transparent; border-color: #06c755; color: #06c755; width: 100%;">
+                LINEで気軽に相談する
+              </a>
+            </div>
+          </div>
+
+          <div class="offset-content">
+            <form action="[TODO: Form Endpoint]" method="POST">
+              <div style="display:none;">
+                <input type="text" name="honeypot_field" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="name" class="form-label">Name *</label>
+                <input type="text" id="name" name="name" class="form-input" required placeholder="お名前">
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" required placeholder="メールアドレス">
+              </div>
+
+              <div class="form-group">
+                <label for="company" class="form-label">Company Name</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="貴社名 / 屋号">
+              </div>
+
+              <div class="form-group">
+                <label for="category" class="form-label">Subject *</label>
+                <div style="position: relative;">
+                  <select id="category" name="category" class="form-input" style="appearance: none;">
+                    <option value="diagnosis">無料診断・リスクチェック</option>
+                    <option value="lp">採用LP制作について</option>
+                    <option value="meo">Googleマップ運用について</option>
+                    <option value="other">その他</option>
+                  </select>
+                  <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #fff;">↓</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="ご相談内容の詳細をご記入ください"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.9rem; color: var(--text-body);">
+                  <input type="checkbox" required name="privacy_policy" style="margin-top: 4px;">
+                  <span>
+                    <a href="privacy.html" target="_blank" style="text-decoration: underline; color: var(--text-main);">プライバシーポリシー</a>に同意します
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn" style="width: 100%;">SEND MESSAGE</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <div style="text-align: center; font-size: 0.75rem; color: var(--text-mute);">
+        &copy; 2026 REMEDORA. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
