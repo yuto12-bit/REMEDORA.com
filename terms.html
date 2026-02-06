@@ -1,88 +1,174 @@
+/* File: terms.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Use | REMEDORA</title>
+  <title>Terms of Use | REMEDORA 利用規約</title>
+  <meta name="description" content="REMEDORAのサービス利用規約。免責事項、契約成立のタイミング、知的財産権の取り扱いについて定めています。">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+  <div id="loading-screen">
+    <div class="loading-logo"></div>
+    <p class="loading-text">REMEDORA</p>
+  </div>
+
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">REMEDORA</a>
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      </a>
+      
       <nav class="nav-list">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="contact.html" class="btn btn-small">Contact</a>
+        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
+        <a href="service.html" class="nav-link">Service</a>
+        <a href="results.html" class="nav-link">Results</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
       </nav>
-      <button class="menu-toggle" aria-label="メニューを開く">☰</button>
+
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <div class="nav-overlay">
     <a href="index.html" class="nav-link">Home</a>
+    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
+    <a href="service.html" class="nav-link">Service</a>
+    <a href="results.html" class="nav-link">Results</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="company.html" class="nav-link">Company</a>
     <a href="contact.html" class="nav-link">Contact</a>
   </div>
 
   <main>
-    <section class="section" style="padding-top: 180px; padding-bottom: 80px;">
+    
+    <section class="hero-section">
       <div class="container reveal">
-        <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">
-          <span>TERMS OF</span>
+        <span class="glass-badge">LEGAL</span>
+        <h1 class="hero-title">
+          TERMS OF<br>
           USE.
         </h1>
-        <p style="color: var(--text-body);">利用規約</p>
+        <div class="grid-2">
+          <div class="pc-only"></div>
+          <div>
+            <p class="hero-desc">
+              本サービスのご利用にあたっての規約です。<br>
+              契約前に必ずご一読ください。
+            </p>
+            <p class="text-muted" style="font-size: 0.85rem; margin-top: 16px;">
+              最終更新日：2026年2月6日
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
       <div class="container reveal">
-        <div style="max-width: 800px; margin-left: auto;">
+        <div class="glass-panel" style="background: transparent; border: none; padding: 0;">
           
-          <p style="margin-bottom: 60px; line-height: 2;">
-            この利用規約（以下、「本規約」といいます。）は、REMEDORA（以下、「当事業」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。
+          <p style="margin-bottom: 60px; line-height: 2; color: var(--text-body);">
+            この利用規約（以下、「本規約」）は、{{LEGAL_NAME}}（以下、「当事業」）がこのウェブサイト上で提供するサービス（以下、「本サービス」）の利用条件を定めるものです。
           </p>
 
-          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 0;">
-            <h2 style="font-size: 1.2rem; margin-bottom: 24px;">第1条（免責事項）</h2>
-            <div style="padding: 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; background: rgba(255,255,255,0.02);">
+          <div style="border-top: var(--border-glass); padding: 40px 0;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第1条（免責事項）</h2>
+            <div class="warning-box">
               <p style="font-size: 0.95rem; line-height: 2; color: var(--text-main); margin-bottom: 16px;">
                 当事業は、本サービスにおいて提供する情報や施策に関して、以下の事項を保証するものではありません。
               </p>
-              <ul style="font-size: 0.9rem; line-height: 2; color: var(--text-body); list-style: disc; margin-left: 20px;">
+              <ul style="font-size: 0.9rem; line-height: 2; color: var(--text-danger); list-style: disc; margin-left: 20px;">
                 <li>採用応募の確実な獲得や、特定の人材の採用成功</li>
                 <li>Googleマップや検索エンジンにおける検索順位の永続的な維持</li>
-                <li>求人媒体側のシステム仕様変更による表示への影響がないこと</li>
+                <li>求人媒体側のアルゴリズム変更やシステム仕様変更による表示への影響</li>
+                <li>当事業が管理しないサーバー、ドメイン等の外部サービスに起因する障害</li>
               </ul>
             </div>
           </div>
 
-          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 0;">
-            <h2 style="font-size: 1.2rem; margin-bottom: 24px;">第2条（契約の成立）</h2>
-            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-body);">
-              具体的な業務委託契約（Webサイト制作、運用代行等）は、本サイト上のフォーム送信時点では成立しません。別途当事業が発行する見積書または契約書に対し、ユーザーが承諾の意思表示（発注書、メールでの合意等）を行った時点で成立するものとします。
+          <div style="border-top: var(--border-glass); padding: 40px 0;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第2条（契約の成立）</h2>
+            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
+              <strong class="text-main">有料プランの場合：</strong><br>
+              本サイト上のフォーム送信時点では契約は成立しません。別途当事業が発行する見積書または契約書に対し、ユーザーが承諾の意思表示（発注書、メールでの合意、着手金の入金等）を行った時点で成立するものとします。<br><br>
+              <strong class="text-main">無料モニターの場合：</strong><br>
+              「無料モニター合意書（または合意メモ）」への署名、またはメール・チャットでの条件合意をもって適用開始とします。
             </p>
           </div>
 
-          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 0;">
-            <h2 style="font-size: 1.2rem; margin-bottom: 24px;">第3条（知的財産権）</h2>
-            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-body);">
-              本サービスにおいて当事業が提供するコンテンツ（文章、画像、プログラム等）に関する知的財産権は、当事業または正当な権利者に帰属します。ただし、納品物としてユーザーに譲渡した制作物の著作権の取扱いは、別途契約の定めに従うものとします。
+          <div style="border-top: var(--border-glass); padding: 40px 0;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第3条（知的財産権）</h2>
+            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
+              本サービスにおいて当事業が提供するコンテンツ（文章、画像、プログラム等）に関する知的財産権は、当事業または正当な権利者に帰属します。<br>
+              ただし、納品物としてユーザーに譲渡した制作物（HTML/CSSファイル、LP等）の著作権の取扱いは、別途契約の定めに従うものとします。なお、当事業が制作に使用した「汎用的なテンプレート」「プログラム部品」の権利は当事業に留保されます。
             </p>
+          </div>
+
+          <div style="border-top: var(--border-glass); padding: 40px 0;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第4条（禁止事項）</h2>
+            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
+              ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。
+            </p>
+            <ul style="font-size: 0.9rem; line-height: 2; color: var(--text-muted); list-style: disc; margin-left: 20px;">
+              <li>法令または公序良俗に違反する行為</li>
+              <li>犯罪行為に関連する行為</li>
+              <li>当事業のサービスの運営を妨害するおそれのある行為</li>
+              <li>虚偽の情報を登録する行為</li>
+            </ul>
           </div>
 
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer style="padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+  <footer class="footer">
     <div class="container">
-      <div style="text-align: center; font-size: 0.75rem; color: var(--text-mute);">
+      <div class="grid-2">
+        <div>
+          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
+          <p>
+            {{LEGAL_NAME}}<br>
+            代表：{{REPRESENTATIVE}}<br>
+            {{ADDRESS}}
+          </p>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="monitor.html">無料モニター</a></li>
+              <li><a href="service.html">Service</a></li>
+              <li><a href="results.html">Results</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="company.html">Company</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
         &copy; 2026 REMEDORA. All Rights Reserved.
       </div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>

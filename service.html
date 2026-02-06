@@ -1,30 +1,46 @@
+/* File: service.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service | REMEDORA</title>
-  <meta name="description" content="REMEDORAの提供サービス詳細。Googleビジネスプロフィール運用、採用LP制作、GA4計測設定の範囲と進め方。">
+  <title>Service | REMEDORA 提供範囲と料金プラン</title>
+  <meta name="description" content="0円の「無料モニター」と、5万円の「土台構築プラン」。成果保証をしない代わりに、作業ログと計測データを開示し、採用導線の不備を物理的に修復します。">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+<div id="loading-screen">
+    <div class="loading-logo"></div>
+    <p class="loading-text">REMEDORA</p>
+  </div>
+
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">REMEDORA</a>
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      </a>
+      
       <nav class="nav-list">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
         <a href="service.html" class="nav-link active">Service</a>
         <a href="results.html" class="nav-link">Results</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-small">Contact</a>
+        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
       </nav>
-      <button class="menu-toggle" aria-label="メニューを開く">☰</button>
+
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <div class="nav-overlay">
     <a href="index.html" class="nav-link">Home</a>
+    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
     <a href="service.html" class="nav-link active">Service</a>
     <a href="results.html" class="nav-link">Results</a>
     <a href="about.html" class="nav-link">About</a>
@@ -34,80 +50,96 @@
 
   <main>
     
-    <section class="section" style="padding-top: 180px; padding-bottom: 100px;">
+    <section class="hero-section">
       <div class="container reveal">
+        <span class="glass-badge">SCOPE OF WORK</span>
         <h1 class="hero-title">
-          <span>OUR</span>
-          SERVICES.
+          NOT MAGIC.<br>
+          JUST LOGIC.
         </h1>
         <div class="grid-2">
-          <div class="sp-hidden"></div> <div>
-            <p style="font-size: 1.1rem; color: var(--text-main); line-height: 2;">
-              採用導線の最適化から、日々の運用代行まで。<br>
-              「人が来ない」原因を、技術とデータで解決するための<br>
-              具体的な提供内容です。
+          <div class="pc-only"></div>
+          <div>
+            <p class="hero-desc">
+              魔法のような「自動集客」は売りません。<br>
+              REMEDORAが提供するのは、リンク切れや情報の空白といった<br>
+              <span class="text-main" style="border-bottom: 1px solid #fff;">「物理的な不備」の修復</span>と、<span class="text-main" style="border-bottom: 1px solid #fff;">「計測環境」の構築</span>だけです。
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section" id="plans">
       <div class="container reveal">
-        <div class="editorial-list">
+        <h2 class="section-title">Plans & Pricing</h2>
+        <p style="margin-bottom: 60px;">貴社の状況に合わせて、最適な「穴埋め」プランを選択してください。</p>
+
+        <div class="grid-3">
           
-          <div class="editorial-item">
-            <span class="item-num">01</span>
-            <div>
-              <h2 class="item-title">Optimization</h2>
-              <div style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-main);">採用導線最適化</div>
-              <p class="item-desc">
-                Googleビジネスプロフィール（旧マイビジネス）や求人検索エンジン（Indeed/Airワーク等）の設定を最適化し、地域内での露出を最大化します。
-              </p>
+          <div class="glass-panel" style="border: 2px solid var(--text-main);">
+            <span class="glass-badge" style="margin-bottom: 16px;">LIMITED: 先着3社</span>
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Free Monitor</h3>
+            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; font-family: sans-serif;">
+              0<span style="font-size: 1rem;">円</span>
             </div>
-            <div style="font-size: 0.9rem; color: var(--text-mute);">
-              <ul style="display: flex; flex-direction: column; gap: 8px;">
-                <li>+ Googleマップ情報整備</li>
-                <li>+ 写真選定・アップロード</li>
-                <li>+ Indeed自動連携設定</li>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px; min-height: 3em;">
+              既存HPはあるが応募が来ない企業様向け。<br>
+              実績公開を条件に、導線整備とLP制作を無料で代行。
+            </p>
+            <div style="border-top: var(--border-glass); padding-top: 24px; margin-bottom: 24px;">
+              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 12px;">
+                <li>✔ GBP(マップ)初期整備</li>
+                <li>✔ Indeed/Airワーク リンク最適化</li>
+                <li>✔ 採用LP制作（テンプレ・スマホ対応）</li>
+                <li>✔ GA4計測イベント設定</li>
+                <li>✔ 作業ログ＋改善提案1点</li>
               </ul>
             </div>
+            <a href="monitor.html" class="btn btn-primary" style="width: 100%;" data-ga-event="click_service_monitor">条件を確認する</a>
           </div>
 
-          <div class="editorial-item">
-            <span class="item-num">02</span>
-            <div>
-              <h2 class="item-title">Development</h2>
-              <div style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-main);">受け皿ページ制作</div>
-              <p class="item-desc">
-                求職者が知りたい情報に特化した、軽量なランディングページ（LP）を制作します。2024年4月の労働条件明示ルール改正に完全対応。
-              </p>
+          <div class="glass-panel" id="foundation">
+            <span class="glass-badge" style="margin-bottom: 16px; background: transparent;">HPがない場合</span>
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Foundation</h3>
+            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; font-family: sans-serif;">
+              {{PRICE}}<span style="font-size: 1rem;"> (税別)</span>
             </div>
-            <div style="font-size: 0.9rem; color: var(--text-mute);">
-              <ul style="display: flex; flex-direction: column; gap: 8px;">
-                <li>+ 1ページ完結型採用サイト</li>
-                <li>+ スマホ完全対応</li>
-                <li>+ 法的必須項目の網羅</li>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px; min-height: 3em;">
+              公式HPが全くない、または放置されている企業様向け。<br>
+              「信頼の土台」となる簡易HPを最短7営業日で構築。
+            </p>
+            <div style="border-top: var(--border-glass); padding-top: 24px; margin-bottom: 24px;">
+              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 12px;">
+                <li>✔ 簡易HP制作（1〜3ページ）</li>
+                <li>✔ 会社概要・事業紹介・問い合わせ</li>
+                <li>✔ スマホ完全対応</li>
+                <li>✔ サーバー公開設定代行</li>
+                <li class="text-muted" style="font-size: 0.8rem;">※サーバー・ドメイン実費は貴社負担</li>
               </ul>
             </div>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;" data-ga-event="click_service_foundation">土台構築を相談</a>
           </div>
 
-          <div class="editorial-item">
-            <span class="item-num">03</span>
-            <div>
-              <h2 class="item-title">Analytics</h2>
-              <div style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-main);">計測と改善</div>
-              <p class="item-desc">
-                Google Analytics 4 (GA4) を導入し、電話タップ数やフォーム到達率を計測。感覚ではなく数値に基づいた改善策を実行します。
-              </p>
+          <div class="glass-panel">
+            <span class="glass-badge" style="margin-bottom: 16px; background: transparent;">運用・改善</span>
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Growth</h3>
+            <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; font-family: sans-serif; line-height: 1.6;">
+              要見積もり
             </div>
-            <div style="font-size: 0.9rem; color: var(--text-mute);">
-              <ul style="display: flex; flex-direction: column; gap: 8px;">
-                <li>+ GA4 / GTM 導入</li>
-                <li>+ CV地点の設計</li>
-                <li>+ 月次改善レポート</li>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px; min-height: 3em;">
+              初期構築後の継続的な改善サポート。<br>
+              毎月の計測レポートに基づき、クリエイティブを修正。
+            </p>
+            <div style="border-top: var(--border-glass); padding-top: 24px; margin-bottom: 24px;">
+              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 12px;">
+                <li>✔ 月次アクセス解析レポート</li>
+                <li>✔ 改善施策の提案・実装</li>
+                <li>✔ 求人票の文言チューニング</li>
+                <li>✔ LPの部分改修</li>
               </ul>
             </div>
+            <a href="contact.html" class="btn btn-outline" style="width: 100%;" data-ga-event="click_service_growth">改善の相談</a>
           </div>
 
         </div>
@@ -116,84 +148,43 @@
 
     <section class="section">
       <div class="container reveal">
-        <h2 style="font-size: 2.5rem; margin-bottom: 60px;">Process & Output</h2>
-        
-        <div class="offset-layout">
-          <div>
-            <h3 style="margin-bottom: 30px; font-size: 1.2rem; color: var(--text-mute);">FLOW</h3>
-            <ul style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 30px;">
-              <li style="margin-bottom: 40px;">
-                <span class="badge" style="margin-bottom: 8px;">STEP 1</span>
-                <h4 style="font-size: 1.2rem; margin-bottom: 8px;">ヒアリング・診断</h4>
-                <p style="font-size: 0.9rem; margin: 0;">現状の課題と法的リスクを洗い出します。</p>
-              </li>
-              <li style="margin-bottom: 40px;">
-                <span class="badge" style="margin-bottom: 8px;">STEP 2</span>
-                <h4 style="font-size: 1.2rem; margin-bottom: 8px;">構成・素材提供</h4>
-                <p style="font-size: 0.9rem; margin: 0;">設計図を共有し、写真等の素材を頂きます。</p>
-              </li>
-              <li style="margin-bottom: 40px;">
-                <span class="badge" style="margin-bottom: 8px;">STEP 3</span>
-                <h4 style="font-size: 1.2rem; margin-bottom: 8px;">実装・テスト</h4>
-                <p style="font-size: 0.9rem; margin: 0;">サイト構築と計測タグの動作確認を行います。</p>
-              </li>
-              <li>
-                <span class="badge" style="margin-bottom: 8px;">STEP 4</span>
-                <h4 style="font-size: 1.2rem; margin-bottom: 8px;">公開・運用開始</h4>
-                <p style="font-size: 0.9rem; margin: 0;">データを蓄積し改善サイクルに入ります。</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="offset-content">
-             <h3 style="margin-bottom: 30px; font-size: 1.2rem; color: var(--text-mute);">DELIVERABLES</h3>
-             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
-               <div style="margin-bottom: 40px;">
-                 <h4 style="margin-bottom: 12px; color: var(--text-main);">主な納品物</h4>
-                 <ul style="font-size: 0.9rem; color: var(--text-body); line-height: 2;">
-                   <li>・採用ランディングページ（HTML/CSS一式）</li>
-                   <li>・Googleビジネスプロフィール設定完了アカウント</li>
-                   <li>・アクセス解析レポート（PDF / 月次）</li>
-                   <li>・改善提案書（必要に応じて）</li>
-                 </ul>
-               </div>
-               
-               <div>
-                 <h4 style="margin-bottom: 12px; color: var(--text-main);">お客様にご用意いただくもの</h4>
-                 <ul style="font-size: 0.9rem; color: var(--text-body); line-height: 2;">
-                   <li>・掲載用写真（外観、内観、スタッフ様）</li>
-                   <li>・就業規則または雇用契約書の雛形</li>
-                   <li>・ドメイン・サーバー契約情報（実費負担）</li>
-                 </ul>
-               </div>
-             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 style="font-size: 2.5rem; margin-bottom: 60px;">Scope of Responsibility</h2>
+        <h2 class="section-title">Responsibility Matrix</h2>
+        <p style="margin-bottom: 40px;">「何をしてくれて、何をしないのか」。責任の所在を明確にします。</p>
         
         <div class="grid-2">
-          <div style="border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 4px;">
-            <h3 style="color: var(--accent); margin-bottom: 24px;">REMEDORAの責任範囲</h3>
-            <ul style="font-size: 0.9rem; line-height: 2; list-style: disc; margin-left: 20px;">
-              <li>Webサイトおよび各媒体の「動作」と「表示」の担保</li>
-              <li>計測タグが正しく発火していることの技術的証明</li>
-              <li>法的要件（明示項目）がサイト上に記載されているかの確認</li>
-              <li>サーバーダウン時などの技術的な復旧支援</li>
+          <div class="glass-panel" style="border-left: 4px solid var(--accent-white);">
+            <h3 style="color: var(--text-main); margin-bottom: 24px;">REMEDORAの責任範囲</h3>
+            <ul style="font-size: 0.95rem; line-height: 2;">
+              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
+                ✔ <strong>導線開通：</strong> リンクが正しく機能し、LPが表示されること
+              </li>
+              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
+                ✔ <strong>計測動作：</strong> GA4等のタグが発火し、データが飛んでいること
+              </li>
+              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
+                ✔ <strong>法的適合：</strong> 2024年4月改正法に基づく項目欄を設けること
+              </li>
+              <li>
+                ✔ <strong>証跡提示：</strong> 作業ログと設定画面のスクショを提出すること
+              </li>
             </ul>
           </div>
           
-          <div style="border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 4px; background: rgba(255,255,255,0.01);">
-            <h3 style="color: var(--text-mute); margin-bottom: 24px;">範囲外（免責事項）</h3>
-            <ul style="font-size: 0.9rem; line-height: 2; list-style: disc; margin-left: 20px; color: var(--text-mute);">
-              <li>応募者の「質」や「採用後の定着率」の保証</li>
-              <li>面接の代行や、応募者への直接連絡</li>
-              <li>求人媒体側のアルゴリズム変更による順位変動</li>
-              <li>サーバー代、ドメイン代、広告費の実費負担</li>
+          <div class="glass-panel" style="border-left: 4px solid var(--text-muted);">
+            <h3 style="color: var(--text-muted); margin-bottom: 24px;">範囲外（免責事項）</h3>
+            <ul style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
+              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
+                × <strong>成果保証：</strong> 応募数・採用数・検索順位の数値保証
+              </li>
+              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
+                × <strong>外部要因：</strong> Google/Indeedの審査落ち、反映待ち時間
+              </li>
+              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
+                × <strong>採用業務：</strong> 職業紹介・斡旋、応募者対応、面接調整
+              </li>
+              <li>
+                × <strong>費用負担：</strong> サーバー/ドメイン代、広告費の実費
+              </li>
             </ul>
           </div>
         </div>
@@ -202,51 +193,87 @@
 
     <section class="section">
       <div class="container reveal">
-        <h2 style="font-size: 2.5rem; margin-bottom: 60px;">FAQ</h2>
+        <h2 class="section-title">FAQ</h2>
         
-        <div style="border-top: 1px solid rgba(255,255,255,0.1);">
-          <div style="padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Q. 修正は何回まで可能ですか？</h3>
-            <p style="font-size: 0.9rem; margin: 0; color: var(--text-body);">
-              構築フェーズでの修正は原則2回まで承ります。運用開始後の軽微な文言修正は、月額サポート範囲内で随時対応いたします。
+        <div class="glass-panel">
+          
+          <div style="padding: 24px 0; border-bottom: var(--border-glass);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. 素材（写真）が準備できない場合は？</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              A. 合意から7日以内に素材が揃わない場合、納期遵守のため、当方で選定した「フリー素材」または「AI生成画像」を使用して制作を進めます。公開後に写真の差し替えは可能です（修正回数に含みます）。
             </p>
           </div>
-          <div style="padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Q. 契約期間の縛りはありますか？</h3>
-            <p style="font-size: 0.9rem; margin: 0; color: var(--text-body);">
-              単発制作の場合はありません。月額運用サポート（計測・改善）については、データ蓄積のため6ヶ月単位でのご契約を推奨していますが、必須ではありません。
+
+          <div style="padding: 24px 0; border-bottom: var(--border-glass);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. 無料モニター終了後、勝手に課金されますか？</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              A. いいえ。自動で有料プランへ移行することはありません。初期設定完了後、そのまま貴社で運用される場合は0円のまま終了です。継続的な改善サポートをご希望の場合のみ、別途お見積りいたします。
             </p>
           </div>
-          <div style="padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Q. 既存のHPがあるのですが？</h3>
-            <p style="font-size: 0.9rem; margin: 0; color: var(--text-body);">
-              既存HPはそのままで、採用専用の特設ページ（LP）のみを新規作成し、リンクさせる形が最も効果的です。既存HPの改修も可能ですのでご相談ください。
+
+          <div style="padding: 24px 0; border-bottom: var(--border-glass);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. 土台プラン（簡易HP）の納期は？</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              A. 原稿・素材を頂いてから、最短7営業日での公開を目安としています。サーバー・ドメインの取得からサポートが必要な場合は、プラス数日頂く場合がございます。
             </p>
           </div>
+
+          <div style="padding: 24px 0;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. パスワードを教える必要がありますか？</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              A. 不要です。Googleビジネスプロフィールや求人媒体は「管理者権限の招待（ユーザー追加）」機能を使用します。貴社のアカウントPWを共有いただく必要はありません。手順書もご用意しています。
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="glass-panel reveal" style="text-align: center; padding: 100px 20px;">
-          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">
-            Start Diagnosis.
-          </h2>
-          <p style="margin-bottom: 40px; color: var(--text-body);">
-            「求人票に不備がないか」「Googleマップが機能しているか」<br>
-            まずは無料で診断いたします。
-          </p>
-          <a href="contact.html" class="btn">無料診断を申し込む</a>
-        </div>
+      <div class="container reveal text-center">
+        <h2 style="margin-bottom: 24px;">まずは「不備の特定」から。</h2>
+        <p style="margin-bottom: 40px; color: var(--text-body);">
+          どのプランが適切か分からない場合も、まずは無料診断へ。<br>
+          30分で貴社のWeb上の「穴」をリストアップします。
+        </p>
+        <a href="contact.html" class="btn btn-primary" data-ga-event="click_service_footer">無料 赤ペン診断を予約</a>
       </div>
     </section>
 
   </main>
 
-  <footer style="padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+  <footer class="footer">
     <div class="container">
-      <div style="text-align: center; font-size: 0.75rem; color: var(--text-mute);">
+      <div class="grid-2">
+        <div>
+          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
+          <p>
+            {{LEGAL_NAME}}<br>
+            代表：{{REPRESENTATIVE}}<br>
+            {{ADDRESS}}
+          </p>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="monitor.html">無料モニター</a></li>
+              <li><a href="service.html">Service</a></li>
+              <li><a href="results.html">Results</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="company.html">Company</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
         &copy; 2026 REMEDORA. All Rights Reserved.
       </div>
     </div>

@@ -1,71 +1,43 @@
+/* File: assets/js/main.js */
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  /* --- 1. Navigation Active State --- */
-  const setActiveLink = () => {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href');
-      if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
+  /* ==========================================================================
+     0. Loading Screen & Page Transition
+     ========================================================================== */
+  const loadingScreen = document.getElementById('loading-screen');
+  
+  // ページリソース（画像等）を含めて完全に読み込まれたら発火
+  window.addEventListener('load', () => {
+    // 少しだけ待機して余韻を持たせる（0.6秒）
+    setTimeout(() => {
+      if(loadingScreen) {
+        loadingScreen.classList.add('is-hidden');
       }
-    });
-  };
-  setActiveLink();
+    }, 600);
+  });
 
-  /* --- 2. Sticky Header --- */
-  const header = document.querySelector('.header');
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
+  // 万が一 load イベントが発火しない場合（キャッシュ等）の保険（3秒後に強制解除）
+  setTimeout(() => {
+    if(loadingScreen && !loadingScreen.classList.contains('is-hidden')) {
+      loadingScreen.classList.add('is-hidden');
     }
-  };
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        handleScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  }, 3000);
 
-  /* --- 3. Scroll Reveal --- */
-  const revealElements = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  /* --- 4. Mobile Menu Fix (Class Toggle Strategy) --- */
+  /* ==========================================================================
+     1. Mobile Menu Logic
+     ========================================================================== */
   const menuToggle = document.querySelector('.menu-toggle');
   const navOverlay = document.querySelector('.nav-overlay');
   const body = document.body;
 
   if (menuToggle && navOverlay) {
     menuToggle.addEventListener('click', () => {
-      // Toggle Menu
-      navOverlay.classList.toggle('is-open');
-      const isOpen = navOverlay.classList.contains('is-open');
-
-      // Icon Switch
-      menuToggle.textContent = isOpen ? '✕' : '☰';
+      const isOpen = navOverlay.classList.toggle('is-open');
+      menuToggle.classList.toggle('is-active'); // animate X
+      
       menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-
-      // Scroll Lock (CSS class toggle)
+      
       if (isOpen) {
         body.classList.add('scroll-lock');
       } else {
@@ -73,13 +45,55 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close on Link Click
-    navOverlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    // Close on link click
+    const navLinks = navOverlay.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
         navOverlay.classList.remove('is-open');
-        menuToggle.textContent = '☰';
+        menuToggle.classList.remove('is-active');
         body.classList.remove('scroll-lock');
+
+        // ローディングアニメーションを再利用してページ遷移（内部リンクのみ）
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('http')) {
+          e.preventDefault();
+          loadingScreen.classList.remove('is-hidden'); // フェードアウト開始
+          setTimeout(() => {
+            window.location.href = href;
+          }, 400);
+        }
       });
     });
   }
+
+  /* ==========================================================================
+     2. Scroll Reveal
+     ========================================================================== */
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealElements.forEach(el => observer.observe(el));
+
+  /* ==========================================================================
+     3. Smooth Scroll
+     ========================================================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const offset = target.getBoundingClientRect().top + window.pageYOffset - 70 - 40;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
 });

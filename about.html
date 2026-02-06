@@ -1,30 +1,45 @@
+/* File: about.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | REMEDORA</title>
-  <meta name="description" content="REMEDORAの代表紹介と提供ポリシー。役割、責任分界点、業務の進め方、お客様への約束（透明性・迅速性）。">
+  <title>About | REMEDORA 代表紹介と監査方針</title>
+  <meta name="description" content="REMEDORAは、介護・建設業界の採用における「Web監査役」です。成果保証をしない代わりに、計測データと作業ログをすべて開示し、ブラックボックス運用を排除します。">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
+<div id="loading-screen">
+    <div class="loading-logo"></div>
+    <p class="loading-text">REMEDORA</p>
+  </div>
+  
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">REMEDORA</a>
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      </a>
+      
       <nav class="nav-list">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
         <a href="service.html" class="nav-link">Service</a>
         <a href="results.html" class="nav-link">Results</a>
         <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="btn btn-small">Contact</a>
+        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
       </nav>
-      <button class="menu-toggle" aria-label="メニューを開く">☰</button>
+
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <div class="nav-overlay">
     <a href="index.html" class="nav-link">Home</a>
+    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
     <a href="service.html" class="nav-link">Service</a>
     <a href="results.html" class="nav-link">Results</a>
     <a href="about.html" class="nav-link active">About</a>
@@ -34,141 +49,165 @@
 
   <main>
 
-    <section class="section" style="padding-top: 180px; padding-bottom: 100px;">
+    <section class="hero-section">
       <div class="container reveal">
+        <span class="glass-badge">ROLE & STANCE</span>
         <h1 class="hero-title">
-          <span>ROLE &</span>
-          STANCE.
+          WEB IMPLEMENTATION<br>
+          ENGINEER.
         </h1>
         <div class="grid-2">
-          <div class="sp-hidden"></div> <div>
-            <p style="font-size: 1.1rem; color: var(--text-main); line-height: 2;">
+          <div class="pc-only"></div>
+          <div>
+            <p class="hero-desc">
               REMEDORAは、Web専門知識を持たない事業者様の<br>
-              「監査役」兼「実装者」です。<br>
-              曖昧な提案を排除し、責任を明確にして業務を遂行します。
+              <span class="text-main" style="border-bottom: 1px solid #fff;">「厳格な監査役」</span>兼<span class="text-main" style="border-bottom: 1px solid #fff;">「実装者」</span>です。<br>
+              甘い励ましや魔法のような提案は一切せず、<br>
+              「物理的な不備」を指摘し、それを修復することに責任を持ちます。
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
       <div class="container reveal">
-        <div class="offset-layout">
+        <div class="grid-2">
+          
           <div>
-            <div style="margin-bottom: 20px;">
-              <span class="badge">REPRESENTATIVE</span>
-            </div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 30px; line-height: 1;">
-              YUTO<br>
-              <span style="font-size: 1rem; color: var(--text-mute); font-weight: 400; letter-spacing: 0.05em;">WEB IMPLEMENTATION ENGINEER</span>
-            </h2>
-            <p style="color: var(--text-body);">
+            <span class="text-muted" style="letter-spacing: 0.1em; font-size: 0.9rem; display: block; margin-bottom: 16px;">REPRESENTATIVE</span>
+            <h2 class="section-title" style="margin-bottom: 24px;">YUTO</h2>
+            <p class="text-muted" style="margin-bottom: 24px;">
               介護・建設・整備業など、地域社会を支える小規模事業者を専門に支援。
               「予算の多寡」ではなく「正しい技術と情報の使い方」で、大手企業と対等に渡り合える採用導線を構築することを任務としています。
             </p>
+            <p class="text-muted">
+              甘い言葉で契約を迫る営業マンではなく、貴社の採用サイトにおける「法的リスク」と「計測不備」を指摘する監査役として機能します。
+            </p>
           </div>
 
-          <div class="offset-content">
-            <div style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 30px;">
-              <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-main); line-height: 1.6; margin-bottom: 20px;">
-                "Design is not just what it looks like and feels like. Design is how it works."
-              </p>
-              <p style="font-size: 0.9rem; color: var(--text-mute);">
-                デザインの美しさよりも、「求職者が迷わないか」「法的リスクはないか」「計測できているか」という実利面を最優先に設計を行います。
-              </p>
-            </div>
+          <div class="glass-panel" style="border-left: 4px solid var(--accent-white);">
+            <p style="font-size: 1.25rem; font-weight: 700; margin-bottom: 24px; font-family: sans-serif; line-height: 1.4; color: var(--text-main);">
+              "Design is not just what it looks like.<br>Design is how it works."
+            </p>
+            <p class="text-muted" style="font-size: 0.95rem;">
+              デザインの美しさよりも、「求職者が迷わないか」「法的リスク（2024年4月改正）はないか」「数字で計測できているか」という実利面を最優先に設計を行います。
+            </p>
           </div>
+
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container reveal">
-        <h2 style="font-size: 2.5rem; margin-bottom: 60px;">Scope of Work</h2>
+        <h2 class="section-title">Our Promise</h2>
+        <div class="grid-3">
+          
+          <div class="glass-panel">
+            <span style="font-size: 2rem; font-weight: 700; color: var(--text-muted); opacity: 0.3;">01</span>
+            <h3 style="margin: 16px 0;">Transparency</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              「何をやっているか分からない」状態を作りません。Google Analytics (GA4) の閲覧権限はお客様にも共有し、常に同じ数値を見て議論できる状態にします。
+            </p>
+          </div>
+
+          <div class="glass-panel">
+            <span style="font-size: 2rem; font-weight: 700; color: var(--text-muted); opacity: 0.3;">02</span>
+            <h3 style="margin: 16px 0;">Communication</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              原則24時間以内のレスポンスを徹底します。専門用語で煙に巻くことなく、現場視点での平易な言葉でリスクと対策を説明します。
+            </p>
+          </div>
+
+          <div class="glass-panel">
+            <span style="font-size: 2rem; font-weight: 700; color: var(--text-muted); opacity: 0.3;">03</span>
+            <h3 style="margin: 16px 0;">Evidence</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">
+              「やったつもり」を排除します。作業完了時は必ずログと反映箇所のスクリーンショットを提出し、証拠に基づいた納品を行います。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <h2 class="section-title">Security Policy</h2>
         
         <div class="grid-2">
-          <div style="border-top: 2px solid var(--accent); padding-top: 30px;">
-            <h3 style="font-size: 1.5rem; margin-bottom: 30px; color: var(--text-main);">責任を負うもの</h3>
-            <ul style="font-size: 0.95rem; line-height: 2.2; color: var(--text-body);">
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">✓ Webサイト・媒体の「動作」と「表示」</li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">✓ 計測タグの正確な発火とデータ収集</li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">✓ 労働条件明示ルールに基づく法的記載</li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">✓ 数値レポートの改ざんなき報告</li>
+          <div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 16px;">パスワード共有不要の原則</h3>
+            <p class="text-muted" style="margin-bottom: 24px;">
+              REMEDORAは、お客様のGoogleアカウントやIndeedアカウントのパスワードを要求しません。<br>
+              すべて正規の「管理者招待（ユーザー追加）」機能を通じて権限をいただき、作業完了後はいつでも貴社側から解除できる状態を保ちます。
+            </p>
+            <ul style="font-size: 0.9rem; color: var(--text-muted); list-style: disc; margin-left: 20px; line-height: 1.8;">
+              <li>Google ビジネスプロフィール：管理者招待</li>
+              <li>Google Analytics：ユーザー追加</li>
+              <li>Indeed / Airワーク：権限付与</li>
             </ul>
           </div>
           
-          <div style="border-top: 1px solid var(--text-mute); padding-top: 30px;">
-            <h3 style="font-size: 1.5rem; margin-bottom: 30px; color: var(--text-mute);">責任を負わないもの</h3>
-            <ul style="font-size: 0.95rem; line-height: 2.2; color: var(--text-mute);">
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">× 応募者の「質」や「採用後の定着」</li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">× 面接代行および応募者への直接連絡</li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">× 媒体アルゴリズムによる順位変動</li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05);">× 広告費・実費の負担</li>
-            </ul>
+          <div class="glass-panel text-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <span style="font-size: 3rem; margin-bottom: 16px; display: block;">🔒</span>
+            <p style="font-size: 0.9rem; color: var(--text-main);">
+              権限付与の手順書（マニュアル）を完備。<br>
+              ITに詳しくない方でも、3分で安全に設定可能です。
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container reveal">
-        <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 0;">
-          <h2 style="margin-bottom: 0;">Our Promise</h2>
-        </div>
-
-        <div class="editorial-list">
-          <div class="editorial-item">
-            <span class="item-num">01</span>
-            <div>
-              <h3 class="item-title">Transparency</h3>
-              <div class="item-desc">
-                「何をやっているか分からない」状態を作りません。Google Analytics (GA4) の閲覧権限はお客様にも共有し、常に同じ数値を見て議論できる状態にします。
-              </div>
-            </div>
-          </div>
-          <div class="editorial-item">
-            <span class="item-num">02</span>
-            <div>
-              <h3 class="item-title">Communication</h3>
-              <div class="item-desc">
-                チャットツール（LINE/Chatwork等）またはメールにて、原則24時間以内の返信を徹底します。技術的な不明点も専門用語を使わず解説します。
-              </div>
-            </div>
-          </div>
-          <div class="editorial-item">
-            <span class="item-num">03</span>
-            <div>
-              <h3 class="item-title">Improvement</h3>
-              <div class="item-desc">
-                制作段階での修正は規定回数まで対応します。運用開始後は、個人の主観ではなく「計測データ」に基づいて修正箇所を提案します。
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="glass-panel reveal" style="text-align: center; padding: 100px 20px;">
-          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">
-            実務重視のパートナーとして。
-          </h2>
-          <p style="margin-bottom: 40px; color: var(--text-body);">
-            御社の採用課題に対し、誠実かつ論理的に向き合います。<br>
-            まずは現状のリスク診断からご相談ください。
-          </p>
-          <a href="contact.html" class="btn">無料診断を申し込む</a>
-        </div>
+      <div class="container reveal text-center">
+        <h2 style="margin-bottom: 24px;">実務重視のパートナーとして。</h2>
+        <p class="text-muted" style="margin-bottom: 40px;">
+          御社の採用課題に対し、誠実かつ論理的に向き合います。<br>
+          まずは「現状のリスク診断」からご相談ください。
+        </p>
+        <a href="contact.html" class="btn btn-primary" data-ga-event="click_about_footer">
+          無料 赤ペン診断を申し込む
+        </a>
       </div>
     </section>
 
   </main>
 
-  <footer style="padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+  <footer class="footer">
     <div class="container">
-      <div style="text-align: center; font-size: 0.75rem; color: var(--text-mute);">
+      <div class="grid-2">
+        <div>
+          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
+          <p>
+            {{LEGAL_NAME}}<br>
+            代表：{{REPRESENTATIVE}}<br>
+            {{ADDRESS}}
+          </p>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="monitor.html">無料モニター</a></li>
+              <li><a href="service.html">Service</a></li>
+              <li><a href="results.html">Results</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="company.html">Company</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
         &copy; 2026 REMEDORA. All Rights Reserved.
       </div>
     </div>
