@@ -1,0 +1,200 @@
+/* File: contact.html */
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | REMEDORA 赤ペン診断・お問い合わせ</title>
+  <meta name="description" content="求人広告費の無駄を特定する「赤ペン診断」のお申し込み、無料モニターへの応募はこちら。強引な営業は一切いたしません。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="loading-screen">
+    <div class="loading-logo"></div>
+    <p class="loading-text">REMEDORA</p>
+  </div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      </a>
+      
+      <nav class="nav-list">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
+        <a href="service.html" class="nav-link">Service</a>
+        <a href="results.html" class="nav-link">Results</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
+    <a href="service.html" class="nav-link">Service</a>
+    <a href="results.html" class="nav-link">Results</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="company.html" class="nav-link">Company</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+
+  <main>
+    
+    <section class="hero-section">
+      <div class="container reveal">
+        <span class="glass-badge">START DIAGNOSIS</span>
+        <h1 class="hero-title">
+          GET IN TOUCH.
+        </h1>
+        
+        <div class="grid-2" style="align-items: flex-start;">
+          
+          <div>
+            <p class="hero-desc">
+              強引な営業は一切いたしません。<br>
+              貴社のWeb上にある「採用の穴」を特定するための情報を教えてください。<br>
+              30分で改善点をご提示します。
+            </p>
+            
+            <div class="glass-panel" style="margin-bottom: 24px; padding: 24px;">
+              <span class="text-muted" style="font-size: 0.8rem; letter-spacing: 0.1em; display: block; margin-bottom: 8px;">DIRECT EMAIL</span>
+              <p style="font-size: 1.1rem; font-family: monospace; color: var(--text-main); margin-bottom: 0;">
+                {{EMAIL}}
+              </p>
+            </div>
+
+            <a href="{{LINE_URL}}" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; background-color: #06c755; color: #fff; border: none; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);" data-ga-event="click_contact_line">
+              LINEで気軽に相談する
+            </a>
+            <p class="text-muted" style="font-size: 0.8rem; margin-top: 16px;">
+              ※ID検索: @{{LINE_ID_PLACEHOLDER}}
+            </p>
+          </div>
+
+          <div class="glass-panel" style="border-top: 4px solid var(--accent-white);">
+            <h2 style="font-size: 1.5rem; margin-bottom: 32px;">お問い合わせフォーム</h2>
+            
+            <form action="[TODO: Form Endpoint]" method="POST">
+              <div style="display:none;">
+                <input type="text" name="honeypot_field" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">ご相談内容 <span class="text-danger">*</span></label>
+                <div style="position: relative;">
+                  <select name="category" class="form-input" required>
+                    <option value="" disabled selected>選択してください</option>
+                    <option value="monitor">【先着3社】無料モニター応募</option>
+                    <option value="diagnosis">無料 赤ペン診断（リスクチェック）</option>
+                    <option value="foundation">土台プラン（簡易HP制作）の相談</option>
+                    <option value="other">その他のお問い合わせ</option>
+                  </select>
+                  <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-main);">▼</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">貴社名 / 屋号 <span class="text-danger">*</span></label>
+                <input type="text" name="company" class="form-input" required placeholder="例）株式会社〇〇建設">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">ご担当者名 <span class="text-danger">*</span></label>
+                <input type="text" name="name" class="form-input" required placeholder="例）山田 太郎">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">メールアドレス <span class="text-danger">*</span></label>
+                <input type="email" name="email" class="form-input" required placeholder="info@example.com">
+              </div>
+
+              <div class="glass-panel" style="margin-bottom: 32px; background-color: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px;">
+                <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 16px;">▼ 診断・モニター希望の方はご記入ください</p>
+                
+                <div class="form-group">
+                  <label class="form-label">診断対象のURL</label>
+                  <input type="url" name="target_url" class="form-input" placeholder="HPやIndeed等のURL">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label">現在利用中の求人媒体</label>
+                  <input type="text" name="current_media" class="form-input" placeholder="例）Indeed, Airワーク, タウンワーク等">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">詳細・ご要望</label>
+                <textarea name="message" class="form-textarea" rows="5" placeholder="現状のお悩みや、連絡のつきやすい時間帯などをご記入ください。"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.9rem; color: var(--text-body);">
+                  <input type="checkbox" required name="privacy_policy" style="margin-top: 4px; transform: scale(1.2); accent-color: var(--accent-white);">
+                  <span>
+                    <a href="privacy.html" target="_blank" style="text-decoration: underline; color: var(--text-main);">プライバシーポリシー</a>に同意します
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;" data-ga-event="submit_contact_form">
+                上記内容で送信する
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
+          <p>
+            {{LEGAL_NAME}}<br>
+            代表：{{REPRESENTATIVE}}<br>
+            {{ADDRESS}}
+          </p>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="monitor.html">無料モニター</a></li>
+              <li><a href="service.html">Service</a></li>
+              <li><a href="results.html">Results</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
+            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+              <li><a href="company.html">Company</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
+        &copy; 2026 REMEDORA. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
