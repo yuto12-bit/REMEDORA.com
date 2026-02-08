@@ -403,11 +403,7 @@ img { max-width: 100%; display: block; }
 /* =========================
    MAINTENANCE OVERLAY
    ========================= */
-html.is-maintenance,
-body.is-maintenance {
-  height: 100%;
-  overflow: hidden; /* スクロール禁止 */
-}
+
 
 .maintenance-overlay {
   position: fixed;
