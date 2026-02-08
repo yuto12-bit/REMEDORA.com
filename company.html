@@ -224,5 +224,38 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+
+<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
+<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
+  <div class="maintenance-card">
+    <h1 class="maintenance-title">改修中</h1>
+    <p class="maintenance-text">
+      現在、サイト内容を更新しています。<br>
+      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
+    </p>
+
+    <div class="maintenance-actions">
+      <!-- ▼あなたの公式LINEリンクに置換 -->
+      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
+        公式LINEで相談する
+      </a>
+
+      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
+      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        Instagramを見る
+      </a>
+    </div>
+
+    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
+  </div>
+</div>
+
+<script>
+  document.documentElement.classList.add('is-maintenance');
+  document.body.classList.add('is-maintenance');
+  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
+</script>
+<!-- /MAINTENANCE OVERLAY -->
+
 </body>
 </html>
