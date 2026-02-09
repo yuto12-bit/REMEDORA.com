@@ -483,3 +483,16 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,0.55);
   text-align: center;
 }
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo__text{
+  font-size:12px;
+  letter-spacing:0.06em;
+  opacity:0.85;
+  white-space:nowrap;
+}
