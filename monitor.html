@@ -1,37 +1,64 @@
-/* File: monitor.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Monitor | REMEDORA 無料モニター募集要項</title>
-  <meta name="description" content="【先着3社限定】採用導線整備・LP制作・GA4計測を「0円」で提供。条件は実績公開と素材の期限内提出のみ。2週間で採用の穴を塞ぎます。">
+  <title>無料モニター募集要項（同意書） | REMEDORA</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="無料モニター募集要項 | REMEDORA">
+  <meta property="og:description" content="【先着3社限定】採用導線整備・LP制作・GA4計測を「0円」で提供。条件は実績公開と素材の期限内提出のみ。最短22日間で採用の穴を塞ぎます。">
+  <meta property="og:url" content="https://remedora.jp/monitor.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="無料モニター募集要項 | REMEDORA">
+  <meta name="twitter:description" content="【先着3社限定】通常30万円の採用LP・導線構築を0円で提供。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="【先着3社限定】採用導線整備・LP制作・GA4計測を「0円」で提供。条件は実績公開と素材の期限内提出のみ。最短22日間で採用の穴を塞ぎます。">
   <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="canonical" href="https://remedora.jp/monitor.html">
+  <link rel="canonical" href="https://remedora.jp/monitor.html">
 </head>
 <body>
 
-<div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link active text-main" style="font-weight: 700;">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link active text-accent" aria-current="page">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,178 +66,154 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link active text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link active text-accent" aria-current="page">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-    <section class="hero-section">
+    <section class="hero-agreement">
       <div class="container reveal">
-        <span class="glass-badge">MONTHLY LIMITED: 先着3社</span>
-        <h1 class="hero-title">
-          FREE MONITOR<br>
-          PROGRAM.
+        <span class="label-tag tag-inverted">毎月 先着3社限定</span>
+        <h1 class="hero-title-massive">
+          無料モニター<br>募集要項・同意書
         </h1>
-        <div class="grid-2">
-          <div class="pc-only"></div>
-          <div>
-            <p class="hero-desc">
-              採用LP制作、Googleマップ整備、GA4計測設定。<br>
-              通常有料の初期構築費を、<span class="text-main" style="font-weight: 700; border-bottom: 1px solid #fff;">完全無料（0円）</span>で提供します。
-            </p>
-            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 32px;">
-              目的は当事業の「実績作り（0→1）」です。<br>
-              そのため、以下の適用条件に同意いただける企業様のみを対象とさせていただきます。
-            </p>
-            <a href="https://yuto12-bit.github.io/client_input/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-ga-event="click_monitor_apply_hero">
-              条件に同意して応募する
-            </a>
-            <p class="text-muted" style="font-size: 0.8rem; margin-top: 16px;">※応募多数の場合、審査により決定します</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Scope & Conditions</h2>
-        
-        <div class="grid-2">
-          <div class="glass-panel" style="border-top: 4px solid var(--accent-white);">
-            <h3 style="color: var(--text-main); margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
-              <span style="font-size: 1.2rem;">◎</span> 無料で提供するもの
-            </h3>
-            <ul style="font-size: 0.95rem; line-height: 2; color: var(--text-main);">
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0;">
-                <strong>1. 導線整備</strong><br>
-                <span class="text-muted" style="font-size: 0.85rem;">Indeed/Airワーク等の入口設定、Googleビジネスプロフィールの基本情報整備。</span>
-              </li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0;">
-                <strong>2. 採用LP制作</strong><br>
-                <span class="text-muted" style="font-size: 0.85rem;">スマホ対応テンプレートを使用した1ページ完結型LP。サーバー公開代行含む。</span>
-              </li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0;">
-                <strong>3. 計測設定 (GA4)</strong><br>
-                <span class="text-muted" style="font-size: 0.85rem;">イベント2〜3個の設定（電話タップ、応募ボタン等）と動作確認。</span>
-              </li>
-              <li style="padding: 12px 0;">
-                <strong>4. 証跡・改善提案</strong><br>
-                <span class="text-muted" style="font-size: 0.85rem;">作業ログの提出および、次に改善すべき点の提案（1点）。</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="glass-panel" style="border-top: 4px solid var(--text-muted); background: rgba(0,0,0,0.5);">
-            <h3 style="color: var(--text-muted); margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
-              <span style="font-size: 1.2rem;">✕</span> 無料に含まないもの
-            </h3>
-            <ul style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
-                × 継続的なPDCA運用（分析・修正・レポート）
-              </li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
-                × 広告運用の代行および広告費の負担
-              </li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
-                × 追加制作（動画撮影、HP全体の構築）
-              </li>
-              <li style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0;">
-                × 無制限の修正対応（修正は計2回まで）
-              </li>
-              <li style="padding: 12px 0;">
-                × <strong>成果保証および職業紹介（斡旋）</strong>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title text-danger">Strict Rules</h2>
-        <p class="text-muted" style="margin-bottom: 40px;">トラブル防止のため、以下のルールを徹底させていただきます。</p>
-        
-        <div class="warning-box">
-          <div class="grid-2">
-            <div>
-              <h3 style="color: var(--text-main); margin-bottom: 16px;">1. 素材提出「7日」ルール</h3>
-              <p class="text-main" style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px;">
-                合意から<strong>7日以内</strong>に、必須素材（写真・募集要項・会社情報）および権限のご提供をお願いします。<br>
-                期限を超過した場合、納期遵守のため、当方の判断で<strong>「フリー素材」または「AI生成画像」を使用して制作・公開</strong>いたします。<br>
-                <small class="text-danger">※公開後の写真差し替えは可能ですが、修正回数（計2回）のカウントに含まれます。</small>
-              </p>
-            </div>
-            <div>
-              <h3 style="color: var(--text-main); margin-bottom: 16px;">2. 実績公開への同意</h3>
-              <p class="text-main" style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px;">
-                制作したLPのBefore/After、作業ログ、計測数値（KPI）を、当事業の実績として公開することに同意いただきます。<br>
-                原則として<strong>匿名・数値のみ</strong>の公開ですが、社名やロゴの公開をご許可いただける企業様を優先して対応いたします。
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div style="margin-top: 40px;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 24px;">完了定義 (Goal)</h3>
-          <div class="glass-panel">
-            <ul style="font-size: 0.95rem; line-height: 2; list-style: disc; margin-left: 20px;">
-              <li>原則、着手から<strong>2週間（14日）</strong>で以下の3点が揃った時点を「初期完了」とします。</li>
-              <li style="margin-left: 20px;">① 採用LPの公開URL提示</li>
-              <li style="margin-left: 20px;">② 求人媒体（Indeed等）へのリンク設定反映確認</li>
-              <li style="margin-left: 20px;">③ GA4イベント（クリック等）の動作確認</li>
-            </ul>
-            <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-muted);">
-              ※Googleや媒体側の審査待ち、反映待ち時間は当方の管理外のため、完了遅延の理由としません。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Safety & Security</h2>
-        <div class="grid-3">
-          <div style="padding: 24px; border-left: 2px solid var(--text-muted);">
-            <h4 style="margin-bottom: 10px;">成果保証なし</h4>
-            <p class="text-muted" style="font-size: 0.85rem;">応募数・採用数の数値保証は行いません。市場動向や競合に左右されるためです。</p>
-          </div>
-          <div style="padding: 24px; border-left: 2px solid var(--text-muted);">
-            <h4 style="margin-bottom: 10px;">応募者情報の管理</h4>
-            <p class="text-muted" style="font-size: 0.85rem;">応募者の個人情報は貴社が直接管理します。当方が保有することはありません。</p>
-          </div>
-          <div style="padding: 24px; border-left: 2px solid var(--text-muted);">
-            <h4 style="margin-bottom: 10px;">パスワード共有不要</h4>
-            <p class="text-muted" style="font-size: 0.85rem;">Google/Indeed等は「管理者招待」機能を使用します。PWを教える必要はありません。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal text-center">
-        <div class="glass-panel" style="border: 1px solid rgba(255,255,255,0.3);">
-          <h2 style="margin-bottom: 24px;">リスクのない「実験」を始めませんか？</h2>
-          <p class="text-muted" style="margin-bottom: 40px;">
-            貴社の金銭的リスクはゼロ（0円）です。<br>
-            必要なのは、情報提供へのご協力と、少しの決断だけです。
+        <div class="u-mt-40" style="max-width: 680px; margin-left: auto; margin-right: auto; text-align: left;">
+          <p class="text-body" style="font-size: 1rem; line-height: 1.8;">
+            本プログラムの目的は、当事業における「圧倒的な成功事例（データ）」の創出です。通常30万円以上の初期構築（採用LP制作、Googleマップ整備、GA4計測設定）を、<strong>完全無料（0円）</strong>で実装します。
           </p>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
-            <a href="https://yuto12-bit.github.io/client_input/" class="btn btn-primary" style="min-width: 280px;" target="_blank" rel="noopener noreferrer" data-ga-event="click_monitor_apply_footer">
-              条件に同意して応募する
-            </a>
-            <p style="font-size: 0.9rem;">
-              または <a href="contact.html" style="text-decoration: underline;">お問い合わせフォーム</a> から質問する
+          <p class="text-body u-mt-16" style="font-size: 1rem; line-height: 1.8;">
+            無料だからといって手を抜くことは一切ありません。本気で採用課題を解決したい企業様との戦略的パートナーシップ枠として設定しているため、<strong>本ページに記載された全条項にご合意いただける企業様のみ</strong>を対象とさせていただきます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container reveal">
+        <h2 class="editorial-title">履行スケジュール</h2>
+        <p class="editorial-subtitle">停滞を排除し、2週間の計測期間を死守する22日間の工程表です。</p>
+        
+        <div class="monitor-gantt u-mt-40">
+          <div class="gantt-row">
+            <div class="gantt-day">Day 00 - 07</div>
+            <div class="gantt-content">
+              <h4>構築・法的整備（初期設定）</h4>
+              <p>合意後ただちに、改正法対応の求人原稿とLP制作、Googleマップ整備を開始します。素材提供完了から7日以内の公開を厳守します。</p>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-day">Day 08 - 21</div>
+            <div class="gantt-content">
+              <h4>行動証跡の取得（計測）</h4>
+              <p>公開した採用LPに対し、GA4を用いて2週間のデータ計測を行います。求職者が「どこで離脱しているか」を可視化します。</p>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-day">Day 22</div>
+            <div class="gantt-content">
+              <h4>レポート提出・プロジェクト完了</h4>
+              <p>取得したデータを翻訳した証跡レポートと、「次に潰すべき改善点1つ」をご提示します。これを以て無料モニター期間は完了（納品）となります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <h2 class="editorial-title">提供範囲と免責事項</h2>
+        <p class="editorial-subtitle">本プログラムにおいて「0円で提供する作業」と「提供対象外の作業」を定義します。</p>
+        
+        <div class="responsibility-split u-mt-40">
+          <div class="resp-box resp-do">
+            <h3 class="text-accent">◎ 提供範囲（請け負うこと）</h3>
+            <ul class="step-list text-body">
+              <li><strong>導線整備：</strong> 既存媒体からLPへのリンク設定、GBP基本情報の入力。</li>
+              <li><strong>LP制作：</strong> スマホ最適化された1ページ完結型LPの構築・サーバー公開代行。</li>
+              <li><strong>計測設定：</strong> GA4を用いた応募ボタンタップ等のイベント設定。</li>
+              <li><strong>証跡提示：</strong> 2週間計測後の作業ログおよび改善提案1点の提出。</li>
+            </ul>
+          </div>
+          <div class="resp-box resp-dont">
+            <h3>✕ 範囲外（請け負わないこと）</h3>
+            <ul class="step-list text-white">
+              <li>Day22以降の継続的な分析や修正作業</li>
+              <li>広告運用の代行、および求人広告費の実費負担</li>
+              <li>動画撮影、会社HPのフルリニューアル</li>
+              <li><strong class="text-danger">応募数の保証、および職業紹介・面接代行</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container reveal">
+        <h2 class="editorial-title text-danger">適用条件（合意事項）</h2>
+        <p class="editorial-subtitle">当プログラムを適用するため、以下の条項への合意を必須とします。</p>
+        
+        <div class="agreement-list u-mt-40">
+          <div class="agreement-item">
+            <h3 class="agreement-title">7日間ルール（素材提供の義務）</h3>
+            <p class="agreement-text">
+              合意から<strong>7日以内</strong>に、制作に必要な素材（現場写真等）およびアカウント権限のご提供をお願いします。<br>
+              期限内に揃わない場合、機会損失を防ぐため、当方の判断で<strong>「フリー素材」または「AI生成画像」を用いて仮公開し、計測期間を進行させます。</strong><br>
+              <span class="text-danger fw-bold" style="font-size: 0.85rem;">※公開後の写真差し替えは可能ですが、修正回数にカウントされます。</span>
             </p>
           </div>
+          
+          <div class="agreement-item">
+            <h3 class="agreement-title">事例公開への許諾</h3>
+            <p class="agreement-text">
+              制作したLPのBefore/After、作業ログ、計測数値（KPI）を、当事業の成功実績としてWebサイト等で公開することに同意いただきます。<br>
+              原則として「匿名・数値のみ」での公開も可能ですが、事前確認の上で社名公開をご許可いただける企業様を優先して採択いたします。
+            </p>
+          </div>
+
+          <div class="agreement-item">
+            <h3 class="agreement-title">免責事項への同意</h3>
+            <p class="agreement-text">
+              前項で定めた「範囲外（請け負わないこと）」に記載されている通り、本プログラムが採用の成果（応募数や採用人数）を絶対的に保証するものではないことを理解し、同意するものとします。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark text-center">
+      <div class="container reveal">
+        <h2 class="editorial-title text-white">応募フォームへ進む</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+          以下の内容を確認の上、専用フォームよりエントリーをお願いします。
+        </p>
+
+        <div class="consent-box">
+          <h3 class="consent-title">合意確認</h3>
+          <ul class="consent-checklist">
+            <li>無料モニターの目的と提供範囲（免責事項）を理解した</li>
+            <li>「7日間ルール（素材提出期限）」に同意する</li>
+            <li>「事例としてのデータ公開」に同意する</li>
+          </ul>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+          <a href="https://input.remedora.jp" class="btn btn-outline block-mobile btn-large" style="color: var(--c-black); background: var(--c-white); border-color: var(--c-white);" target="_blank" rel="noopener noreferrer" data-ga-event="click_monitor_apply_footer">
+            上記に同意して応募する（外部フォーム）
+          </a>
+          <p class="text-small" style="color: var(--c-gray);">
+            疑問点がある場合は応募前に <a href="contact.html" style="color: var(--c-white); text-decoration: underline;">お問い合わせ</a> よりご相談ください
+          </p>
         </div>
       </div>
     </section>
@@ -219,74 +222,49 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
+  <div class="sp-fixed-cta" aria-hidden="false">
+    <a href="https://input.remedora.jp" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer" data-ga-event="click_sp_fixed_cta">
+      合意して応募する（無料）
+    </a>
   </div>
-</div>
 
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

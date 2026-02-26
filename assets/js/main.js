@@ -3,40 +3,52 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   /* ==========================================================================
-     0. Loading Screen & Page Transition
+     0. Loading Screen & bfcache対策
      ========================================================================== */
   const loadingScreen = document.getElementById('loading-screen');
   
-  // ページリソース（画像等）を含めて完全に読み込まれたら発火
-  window.addEventListener('load', () => {
-    // 少しだけ待機して余韻を持たせる（0.6秒）
-    setTimeout(() => {
-      if(loadingScreen) {
-        loadingScreen.classList.add('is-hidden');
-      }
-    }, 600);
-  });
-
-  // 万が一 load イベントが発火しない場合（キャッシュ等）の保険（3秒後に強制解除）
-  setTimeout(() => {
-    if(loadingScreen && !loadingScreen.classList.contains('is-hidden')) {
+  const hideLoadingScreen = () => {
+    if (loadingScreen && !loadingScreen.classList.contains('is-hidden')) {
       loadingScreen.classList.add('is-hidden');
+      loadingScreen.setAttribute('aria-hidden', 'true');
     }
-  }, 3000);
+  };
+
+  // すでに読み込み完了している場合（キャッシュ等）の対応
+  if (document.readyState === 'complete') {
+    setTimeout(hideLoadingScreen, 200);
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(hideLoadingScreen, 600);
+    });
+  }
+
+  // 保険（3秒後に強制解除）
+  setTimeout(hideLoadingScreen, 3000);
+
+  // bfcache（ブラウザバック）時のローディング画面残り対策
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      hideLoadingScreen();
+    }
+  });
 
   /* ==========================================================================
      1. Mobile Menu Logic
      ========================================================================== */
   const menuToggle = document.querySelector('.menu-toggle');
-  const navOverlay = document.querySelector('.nav-overlay');
+  // 前回のHTML改修で付与したIDを優先取得、無ければクラスで取得
+  const navOverlay = document.getElementById('mobile-menu') || document.querySelector('.nav-overlay');
   const body = document.body;
 
   if (menuToggle && navOverlay) {
     menuToggle.addEventListener('click', () => {
       const isOpen = navOverlay.classList.toggle('is-open');
-      menuToggle.classList.toggle('is-active'); // animate X
+      menuToggle.classList.toggle('is-active'); // Xアイコンへのアニメーション
       
+      // アクセシビリティ：状態の更新
       menuToggle.setAttribute('aria-expanded', isOpen);
+      navOverlay.setAttribute('aria-hidden', !isOpen);
       
       if (isOpen) {
         body.classList.add('scroll-lock');
@@ -45,23 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close on link click
+    // リンククリック時にメニューを閉じる（ページ遷移はブラウザ標準に任せる）
     const navLinks = navOverlay.querySelectorAll('a');
     navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+      link.addEventListener('click', () => {
         navOverlay.classList.remove('is-open');
         menuToggle.classList.remove('is-active');
         body.classList.remove('scroll-lock');
 
-        // ローディングアニメーションを再利用してページ遷移（内部リンクのみ）
-        const href = link.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('http')) {
-          e.preventDefault();
-          loadingScreen.classList.remove('is-hidden'); // フェードアウト開始
-          setTimeout(() => {
-            window.location.href = href;
-          }, 400);
-        }
+        // 状態のリセット
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navOverlay.setAttribute('aria-hidden', 'true');
       });
     });
   }
@@ -74,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
+        // 一度発火したら監視を解除してパフォーマンスを確保
         observer.unobserve(entry.target);
       }
     });
@@ -83,17 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
      3. Smooth Scroll
+     ※ 厳格監査官の判断：
+     CSS側の `scroll-behavior: smooth` および `scroll-margin-top` の設定と
+     JSのオフセット計算処理が競合し、二重スクロールのバグを引き起こすため削除しました。
+     モダンブラウザではCSSのみで完結させるのがベストプラクティスです。
      ========================================================================== */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const offset = target.getBoundingClientRect().top + window.pageYOffset - 70 - 40;
-        window.scrollTo({ top: offset, behavior: 'smooth' });
-      }
-    });
-  });
 });

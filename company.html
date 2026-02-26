@@ -1,40 +1,64 @@
-/* File: company.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company | REMEDORA 会社概要・特商法表記</title>
-  <meta name="description" content="REMEDORAの事業者概要および特定商取引法に基づく表記。屋号、代表者、所在地、連絡先、支払い方法、キャンセルポリシーを公開しています。">
-  <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="canonical" href="https://remedora.jp/">
-   <link rel="canonical" href="https://remedora.jp/company.html">
+  <title>会社概要・特商法表記 | REMEDORA</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="会社概要・特商法表記 | REMEDORA">
+  <meta property="og:description" content="REMEDORAの事業者概要および特定商取引法に基づく表記。屋号、代表者、所在地、連絡先、支払い方法などを公開しています。">
+  <meta property="og:url" content="https://remedora.jp/company.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="会社概要・特商法表記 | REMEDORA">
+  <meta name="twitter:description" content="事業者概要および特定商取引法に基づく表記。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="REMEDORAの事業者概要および特定商取引法に基づく表記。屋号、代表者、所在地、連絡先、支払い方法などを公開しています。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://remedora.jp/company.html">
 </head>
 <body>
 
-<div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="company.html" class="nav-link active">Company</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -42,223 +66,187 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link active">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link active text-accent" aria-current="page">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-    <section class="hero-section">
-      <div class="container reveal">
-        <span class="glass-badge">CORPORATE PROFILE</span>
-        <h1 class="hero-title">
-          TRANSPARENCY<br>
-          & LEGAL.
-        </h1>
-        <div class="grid-2">
-          <div class="pc-only"></div>
-          <div>
-            <p class="hero-desc">
-              透明性と実利を追求する、私たちの基本情報です。<br>
-              法律に基づく表記（特定商取引法）を含みます。
-            </p>
-          </div>
-        </div>
+    <header class="container">
+      <div class="legal-header">
+        <h1 class="legal-title">会社概要・特商法表記</h1>
       </div>
-    </section>
+    </header>
 
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Overview</h2>
-        
-        <div class="glass-panel">
-          <ul style="font-size: 0.95rem; line-height: 1.8;">
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">屋号</strong>
-                <span class="text-main">{{LEGAL_NAME}}</span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">代表者</strong>
-                <span class="text-main">{{REPRESENTATIVE}}</span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">所在地</strong>
-                <span class="text-main">{{ADDRESS}}</span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">連絡先</strong>
-                <span class="text-main">
-                  {{EMAIL}}<br>
-                  {{PHONE}}
-                </span>
-              </div>
-            </li>
-            <li style="padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">事業内容</strong>
-                <span class="text-main">
-                  Webサイト監査・制作・運用保守<br>
-                  採用コンサルティング（導線設計・計測基盤構築）<br>
-                  Googleビジネスプロフィール運用代行<br>
-                  <small class="text-muted" style="display: block; margin-top: 8px;">※有料職業紹介事業・労働者派遣事業ではありません</small>
-                </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div class="container reveal">
+      
+      <section class="legal-section">
+        <h2 class="legal-section-title">事業者概要</h2>
+        <table class="legal-table">
+          <tbody>
+            <tr>
+              <th>屋号</th>
+              <td>REMEDORA（レメドラ）</td>
+            </tr>
+            <tr>
+              <th>代表者</th>
+              <td>勇翔</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>
+                大阪府東大阪市<br>
+                <span class="note">※事業所（自宅）の番地等詳細につきましては、ご請求いただき次第遅滞なく開示いたします。</span>
+              </td>
+            </tr>
+            <tr>
+              <th>連絡先</th>
+              <td>
+                お問い合わせフォームまたは公式LINEよりご連絡ください。<br>
+                <span class="note">※電話番号およびメールアドレスにつきましては、ご請求いただき次第遅滞なく開示いたします。</span>
+              </td>
+            </tr>
+            <tr>
+              <th>事業内容</th>
+              <td>
+                <ul>
+                  <li>Webサイト監査、制作、運用保守</li>
+                  <li>採用コンサルティング（導線設計・計測基盤構築）</li>
+                  <li>Googleビジネスプロフィール設定代行</li>
+                </ul>
+                <span class="note u-mt-16">※有料職業紹介事業・労働者派遣事業ではありません。</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Legal Notice</h2>
-        <p class="text-muted" style="margin-bottom: 32px;">特定商取引法に基づく表記</p>
-        
-        <div class="glass-panel">
-          <ul style="font-size: 0.95rem; line-height: 1.8;">
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">販売価格</strong>
-                <span class="text-main">
-                  各プラン詳細ページに記載（記載のない特別対応は別途見積書にて提示）。<br>
-                  消費税は別途請求となります。
-                </span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">支払方法</strong>
-                <span class="text-main">{{PAYMENT}}</span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">支払時期</strong>
-                <span class="text-main">
-                  制作費：契約時（前払い）または着手時50%・納品時50%<br>
-                  月額費：当月末締め翌月末払い
-                </span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">必要料金</strong>
-                <span class="text-main">
-                  銀行振込手数料、サーバー・ドメイン維持費（実費）、<br>
-                  インターネット接続料金その他の電気通信回線の通信に関する費用
-                </span>
-              </div>
-            </li>
-            <li style="border-bottom: var(--border-glass); padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">引渡時期</strong>
-                <span class="text-main">
-                  制作物：契約締結後、別途合意した納期にサーバーアップロードまたは権限譲渡にて納品<br>
-                  運用：契約期間中、継続的に提供
-                </span>
-              </div>
-            </li>
-            <li style="padding: 16px 0;">
-              <div class="grid-2" style="gap: 16px; grid-template-columns: 100px 1fr;">
-                <strong class="text-muted">キャンセル</strong>
-                <span class="text-main">
-                  <strong>制作業務：</strong><br>
-                  デジタルコンテンツの性質上、お客様都合による着手後の返金・キャンセルはお受けできません。<br><br>
-                  <strong>運用業務（月額）：</strong><br>
-                  解約希望月の1ヶ月前までに書面またはメールにて通知いただくことで、翌月末での解約が可能です。
-                </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <section class="legal-section">
+        <h2 class="legal-section-title">特定商取引法に基づく表記</h2>
+        <table class="legal-table">
+          <tbody>
+            <tr>
+              <th>販売価格</th>
+              <td>
+                各プラン詳細ページ（サービス・仕様）に記載。<br>
+                記載のない特別対応は別途お見積書にてご提示します。<br>
+                <span class="note">※消費税は別途請求となります。</span>
+              </td>
+            </tr>
+            <tr>
+              <th>支払方法</th>
+              <td>銀行振込</td>
+            </tr>
+            <tr>
+              <th>支払時期</th>
+              <td>
+                <p><strong>【初期制作費】</strong> 契約時（前払い）または着手時50%・納品時50%</p>
+                <p><strong>【月額運用費】</strong> 当月末締め翌月末払い</p>
+              </td>
+            </tr>
+            <tr>
+              <th>商品代金以外の<br class="pc-only">必要料金</th>
+              <td>
+                銀行振込手数料、サーバー・ドメイン維持費（実費）、<br>
+                インターネット接続料金その他の電気通信回線の通信に関する費用。
+              </td>
+            </tr>
+            <tr>
+              <th>引渡時期</th>
+              <td>
+                <p><strong>【制作物】</strong> 契約締結後、別途合意した納期にサーバーアップロードまたは権限譲渡にて納品します。</p>
+                <p><strong>【運用業務】</strong> 契約期間中、継続的にサービスを提供します。</p>
+              </td>
+            </tr>
+            <tr>
+              <th>キャンセル・<br class="pc-only">解約について</th>
+              <td>
+                <p><strong>【制作業務】</strong><br>デジタルコンテンツ・役務提供の性質上、お客様都合による着手後の返金・キャンセルはお受けできません。</p>
+                <p><strong>【運用業務（月額）】</strong><br>解約希望月の1ヶ月前までに書面またはメールにてご通知いただくことで、翌月末での解約が可能です。</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
+    </div>
   </main>
+
+  <aside class="principles-area" aria-label="REMEDORAの基本原則">
+    <div class="container">
+      <h4 class="fw-bold text-main u-mb-40 text-center">REMEDORAの基本原則（守りの約束）</h4>
+      <div class="principles-grid">
+        <article class="principle-item">
+          <strong class="text-accent">1. 成果保証なし</strong>
+          <p>応募数は市場動向に左右されるため、数字の絶対保証は致しません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">2. 職業紹介なし</strong>
+          <p>人材の斡旋・紹介、選考介入、面接日程の調整代行は一切行いません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">3. 思考の証跡開示</strong>
+          <p>ブラックボックスを排除し、作業ログと計測データをすべて開示します。</p>
+        </article>
+      </div>
+    </div>
+  </aside>
 
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
+  <div class="sp-fixed-cta" aria-hidden="false">
+    <a href="contact.html" class="btn btn-primary btn-full" data-ga-event="click_sp_fixed_cta">
+      無料モニター・診断に申し込む
+    </a>
   </div>
-</div>
 
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

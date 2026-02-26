@@ -1,38 +1,64 @@
-/* File: results.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Results | REMEDORA 検証レポート・納品イメージ</title>
-  <meta name="description" content="REMEDORAの実装事例と技術検証レポート。介護・建設業界における採用LPの計測設計（GA4）や、Googleマップ最適化のモニタリング手法を公開。">
-  <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="canonical" href="https://remedora.jp/results.html">
+  <title>証跡レポート・作業ログサンプル | REMEDORA</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="証跡レポート・作業ログサンプル | REMEDORA">
+  <meta property="og:description" content="REMEDORAが提供する監査レポートと改善作業ログのサンプルフォーマット。客観的なデータと論理的な思考プロセスを可視化します。">
+  <meta property="og:url" content="https://remedora.jp/results.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="証跡レポート・作業ログサンプル | REMEDORA">
+  <meta name="twitter:description" content="監査レポートと改善作業ログのサンプルフォーマット。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="REMEDORAが提供する監査レポートと改善作業ログのサンプルフォーマット。客観的なデータと論理的な思考プロセスを可視化します。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://remedora.jp/results.html">
 </head>
 <body>
 
-<div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link active">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link active text-accent" aria-current="page">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,226 +66,216 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link active">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link active text-accent" aria-current="page">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-    <section class="hero-section">
-      <div class="container reveal">
-        <span class="glass-badge">IMPLEMENTATION REPORT</span>
-        <h1 class="hero-title">
-          PROVEN LOGIC.<br>
-          NO MAGIC.
-        </h1>
-        <div class="grid-2">
-          <div class="pc-only"></div>
-          <div>
-            <p class="hero-desc">
-              REMEDORAは「魔法」を売りません。<br>
-              ここで公開するのは、感情を排した<span class="text-main" style="border-bottom: 1px solid #fff;">「計測設計」</span>と<span class="text-main" style="border-bottom: 1px solid #fff;">「改善の記録」</span>です。<br>
-              貴社の採用活動を、これと同じ解像度で可視化します。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        
-        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 80px; margin-bottom: 80px;">
-          <div class="grid-2">
-            <div>
-              <span class="glass-badge" style="background: transparent; margin-bottom: 24px;">DEMO: 介護・福祉</span>
-              <h2 class="section-title" style="margin-bottom: 24px;">
-                見えない「離脱」を<br>ヒートマップ化する。
-              </h2>
-              <p class="text-muted">Target: Nursing Home / LP Optimization</p>
-            </div>
-
-            <div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 20px;">課題と実装</h3>
-              <p class="text-muted" style="margin-bottom: 32px;">
-                「求人票は見られているはずなのに応募がない」という課題に対し、スマホ特化型のLPを導入。
-                GA4のカスタムイベントを設定し、ユーザーが「条件面を見て諦めた」のか「応募フォームで挫折した」のかを特定できる環境を構築しました。
-              </p>
-
-              <div class="glass-panel" style="border-left: 4px solid var(--accent-white);">
-                <h4 style="font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 16px; color: var(--text-muted);">TRACKING POINTS (計測設計)</h4>
-                <ul style="font-size: 0.95rem; line-height: 2; color: var(--text-main);">
-                  <li>✔ <strong>Scroll Depth:</strong> 読了率（25%・50%・75%・100%）</li>
-                  <li>✔ <strong>Click Event:</strong> 「電話する」「LINEで質問」タップ数</li>
-                  <li>✔ <strong>Form Funnel:</strong> 入力開始 → 確認画面 → 送信完了率</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="padding-bottom: 0;">
-          <div class="grid-2">
-            <div>
-              <span class="glass-badge" style="background: transparent; margin-bottom: 24px;">DEMO: 建設・土木</span>
-              <h2 class="section-title" style="margin-bottom: 24px;">
-                地域No.1の信頼を<br>Googleマップで作る。
-              </h2>
-              <p class="text-muted">Target: Construction / MEO Optimization</p>
-            </div>
-
-            <div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 20px;">施策と検証</h3>
-              <p class="text-muted" style="margin-bottom: 32px;">
-                地域密着の建設業では、HPよりも先に地図検索される傾向があります。
-                放置されていたGoogleビジネスプロフィール（GBP）のオーナー権限を整理し、正確な営業時間と現場写真を投稿。信頼性のベースラインを引き上げました。
-              </p>
-
-              <div class="glass-panel" style="border-left: 4px solid var(--text-muted);">
-                <h4 style="font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 16px; color: var(--text-muted);">MONITORING ITEMS (監視項目)</h4>
-                <ul style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
-                  <li>✔ <strong>Discovery:</strong> マップ検索経由での表示回数</li>
-                  <li>✔ <strong>Action:</strong> 「ルート検索」「通話」ボタンのタップ数</li>
-                  <li>✔ <strong>Photo View:</strong> 投稿写真（現場・スタッフ）の閲覧推移</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal text-center">
-        <div class="grid-2" style="align-items: center; text-align: left;">
-          <div>
-            <h2 class="section-title">100% Data Transparency</h2>
-            <p class="text-muted" style="margin-bottom: 32px;">
-              REMEDORAは、お客様も同じ管理画面（GA4）を閲覧可能にします。<br>
-              「都合の悪い数字」も隠さない。<br>
-              それが、私たちの考える誠実さです。
-            </p>
-          </div>
-          <div class="glass-panel text-center">
-            <p style="font-size: 4rem; font-weight: 700; line-height: 1; margin-bottom: 16px; color: var(--text-main);">100<span style="font-size: 2rem;">%</span></p>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">OPEN ACCESS POLICY</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal text-center">
-        <h2 style="margin-bottom: 24px;">技術的な裏付けのある提案を。</h2>
-        <p class="text-muted" style="margin-bottom: 40px;">
-          「なんとなく」の提案はいたしません。<br>
-          貴社の現状を数値で把握するための診断からスタートします。
+    <section class="results-hero">
+      <div class="container">
+        <h1 class="results-title">証跡レポートと改善ログ</h1>
+        <p class="results-lead">
+          監査プロセスで提出する成果物のサンプルフォーマット。<br>
+          感覚を排し、事実と論理に基づく改善の記録です。
         </p>
-        <a href="contact.html" class="btn btn-primary" data-ga-event="click_results_footer">
-          無料 赤ペン診断を申し込む
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <h2 class="results-heading">01. 証跡レポート (Insight)</h2>
+        <p class="u-mb-40">難解な専門用語を、経営判断のための「普通の言葉（お店の状況）」へ翻訳してご報告します。</p>
+
+        <div class="report-comparison">
+          
+          <div class="data-panel-raw">
+            <div class="data-panel-title">
+              <span aria-hidden="true">✖</span> 一般的なアクセス解析データ
+            </div>
+            <ul class="raw-list">
+              <li><span>Users:</span> <span>142</span></li>
+              <li><span>Sessions:</span> <span>165</span></li>
+              <li><span>Bounce Rate:</span> <span>68.5%</span></li>
+              <li><span>Avg. Session Duration:</span> <span>00:01:20</span></li>
+              <li><span>Conversion Rate:</span> <span>1.2%</span></li>
+            </ul>
+            <p style="margin-top: 24px; color: var(--c-danger); font-size: 0.9rem;">※専門知識がないと、どこに問題があるか直感的に分からない。</p>
+          </div>
+
+          <div class="dashboard-mockup">
+            <div class="dashboard-header">
+              <span>REMEDORA 翻訳レポート</span>
+              <span style="font-weight: normal; font-size: 0.9rem;">202X年10月度</span>
+            </div>
+            <div class="dashboard-body">
+              
+              <div class="visual-flow">
+                <div class="flow-step-box">
+                  <span class="num">150</span>
+                  <span class="label">入店(PV)</span>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step-box">
+                  <span class="num">45</span>
+                  <span class="label">商品閲覧</span>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step-box" style="border-color: var(--c-danger); background: #fff5f5;">
+                  <span class="num" style="color: var(--c-danger);">2</span>
+                  <span class="label">レジ通過</span>
+                </div>
+              </div>
+
+              <ul class="translated-list">
+                <li>
+                  <span>お店に来た人（LP閲覧数）</span>
+                  <span class="highlight">150人</span>
+                </li>
+                <li>
+                  <span>募集要項まで読んだ人</span>
+                  <span>45人 (30%)</span>
+                </li>
+                <li style="color: var(--c-danger);">
+                  <span>応募フォームで離脱した人</span>
+                  <span>43人 (カゴ落ち)</span>
+                </li>
+              </ul>
+
+              <div class="next-action">
+                → 次の一手：フォームの入力項目を現在の8個から3個へ削減し、「カゴ落ち」を防ぎます。
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="terminal-section">
+      <div class="container reveal">
+        <h2 class="results-heading text-white">02. 改善作業ログ (Trace)</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8;">単なる作業報告ではありません。「なぜそれを行ったか」の思考プロセスを含む、生の記録です。</p>
+
+        <div class="results-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            remedora_audit.log — -bash — 80x24
+          </div>
+          <div class="terminal-body">
+            
+            <div class="log-entry">
+              <span class="log-time">[202X-10-01 10:15:32]</span>
+              <span class="log-type hypo">HYPOTHESIS</span>
+              <span class="log-message">スマホ表示時、応募ボタンがファーストビュー外にあり、気付かれていない可能性が高い。</span>
+            </div>
+            
+            <div class="log-entry">
+              <span class="log-time">[202X-10-01 14:20:11]</span>
+              <span class="log-type act">ACTION</span>
+              <span class="log-message">画面下部に固定追従する「応募フローティングボタン」を実装。配色はブランドカラーの補色(#FF9900)を採用し視認性を強化。</span>
+            </div>
+            
+            <div class="log-entry">
+              <span class="log-time">[202X-10-08 09:00:45]</span>
+              <span class="log-type res">RESULT</span>
+              <span class="log-message">実装後7日間の計測結果：ボタンのタップ率が 0.8% → 2.4% へ向上。仮説は正しかったと判断し、実装を継続。</span>
+            </div>
+
+            <div class="log-entry" style="opacity: 0.5;">
+              <span class="log-time">[202X-10-08 09:05:22]</span>
+              <span class="log-message">_</span> </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="transparency-box">
+          <div class="transparency-icon">🔓</div>
+          <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 16px;">データの完全透明化</h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+            REMEDORAは、お客様も同じGA4管理画面にアクセス可能な状態にします。<br>
+            都合の悪い数字も包み隠さず共有し、事実を直視することから改善は始まります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark text-center">
+      <div class="container reveal">
+        <h2 class="text-white" style="font-size: 2rem; margin-bottom: 24px;">貴社の現状を、データで見る。</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+          まずは無料診断で、貴社のWebサイトが抱える「物理的な不備」を特定しませんか。<br>
+          30分で簡易的な監査レポートをご提示します。
+        </p>
+        <a href="contact.html" class="btn btn-outline" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_results_footer">
+          無料・採用導線診断を予約する
         </a>
       </div>
     </section>
 
   </main>
 
-  <div style="background: rgba(0,0,0,0.3); padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
-    <div class="container">
-      <h4 style="margin-bottom: 24px; font-size: 0.9rem;">REMEDORAの基本原則</h4>
-      <div class="grid-3" style="font-size: 0.85rem; color: var(--text-muted);">
-        <div>
-          <strong class="text-main">成果保証なし</strong><br>
-          応募数・採用数は市場動向やアルゴリズムに左右されるため、数字の保証は致しません。
-        </div>
-        <div>
-          <strong class="text-main">職業紹介なし</strong><br>
-          人材の斡旋・紹介、選考への介入、面接日程の調整代行は一切行いません。
-        </div>
-        <div>
-          <strong class="text-main">証跡の徹底</strong><br>
-          ブラックボックスを排除し、作業ログと計測データ（GA4）をすべて開示します。
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
+  <div class="sp-fixed-cta" aria-hidden="false">
+    <a href="contact.html" class="btn btn-primary btn-full" data-ga-event="click_sp_fixed_cta">
+      無料モニター・診断に申し込む
+    </a>
   </div>
-</div>
 
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

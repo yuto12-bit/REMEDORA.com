@@ -1,14 +1,39 @@
-/* File: index.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>レメドラ　REMEDORA | 介護・建設・車検業界の採用導線監査・改善</title>
-  <meta name="description" content="垂れ流しの求人広告費を「導線整備」で止める。IndeedやGoogleマップの不備を2週間で修復するWeb監査・実装サービス。">
+  <title>REMEDORA | 採用導線の改善サービス（建設・介護・車検業界向け）</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="REMEDORA | 採用導線の改善サービス">
+  <meta property="og:description" content="求人を出しても応募が来ない「サイレント離脱」を防ぐ、採用特化のWeb導線改善サービス。Googleビジネスプロフィール、採用LP、GA4を活用し、広告費の無駄を止めます。">
+  <meta property="og:url" content="https://remedora.jp/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="REMEDORA | 採用導線の監査・改善サービス">
+  <meta name="twitter:description" content="求人広告の穴、塞いでいますか？最短22日で採用導線を修復します。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="求人を出しても応募が来ない「サイレント離脱」を防ぐ、採用特化のWeb導線改善サービス。Googleビジネスプロフィール、採用LP、GA4を活用し、広告費の無駄を止めます。">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="canonical" href="https://remedora.jp/">
-<script type="application/ld+json">
+  
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -27,34 +52,33 @@
   "logo": "https://remedora.jp/assets/img/logo.png"
 }
 </script>
-
-
 </head>
 <body>
 
-<div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-       <a href="/" class="logo" aria-label="レメドラ REMEDORA">
-        <img src="assets/img/logo.png" alt="レメドラ REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
         <span class="logo__text">レメドラ</span>
-       </a>
-
+      </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-primary">10分診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link active text-accent" aria-current="page">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -62,217 +86,240 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link active text-accent" aria-current="page">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-<section class="hero-section hero-visual">
-      <div class="hero-bg"></div>
-      
+    <section class="hero-section">
       <div class="container reveal">
-        <div class="hero-content">
-          <span class="glass-badge">MONTHLY LIMITED: 3 COMPANIES</span>
+        <div class="hero-split">
+          <div class="hero-content">
+            <span class="label-tag">採用特化型 Web監査・実装</span>
+            <h1 class="hero-title-massive">
+              求人広告の「穴」、<br>
+              塞いでいますか？
+            </h1>
+            <p class="hero-lead">
+              REMEDORAは、広告費を安くするサービスではありません。<br>
+              すでに投じている広告費の効果を最大化するため、求職者が離脱する「見えないWebの穴」をデータに基づいて特定し、物理的に修復する監査機関です。
+            </p>
+          </div>
+          <div class="pc-only" style="border-left: 1px solid var(--c-border); padding-left: 40px; display: flex; flex-direction: column; justify-content: center;">
+             <p class="text-muted text-small fw-bold u-mb-16" style="letter-spacing: 0.1em;">OUR FOCUS AREA</p>
+             <ul class="step-list text-body">
+               <li>建設・土木業界</li>
+               <li>介護・福祉業界</li>
+               <li>自動車整備・車検業界</li>
+             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-border-top">
+      <div class="container reveal">
+        <div class="editorial-header">
+          <h2 class="editorial-title">なぜ、求人広告を出しても応募が来ないのか。</h2>
+          <p class="editorial-subtitle">現状の採用市場における最大のボトルネックは「受け皿の欠如」にあります。</p>
+        </div>
+
+        <div class="concept-box">
           
-          <h1 class="hero-title-large">
-            見えない道<br>
-            創造する。
-          </h1>
-          
-          <p class="hero-tagline">
-            REMEDORA
+          <div class="concept-illustration">
+            <div class="ill-step">
+              <div class="ill-title">大通りにド派手な看板</div>
+              <p class="ill-desc">（Indeedなどの高額な求人広告）</p>
+            </div>
+            <div class="ill-arrow">↓</div>
+            <div class="ill-step danger">
+              <div class="ill-title text-danger">店舗のシャッターが閉まっている</div>
+              <p class="ill-desc">（会社の具体的な中身が分かるLPやGBPが未整備）</p>
+            </div>
+            <div class="ill-arrow">↓</div>
+            <div class="ill-step" style="background: #f0f0f0;">
+              <div class="ill-title">隣の店（競合）へ行く</div>
+              <p class="ill-desc">（情報不足によるサイレント離脱）</p>
+            </div>
+          </div>
+
+          <p class="text-body" style="font-size: 1rem; line-height: 1.8; margin: 0;">
+            社長、今の求人は<strong>「看板を出しているのに、店のシャッターが閉まっている状態」</strong>です。<br>
+            求職者は大手求人サイト（看板）を見て貴社に興味を持ちますが、それだけでは応募の決断には至りません。「会社の具体的な中身」を知ろうと検索した際、情報が整備されていなければ、ノーリスクで隣の競合他社へ流出します。広告費（看板代）だけが毎日消えていくこの構造的欠陥を、本日から終わらせます。
           </p>
         </div>
       </div>
-      <div class="hero-scroll">
-        <span>Scroll</span>
-        <div class="hero-scroll-line"></div>
+    </section>
+
+    <section class="section bg-light section-border-top">
+      <div class="container reveal">
+        <div class="editorial-header">
+          <h2 class="editorial-title">REMEDORAの解決策</h2>
+          <p class="editorial-subtitle">シャッターを開け、中身を可視化し、離脱を監視するシステムを構築します。</p>
+        </div>
+        
+        <table class="solution-table">
+          <tbody>
+            <tr>
+              <th>01. 母数の確保<br><span style="font-size: 0.8rem; font-weight: normal; color: var(--c-gray);">※必要な場合のみ</span></th>
+              <td>現在の求人サイトは利用したままで構いません。もし流入母数が不足している場合は、無料で使える「Airワーク」等を用いて、採用LPへ誘導するための入口（トラフィック）を確保します。</td>
+            </tr>
+            <tr>
+              <th>02. 信頼の入口構築<br><span style="font-size: 0.8rem; font-weight: normal; color: var(--c-gray);">(Googleマップ整備)</span></th>
+              <td>求職者が社名検索した際、一番最初に目に入る「Googleビジネスプロフィール（GBP）」を整備し、外観や基本情報を正しく表示させて「実体のない怪しい会社」という初期不安を払拭します。</td>
+            </tr>
+            <tr>
+              <th>03. シャッターを開ける<br><span style="font-size: 0.8rem; font-weight: normal; color: var(--c-gray);">(採用LP制作)</span></th>
+              <td>GBPや求人媒体から飛べる「採用専用ランディングページ（LP）」を制作します。働く環境や具体的な条件（法改正対応含む）をスマホで読みやすく可視化し、応募の決断を高める受け皿とします。</td>
+            </tr>
+            <tr>
+              <th>04. 離脱の監視と改善<br><span style="font-size: 0.8rem; font-weight: normal; color: var(--c-gray);">(GA4導入)</span></th>
+              <td>制作したLPにGA4（アクセス解析）を導入。「何人が興味を持ち、どこまでスクロールし、応募フォームのどこで離脱したか」をデータ化し、推測ではなく事実に基づいた継続的な改善を行います。</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-border-top">
       <div class="container reveal">
-        <h2 class="section-title">Why Applicants Leave.</h2>
-        <p style="margin-bottom: 60px;">求職者が応募ボタンを押す前に「静かに立ち去る」3つの物理的な不備。</p>
-
-        <div class="grid-3">
-          <div class="glass-panel">
-            <span style="font-size: 3rem; color: var(--text-muted); opacity: 0.2; font-weight: 700; line-height: 1;">01</span>
-            <h3 style="margin-top: 16px;">Googleマップが<br>「廃墟」になっている</h3>
-            <p style="margin-top: 16px; font-size: 0.95rem; color: var(--text-body);">
-              住所検索をした時、写真がない、営業時間が不明。これだけで「実態のない怪しい会社」と判断され、候補から消えます。
+        <h2 class="u-mb-40" style="font-size: 1.25rem; font-weight: 900; letter-spacing: 0.1em; color: var(--c-gray);">SITE DIRECTORY</h2>
+        
+        <div class="directory-grid">
+          
+          <article class="directory-item">
+            <h3 class="dir-title">Service & Specification <span>→</span></h3>
+            <p class="dir-desc">
+              当事業が提供する「無料モニター」および「土台構築」の料金プラン、提供される成果物、そして責任範囲・免責事項を定めた仕様書です。
             </p>
-          </div>
-          <div class="glass-panel">
-            <span style="font-size: 3rem; color: var(--text-muted); opacity: 0.2; font-weight: 700; line-height: 1;">02</span>
-            <h3 style="margin-top: 16px;">Indeedからの<br>「リンク先」が不適切</h3>
-            <p style="margin-top: 16px; font-size: 0.95rem; color: var(--text-body);">
-              求人をクリックしたのに、トップページに飛ばされる。「探す手間」をかけさせた瞬間、スマホ世代は1秒で離脱します。
+            <div><a href="service.html" class="dir-link">サービス・仕様を見る</a></div>
+          </article>
+
+          <article class="directory-item">
+            <h3 class="dir-title">Insight & Log <span>→</span></h3>
+            <p class="dir-desc">
+              監査プロセスで提出する「証跡レポート」と「改善作業ログ」のサンプルフォーマット。専門用語を排し、経営判断に直結するデータを開示します。
             </p>
-          </div>
-          <div class="glass-panel">
-            <span style="font-size: 3rem; color: var(--text-muted); opacity: 0.2; font-weight: 700; line-height: 1;">03</span>
-            <h3 style="margin-top: 16px;">スマホで<br>「文字が読めない」</h3>
-            <p style="margin-top: 16px; font-size: 0.95rem; color: var(--text-body);">
-              PC前提の古いサイトは、スマホでは文字が重なり、ボタンが押せません。現在の求職者の8割以上はスマートフォンです。
+            <div><a href="results.html" class="dir-link">証跡レポートを見る</a></div>
+          </article>
+
+          <article class="directory-item">
+            <h3 class="dir-title">Corporate Policy <span>→</span></h3>
+            <p class="dir-desc">
+              感覚や推測を排し、データと事実に基づく採用基盤を構築する。REMEDORAの厳格な監査方針と、3つの行動規範を明文化しています。
             </p>
-          </div>
+            <div><a href="about.html" class="dir-link">監査方針を読む</a></div>
+          </article>
+
+          <article class="directory-item">
+            <h3 class="dir-title">Free Monitor Program <span>→</span></h3>
+            <p class="dir-desc">
+              毎月先着3社限定。通常30万円以上の初期構築を「0円」で提供する、戦略的パートナーシップ枠の適用条件と同意事項を記載しています。
+            </p>
+            <div><a href="monitor.html" class="dir-link">無料モニターに応募する</a></div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-dark text-center">
       <div class="container reveal">
-        <div class="glass-panel" style="border: 1px solid rgba(255,255,255,0.3);">
-          <div class="grid-2" style="align-items: center;">
-            <div>
-              <span class="glass-badge" style="margin-bottom: 24px;">LIMITED OFFER</span>
-              <h2 style="margin-bottom: 24px;">【先着3社】無料モニター募集</h2>
-              <p style="margin-bottom: 0;">
-                導線整備＋採用LP制作＋GA4計測設定。<br>
-                通常有料の初期構築を、実績公開を条件に<span class="text-main" style="font-weight: 700; border-bottom: 1px solid #fff;">0円</span>で提供します。
-              </p>
-            </div>
-            <div class="text-center">
-              <a href="monitor.html" class="btn btn-primary" style="width: 100%; max-width: 320px;">
-                条件詳細を確認する
-              </a>
-              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 16px;">
-                ※素材提出7日以内 / 修正2回まで
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <div class="warning-box">
-          <div class="grid-2">
-            <div>
-              <h2 class="text-danger" style="font-size: 1.5rem; margin-bottom: 20px;">⚠ 2024年4月 法改正対応</h2>
-              <p class="text-main">労働条件明示ルールの改正により、「業務の変更の範囲」等の明示が義務化されました。未対応の求人票は法リスクがあるだけでなく、「コンプライアンス意識の低い会社」として敬遠されます。</p>
-              <a href="service.html" class="text-danger" style="text-decoration: underline;">→ 対応範囲の詳細はこちら</a>
-            </div>
-            <div>
-              <ul style="list-style: disc; margin-left: 20px; line-height: 2; color: var(--text-danger);">
-                <li>従事すべき業務の変更の範囲</li>
-                <li>就業場所の変更の範囲</li>
-                <li>有期労働契約の更新上限</li>
-              </ul>
-              <p class="text-main" style="margin-top: 20px; font-weight: 700;">Status: 未記載 = リスク大</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <div class="glass-panel">
-          <div class="grid-2" style="align-items: center;">
-            <div>
-              <h3>HP自体をお持ちでない場合</h3>
-              <p style="margin-top: 16px;">
-                採用の受け皿となる「公式拠点（簡易HP）」がなければ、信頼は生まれません。会社概要・サービス紹介を含む土台構築プランをご用意しています。
-              </p>
-            </div>
-            <div class="text-center">
-              <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">
-                {{PRICE}} <span style="font-size: 1rem; font-weight: 400;">(土台構築プラン)</span>
-              </p>
-              <a href="service.html#foundation" class="btn btn-outline" style="width: 100%; max-width: 320px;">
-                土台プランを見る
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal text-center">
-        <h2 style="margin-bottom: 24px;">まずは「不備の特定」から。</h2>
-        <p style="margin-bottom: 40px; color: var(--text-body);">
-          どのプランが適切か分からない場合も、まずは無料診断へ。<br>
-          30分で貴社のWeb上の「穴」をリストアップします。
+        <h2 class="editorial-title text-white">まずは「不備の特定」から始めませんか。</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+          これ以上、見えない「穴」に広告費を注ぎ込むのを止めるために。<br>
+          30分で貴社のWeb上にある不備をリストアップし、無料の修理案をご提示します。
         </p>
-        <a href="contact.html" class="btn btn-primary" data-ga-event="click_footer_diagnosis">
-          無料 赤ペン診断を予約
+        <a href="contact.html" class="btn btn-outline" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_footer_diagnosis">
+          無料・採用導線診断を予約する
         </a>
       </div>
     </section>
 
   </main>
 
-  <div style="background: rgba(0,0,0,0.3); padding: 60px 0; border-top: var(--border-glass);">
+  <aside class="principles-area" aria-label="REMEDORAの基本原則">
     <div class="container">
-      <h4 style="margin-bottom: 24px; font-size: 0.9rem;">REMEDORAの基本原則</h4>
-      <div class="grid-3" style="font-size: 0.85rem; color: var(--text-muted);">
-        <div>
-          <strong class="text-main">成果保証なし</strong><br>
-          応募数・採用数は市場動向やアルゴリズムに左右されるため、数字の保証は致しません。
-        </div>
-        <div>
-          <strong class="text-main">職業紹介なし</strong><br>
-          人材の斡旋・紹介、選考への介入、面接日程の調整代行は一切行いません。
-        </div>
-        <div>
-          <strong class="text-main">証跡の徹底</strong><br>
-          ブラックボックスを排除し、作業ログと計測データ（GA4）をすべて開示します。
-        </div>
+      <h4 class="fw-bold text-main u-mb-40 text-center">REMEDORAの基本原則（守りの約束）</h4>
+      <div class="principles-grid">
+        <article class="principle-item">
+          <strong class="text-accent">1. 成果保証なし</strong>
+          <p>応募数は市場動向に左右されるため、数字の絶対保証は致しません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">2. 職業紹介なし</strong>
+          <p>人材の斡旋・紹介、選考介入、面接調整代行は一切行いません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">3. 思考の証跡開示</strong>
+          <p>ブラックボックスを排除し、作業ログと計測データをすべて開示します。</p>
+        </article>
       </div>
     </div>
-  </div>
+  </aside>
 
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
+  <div class="sp-fixed-cta" aria-hidden="false">
+  <a href="https://lin.ee/MTjihBI" class="btn btn-secondary" target="_blank" rel="noopener">
+    LINE相談
+  </a>
+  <a href="contact.html" class="btn btn-primary" data-ga-event="click_sp_fixed_cta">
+    無料モニター・診断
+  </a>
+</div>
+
   <script src="assets/js/main.js"></script>
 
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
+
+  <!-- MAINTENANCE OVERLAY (LINE / IG only) -->
 <div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
   <div class="maintenance-card">
     <h1 class="maintenance-title">改修中</h1>
@@ -288,7 +335,7 @@
       </a>
 
       <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
+      <a class="maintenance-btn" href="https://www.instagram.com/remedora.jp?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
         Instagramを見る
       </a>
     </div>
@@ -303,7 +350,6 @@
   document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
 </script>
 <!-- /MAINTENANCE OVERLAY -->
-
 
 </body>
 </html>

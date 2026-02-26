@@ -1,38 +1,64 @@
-/* File: service.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service | REMEDORA 提供範囲と料金プラン</title>
-  <meta name="description" content="0円の「無料モニター」と、5万円の「土台構築プラン」。成果保証をしない代わりに、作業ログと計測データを開示し、採用導線の不備を物理的に修復します。">
-  <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="canonical" href="https://remedora.jp/service.html">
+  <title>サービス・仕様書 | REMEDORA 採用導線の修復</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="サービス・仕様書 | REMEDORA">
+  <meta property="og:description" content="採用導線の修復サービス仕様。無料モニターから簡易HP構築まで、提供範囲と免責事項を仕様書として公開。">
+  <meta property="og:url" content="https://remedora.jp/service.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="サービス・仕様書 | REMEDORA">
+  <meta name="twitter:description" content="採用導線の修復サービス仕様。無料モニターから簡易HP構築まで。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="採用導線の修復サービス仕様。無料モニターから簡易HP構築まで、提供範囲と免責事項を仕様書として公開。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://remedora.jp/service.html">
 </head>
 <body>
 
-<div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link active">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link active text-accent" aria-current="page">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,205 +66,269 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link active">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link active text-accent" aria-current="page">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-    <section class="hero-section">
-      <div class="container reveal">
-        <span class="glass-badge">SCOPE OF WORK</span>
-        <h1 class="hero-title">
-          NOT MAGIC.<br>
-          JUST LOGIC.
-        </h1>
-        <div class="grid-2">
-          <div class="pc-only"></div>
-          <div>
-            <p class="hero-desc">
-              魔法のような「自動集客」は売りません。<br>
-              REMEDORAが提供するのは、リンク切れや情報の空白といった<br>
-              <span class="text-main" style="border-bottom: 1px solid #fff;">「物理的な不備」の修復</span>と、<span class="text-main" style="border-bottom: 1px solid #fff;">「計測環境」の構築</span>だけです。
-            </p>
-          </div>
-        </div>
+    <header class="container">
+      <div class="page-header">
+        <h1 class="page-title">Service &<br>Specification.</h1>
+        <p class="page-lead">提供プランおよび責任範囲の仕様書</p>
       </div>
-    </section>
+    </header>
 
-    <section class="section" id="plans">
-      <div class="container reveal">
-        <h2 class="section-title">Plans & Pricing</h2>
-        <p style="margin-bottom: 60px;">貴社の状況に合わせて、最適な「穴埋め」プランを選択してください。</p>
+    <div class="container doc-layout">
+      
+      <aside class="doc-sidebar sp-only" aria-label="ページ内目次" style="display: block !important;">
+        <ul class="doc-nav">
+          <li><a href="#plans" class="active">01. 料金プラン比較表</a></li>
+          <li><a href="#details">02. 各プランの提供仕様</a></li>
+          <li><a href="#scope">03. 責任範囲（Scope）</a></li>
+          <li><a href="#disclaimer">04. 免責事項（Out of Scope）</a></li>
+          <li><a href="#faq">05. 仕様に関するQ&A</a></li>
+        </ul>
+      </aside>
 
-        <div class="grid-3">
-          
-          <div class="glass-panel" style="border: 2px solid var(--text-main);">
-            <span class="glass-badge" style="margin-bottom: 16px;">LIMITED: 先着3社</span>
-            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Free Monitor</h3>
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; font-family: sans-serif;">
-              0<span style="font-size: 1rem;">円</span>
-            </div>
-            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px; min-height: 3em;">
-              既存HPはあるが応募が来ない企業様向け。<br>
-              実績公開を条件に、導線整備とLP制作を無料で代行。
-            </p>
-            <div style="border-top: var(--border-glass); padding-top: 24px; margin-bottom: 24px;">
-              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 12px;">
-                <li>✔ GBP(マップ)初期整備</li>
-                <li>✔ Indeed/Airワーク リンク最適化</li>
-                <li>✔ 採用LP制作（テンプレ・スマホ対応）</li>
-                <li>✔ GA4計測イベント設定</li>
-                <li>✔ 作業ログ＋改善提案1点</li>
-              </ul>
-            </div>
-            <a href="monitor.html" class="btn btn-primary" style="width: 100%;" data-ga-event="click_service_monitor">条件を確認する</a>
-          </div>
-
-          <div class="glass-panel" id="foundation">
-            <span class="glass-badge" style="margin-bottom: 16px; background: transparent;">HPがない場合</span>
-            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Foundation</h3>
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; font-family: sans-serif;">
-              {{PRICE}}<span style="font-size: 1rem;"> (税別)</span>
-            </div>
-            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px; min-height: 3em;">
-              公式HPが全くない、または放置されている企業様向け。<br>
-              「信頼の土台」となる簡易HPを最短7営業日で構築。
-            </p>
-            <div style="border-top: var(--border-glass); padding-top: 24px; margin-bottom: 24px;">
-              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 12px;">
-                <li>✔ 簡易HP制作（1〜3ページ）</li>
-                <li>✔ 会社概要・事業紹介・問い合わせ</li>
-                <li>✔ スマホ完全対応</li>
-                <li>✔ サーバー公開設定代行</li>
-                <li class="text-muted" style="font-size: 0.8rem;">※サーバー・ドメイン実費は貴社負担</li>
-              </ul>
-            </div>
-            <a href="contact.html" class="btn btn-outline" style="width: 100%;" data-ga-event="click_service_foundation">土台構築を相談</a>
-          </div>
-
-          <div class="glass-panel">
-            <span class="glass-badge" style="margin-bottom: 16px; background: transparent;">運用・改善</span>
-            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Growth</h3>
-            <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; font-family: sans-serif; line-height: 1.6;">
-              要見積もり
-            </div>
-            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 24px; min-height: 3em;">
-              初期構築後の継続的な改善サポート。<br>
-              毎月の計測レポートに基づき、クリエイティブを修正。
-            </p>
-            <div style="border-top: var(--border-glass); padding-top: 24px; margin-bottom: 24px;">
-              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 12px;">
-                <li>✔ 月次アクセス解析レポート</li>
-                <li>✔ 改善施策の提案・実装</li>
-                <li>✔ 求人票の文言チューニング</li>
-                <li>✔ LPの部分改修</li>
-              </ul>
-            </div>
-            <a href="contact.html" class="btn btn-outline" style="width: 100%;" data-ga-event="click_service_growth">改善の相談</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Responsibility Matrix</h2>
-        <p style="margin-bottom: 40px;">「何をしてくれて、何をしないのか」。責任の所在を明確にします。</p>
+      <div class="doc-content">
         
-        <div class="grid-2">
-          <div class="glass-panel" style="border-left: 4px solid var(--accent-white);">
-            <h3 style="color: var(--text-main); margin-bottom: 24px;">REMEDORAの責任範囲</h3>
-            <ul style="font-size: 0.95rem; line-height: 2;">
-              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
-                ✔ <strong>導線開通：</strong> リンクが正しく機能し、LPが表示されること
-              </li>
-              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
-                ✔ <strong>計測動作：</strong> GA4等のタグが発火し、データが飛んでいること
-              </li>
-              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
-                ✔ <strong>法的適合：</strong> 2024年4月改正法に基づく項目欄を設けること
-              </li>
-              <li>
-                ✔ <strong>証跡提示：</strong> 作業ログと設定画面のスクショを提出すること
-              </li>
-            </ul>
-          </div>
+        <section id="plans" class="doc-section">
+          <h2 class="doc-section-title">01. 料金プラン比較表</h2>
+          <p class="u-mb-24">貴社のWeb環境の現状に合わせて、必要な「穴埋め」の規模をご選択ください。初期費用のみの明朗会計です。</p>
           
-          <div class="glass-panel" style="border-left: 4px solid var(--text-muted);">
-            <h3 style="color: var(--text-muted); margin-bottom: 24px;">範囲外（免責事項）</h3>
-            <ul style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
-              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
-                × <strong>成果保証：</strong> 応募数・採用数・検索順位の数値保証
-              </li>
-              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
-                × <strong>外部要因：</strong> Google/Indeedの審査落ち、反映待ち時間
-              </li>
-              <li style="border-bottom: var(--border-glass); padding-bottom: 8px; margin-bottom: 8px;">
-                × <strong>採用業務：</strong> 職業紹介・斡旋、応募者対応、面接調整
-              </li>
-              <li>
-                × <strong>費用負担：</strong> サーバー/ドメイン代、広告費の実費
-              </li>
-            </ul>
+          <div class="spec-table-wrapper">
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>提供スペック</th>
+                  <th class="highlight-col text-center">無料モニター<br><span class="label-tag" style="margin: 8px 0 0; border-color: var(--c-accent); color: var(--c-accent);">先着3社限定</span></th>
+                  <th class="text-center">土台構築<br><span style="font-size: 0.8rem; font-weight: normal;">(簡易HP制作)</span></th>
+                  <th class="text-center">継続グロース<br><span style="font-size: 0.8rem; font-weight: normal;">(運用代行)</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>初期費用</th>
+                  <td class="highlight-col text-center"><strong style="font-size: 1.5rem;">0円</strong></td>
+                  <td class="text-center"><strong style="font-size: 1.25rem;">50,000円</strong><br><small>(税別)</small></td>
+                  <td class="text-center">都度お見積り</td>
+                </tr>
+                <tr>
+                  <th>前提条件</th>
+                  <td class="highlight-col text-small">実績公開への同意</td>
+                  <td class="text-small">公式HPがない企業</td>
+                  <td class="text-small">初期構築を終えた企業</td>
+                </tr>
+                <tr>
+                  <th>Googleマップ初期整備</th>
+                  <td class="highlight-col text-center"><span class="check">●</span></td>
+                  <td class="text-center"><span class="check">●</span></td>
+                  <td class="text-center"><span class="cross">−</span></td>
+                </tr>
+                <tr>
+                  <th>採用LP（スマホ対応）制作</th>
+                  <td class="highlight-col text-center"><span class="check">●</span> <small>(1P)</small></td>
+                  <td class="text-center"><span class="check">●</span> <small>(1〜3P)</small></td>
+                  <td class="text-center"><span class="cross">−</span></td>
+                </tr>
+                <tr>
+                  <th>GA4 計測イベント設定</th>
+                  <td class="highlight-col text-center"><span class="check">●</span></td>
+                  <td class="text-center"><span class="check">●</span></td>
+                  <td class="text-center"><span class="check">●</span> <small>(改修含む)</small></td>
+                </tr>
+                <tr>
+                  <th>月次レポート・継続改善</th>
+                  <td class="highlight-col text-center"><span class="cross">✕</span> <small>(初期1回のみ)</small></td>
+                  <td class="text-center"><span class="cross">✕</span></td>
+                  <td class="text-center"><span class="check">●</span> <small>(月1回)</small></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="section">
+        <section id="details" class="doc-section">
+          <h2 class="doc-section-title">02. 各プランの提供仕様</h2>
+          
+          <div class="plan-detail-box">
+            <div class="plan-detail-header">
+              無料モニター <span style="font-size: 0.9rem; color: var(--c-accent); font-weight: bold;">0円</span>
+            </div>
+            <div class="plan-detail-body">
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">対象企業</div>
+                <div class="plan-detail-content">既存の求人媒体（Indeed等）は運用しているが、応募に繋がらない企業様</div>
+              </div>
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">主な成果物</div>
+                <div class="plan-detail-content">
+                  <ul>
+                    <li>Googleビジネスプロフィール 基本設定完了画面</li>
+                    <li>スマートフォン最適化された 採用ランディングページ（1ページ）</li>
+                    <li>GA4による 2週間の計測データおよび改善提案書（PDF）</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">条件・備考</div>
+                <div class="plan-detail-content">事例公開にご協力いただくため、費用は一切かかりません。<br><a href="monitor.html" class="text-accent fw-bold" style="text-decoration: underline;">→ 募集要項・条件を確認する</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-detail-box">
+            <div class="plan-detail-header">
+              土台構築 (簡易HP制作) <span style="font-size: 0.9rem; color: var(--c-dark); font-weight: bold;">50,000円 (税別)</span>
+            </div>
+            <div class="plan-detail-body">
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">対象企業</div>
+                <div class="plan-detail-content">公式ホームページが全く存在しない、または10年以上放置されている企業様</div>
+              </div>
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">主な成果物</div>
+                <div class="plan-detail-content">
+                  <ul>
+                    <li>レスポンシブ対応 簡易ホームページ（最大3ページ：トップ、会社概要、事業内容等）</li>
+                    <li>独自ドメイン・サーバー公開設定の代行</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">条件・備考</div>
+                <div class="plan-detail-content text-danger text-small">
+                  ※ドメイン取得費用、レンタルサーバーの維持費（月額数百円〜千円程度）は貴社の実費負担となります。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-detail-box">
+            <div class="plan-detail-header">
+              継続グロース <span style="font-size: 0.9rem; color: var(--c-gray); font-weight: normal;">都度お見積り</span>
+            </div>
+            <div class="plan-detail-body">
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">対象企業</div>
+                <div class="plan-detail-content">初期の穴埋めが完了し、データを基にさらに応募率を高めたい企業様</div>
+              </div>
+              <div class="plan-detail-row">
+                <div class="plan-detail-label">提供内容</div>
+                <div class="plan-detail-content">取得したデータに基づき、毎月「最も効果の高い改善箇所」を1つずつ修正していく運用代行。貴社の課題規模に合わせて都度お見積りいたします。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="scope" class="doc-section">
+          <h2 class="doc-section-title">03. 責任範囲（Scope）</h2>
+          <p class="u-mb-24">当事業が請け負う物理的な作業範囲および、納品基準は以下の通りです。</p>
+          
+          <div class="clause-list">
+            <div class="clause-item">
+              <div class="clause-icon check">✔</div>
+              <div>
+                <h3 class="clause-title">導線の物理的開通</h3>
+                <p class="clause-text">貴社が利用する既存の求人媒体（またはSNS等）に設置されたリンクから、当方が制作した採用LPへ正常に遷移・表示される状態を構築します。</p>
+              </div>
+            </div>
+            <div class="clause-item">
+              <div class="clause-icon check">✔</div>
+              <div>
+                <h3 class="clause-title">トラッキング動作の担保</h3>
+                <p class="clause-text">Google Analytics 4（GA4）のタグが指定のページ内で正常に発火し、「応募ボタンのクリック」等のアクションデータが計測画面上で確認できる状態にします。</p>
+              </div>
+            </div>
+            <div class="clause-item">
+              <div class="clause-icon check">✔</div>
+              <div>
+                <h3 class="clause-title">法改正要件への適合レイアウト</h3>
+                <p class="clause-text">2024年4月施行の職業安定法等改正に伴う、「従事すべき業務の変更の範囲」等の明示項目欄を、制作するLPの募集要項内に確実に設けます。</p>
+              </div>
+            </div>
+            <div class="clause-item">
+              <div class="clause-icon check">✔</div>
+              <div>
+                <h3 class="clause-title">思考・証跡の開示</h3>
+                <p class="clause-text">設定代行を行った管理画面のスクリーンショット、および数値を基にした改善の思考プロセスを、レポートとして明示的に提出します。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="disclaimer" class="doc-section">
+          <h2 class="doc-section-title text-danger">04. 免責事項（Out of Scope）</h2>
+          <p class="u-mb-24">以下の事項は当事業の管理外、または提供範囲外とし、一切の責任を負いかねます。</p>
+          
+          <div class="clause-list">
+            <div class="clause-item">
+              <div class="clause-icon cross">✕</div>
+              <div>
+                <h3 class="clause-title">コンバージョン数値の絶対保証</h3>
+                <p class="clause-text">応募数、採用成功人数、検索エンジンにおける順位など、競合他社や市場環境、プラットフォームのアルゴリズムに依存する「結果の数値」についてのコミットメント（成果保証）は行いません。</p>
+              </div>
+            </div>
+            <div class="clause-item">
+              <div class="clause-icon cross">✕</div>
+              <div>
+                <h3 class="clause-title">プラットフォームの審査・仕様変更</h3>
+                <p class="clause-text">Googleビジネスプロフィールのアカウント停止・審査遅延、Indeed等の求人検索エンジンにおける掲載落ち・仕様変更によるトラフィック減少等の外部要因のコントロール。</p>
+              </div>
+            </div>
+            <div class="clause-item">
+              <div class="clause-icon cross">✕</div>
+              <div>
+                <h3 class="clause-title">採用実務の代行行為</h3>
+                <p class="clause-text">求職者に対する職業紹介や斡旋、応募者との直接的なメッセージのやり取り、面接日程の調整代行など、採用担当者の実務を代替する行為。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="doc-section">
+          <h2 class="doc-section-title">05. 仕様に関するQ&A</h2>
+          
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-q">指定期日までに現場の写真が準備できない場合は？</div>
+              <div class="faq-a">機会損失（データ計測の遅れ）を防ぐため、当方で選定した「フリー素材」または「AI生成画像（※画像はイメージです等の免責付記）」を使用して強制的に仮公開し、運用を開始します。公開後の写真差し替えはご依頼いただければ随時対応します。</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">無料モニター終了後、自動的に有料プランへ移行しますか？</div>
+              <div class="faq-a">自動移行や勝手な課金は一切ありません。初期設定と2週間の計測完了後、そのまま貴社単独で運用される場合はプロジェクト完了となります。継続支援をご希望の場合のみ、改めて契約書を交わします。</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">各種アカウントのパスワードを教える必要はありますか？</div>
+              <div class="faq-a">原則として不要です。Googleビジネスプロフィール等は「管理者権限の招待（ユーザー追加）」機能を使用し、当方のアカウントへ権限を付与していただく形式をとります。</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    
+    <section class="section section-dark text-center">
       <div class="container reveal">
-        <h2 class="section-title">FAQ</h2>
-        
-        <div class="glass-panel">
-          
-          <div style="padding: 24px 0; border-bottom: var(--border-glass);">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. 素材（写真）が準備できない場合は？</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              A. 合意から7日以内に素材が揃わない場合、納期遵守のため、当方で選定した「フリー素材」または「AI生成画像」を使用して制作を進めます。公開後に写真の差し替えは可能です（修正回数に含みます）。
-            </p>
-          </div>
-
-          <div style="padding: 24px 0; border-bottom: var(--border-glass);">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. 無料モニター終了後、勝手に課金されますか？</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              A. いいえ。自動で有料プランへ移行することはありません。初期設定完了後、そのまま貴社で運用される場合は0円のまま終了です。継続的な改善サポートをご希望の場合のみ、別途お見積りいたします。
-            </p>
-          </div>
-
-          <div style="padding: 24px 0; border-bottom: var(--border-glass);">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. 土台プラン（簡易HP）の納期は？</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              A. 原稿・素材を頂いてから、最短7営業日での公開を目安としています。サーバー・ドメインの取得からサポートが必要な場合は、プラス数日頂く場合がございます。
-            </p>
-          </div>
-
-          <div style="padding: 24px 0;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Q. パスワードを教える必要がありますか？</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              A. 不要です。Googleビジネスプロフィールや求人媒体は「管理者権限の招待（ユーザー追加）」機能を使用します。貴社のアカウントPWを共有いただく必要はありません。手順書もご用意しています。
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal text-center">
-        <h2 style="margin-bottom: 24px;">まずは「不備の特定」から。</h2>
-        <p style="margin-bottom: 40px; color: var(--text-body);">
-          どのプランが適切か分からない場合も、まずは無料診断へ。<br>
-          30分で貴社のWeb上の「穴」をリストアップします。
+        <h2 class="editorial-title text-white">自社の「穴」を特定する。</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8;">
+          どのプランが適切か分からない場合も、まずは無料診断をご利用ください。<br>
+          30分で貴社のWeb上の不備をリストアップし、修理案をご提示します。
         </p>
-        <a href="contact.html" class="btn btn-primary" data-ga-event="click_service_footer">無料 赤ペン診断を予約</a>
+        <a href="contact.html" class="btn btn-outline" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_footer_diagnosis">
+          無料・採用導線診断を予約する
+        </a>
       </div>
     </section>
 
@@ -246,74 +336,49 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
+  <div class="sp-fixed-cta" aria-hidden="false">
+    <a href="contact.html" class="btn btn-primary btn-full" data-ga-event="click_sp_fixed_cta">
+      無料モニター・診断に申し込む
+    </a>
   </div>
-</div>
 
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

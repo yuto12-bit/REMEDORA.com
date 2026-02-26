@@ -1,38 +1,64 @@
-/* File: terms.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Use | REMEDORA 利用規約</title>
+  <title>利用規約 | REMEDORA</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="利用規約 | REMEDORA">
+  <meta property="og:description" content="REMEDORAのサービス利用規約。免責事項、契約成立のタイミング、知的財産権の取り扱いについて定めています。">
+  <meta property="og:url" content="https://remedora.jp/terms.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="利用規約 | REMEDORA">
+  <meta name="twitter:description" content="REMEDORAのサービス利用規約。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
   <meta name="description" content="REMEDORAのサービス利用規約。免責事項、契約成立のタイミング、知的財産権の取り扱いについて定めています。">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="canonical" href="https://remedora.jp/terms.html">
-
 </head>
 <body>
 
-  <div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,93 +66,95 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-    <section class="hero-section">
-      <div class="container reveal">
-        <span class="glass-badge">LEGAL</span>
-        <h1 class="hero-title">
-          TERMS OF<br>
-          USE.
-        </h1>
-        <div class="grid-2">
-          <div class="pc-only"></div>
-          <div>
-            <p class="hero-desc">
-              本サービスのご利用にあたっての規約です。<br>
-              契約前に必ずご一読ください。
-            </p>
-            <p class="text-muted" style="font-size: 0.85rem; margin-top: 16px;">
-              最終更新日：2026年2月6日
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <header class="legal-header container">
+      <h1 class="legal-title text-center">利用規約</h1>
+    </header>
 
-    <section class="section">
+    <section class="section pt-0">
       <div class="container reveal">
-        <div class="glass-panel" style="background: transparent; border: none; padding: 0;">
+        
+        <div class="terms-container">
+          <div class="terms-header">
+            <h2 class="terms-title">REMEDORA サービス利用規約</h2>
+            <div class="terms-date">最終更新日：2026年2月26日</div>
+          </div>
           
-          <p style="margin-bottom: 60px; line-height: 2; color: var(--text-body);">
-            この利用規約（以下、「本規約」）は、{{LEGAL_NAME}}（以下、「当事業」）がこのウェブサイト上で提供するサービス（以下、「本サービス」）の利用条件を定めるものです。
+          <p class="terms-preamble">
+            この利用規約（以下、「本規約」）は、REMEDORA（以下、「当事業」）が提供するサービス（以下、「本サービス」）の利用条件を定めるものです。登録ユーザー様およびクライアント企業様（以下、「ユーザー」）には、本規約に従って本サービスをご利用いただきます。
           </p>
 
-          <div style="border-top: var(--border-glass); padding: 40px 0;">
-            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第1条（免責事項）</h2>
-            <div class="warning-box">
-              <p style="font-size: 0.95rem; line-height: 2; color: var(--text-main); margin-bottom: 16px;">
-                当事業は、本サービスにおいて提供する情報や施策に関して、以下の事項を保証するものではありません。
-              </p>
-              <ul style="font-size: 0.9rem; line-height: 2; color: var(--text-danger); list-style: disc; margin-left: 20px;">
+          <article class="terms-article">
+            <h3 class="terms-article-title">第1条（免責事項）</h3>
+            <div class="terms-content">
+              <p>当事業は、本サービスにおいて提供する情報や施策に関して、以下の事項を保証するものではなく、これらに起因してユーザーに生じた損害について一切の責任を負いません。</p>
+              <ul class="terms-list">
                 <li>採用応募の確実な獲得や、特定の人材の採用成功</li>
                 <li>Googleマップや検索エンジンにおける検索順位の永続的な維持</li>
-                <li>求人媒体側のアルゴリズム変更やシステム仕様変更による表示への影響</li>
+                <li>求人媒体側のアルゴリズム変更やシステム仕様変更による表示順位・トラフィックへの影響</li>
                 <li>当事業が管理しないサーバー、ドメイン等の外部サービスに起因する障害</li>
               </ul>
             </div>
-          </div>
+          </article>
 
-          <div style="border-top: var(--border-glass); padding: 40px 0;">
-            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第2条（契約の成立）</h2>
-            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
-              <strong class="text-main">有料プランの場合：</strong><br>
-              本サイト上のフォーム送信時点では契約は成立しません。別途当事業が発行する見積書または契約書に対し、ユーザーが承諾の意思表示（発注書、メールでの合意、着手金の入金等）を行った時点で成立するものとします。<br><br>
-              <strong class="text-main">無料モニターの場合：</strong><br>
-              「無料モニター合意書（または合意メモ）」への署名、またはメール・チャットでの条件合意をもって適用開始とします。
-            </p>
-          </div>
+          <article class="terms-article">
+            <h3 class="terms-article-title">第2条（契約の成立）</h3>
+            <div class="terms-content">
+              <p>本サービスの利用契約は、プランに応じて以下のタイミングで成立するものとします。</p>
+              <ul class="terms-list">
+                <li><strong>有料プランの場合：</strong> 本サイト上のフォーム送信時点では契約は成立しません。別途当事業が発行する見積書または契約書に対し、ユーザーが承諾の意思表示（発注書の送付、メールでの合意、着手金の入金等）を行った時点で成立するものとします。</li>
+                <li><strong>無料モニターの場合：</strong> 「無料モニター合意書（または合意メモ）」への署名、またはメール・チャット等の電磁的記録での条件合意をもって適用開始とします。</li>
+              </ul>
+            </div>
+          </article>
 
-          <div style="border-top: var(--border-glass); padding: 40px 0;">
-            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第3条（知的財産権）</h2>
-            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
-              本サービスにおいて当事業が提供するコンテンツ（文章、画像、プログラム等）に関する知的財産権は、当事業または正当な権利者に帰属します。<br>
-              ただし、納品物としてユーザーに譲渡した制作物（HTML/CSSファイル、LP等）の著作権の取扱いは、別途契約の定めに従うものとします。なお、当事業が制作に使用した「汎用的なテンプレート」「プログラム部品」の権利は当事業に留保されます。
-            </p>
-          </div>
+          <article class="terms-article">
+            <h3 class="terms-article-title">第3条（知的財産権）</h3>
+            <div class="terms-content">
+              <p>
+                本サービスにおいて当事業が提供するコンテンツ（文章、画像、プログラム等）に関する知的財産権は、当事業または正当な権利者に帰属します。<br>
+                ただし、納品物としてユーザーに譲渡した制作物（HTML/CSSファイル、LP等）の著作権の取扱いは、別途個別の契約の定めに従うものとします。なお、当事業が制作に使用した「汎用的なテンプレート」や「プログラム部品」の権利は、引き続き当事業に留保されます。
+              </p>
+            </div>
+          </article>
 
-          <div style="border-top: var(--border-glass); padding: 40px 0;">
-            <h2 style="font-size: 1.25rem; margin-bottom: 24px;">第4条（禁止事項）</h2>
-            <p style="font-size: 0.95rem; line-height: 2; color: var(--text-muted);">
-              ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。
-            </p>
-            <ul style="font-size: 0.9rem; line-height: 2; color: var(--text-muted); list-style: disc; margin-left: 20px;">
-              <li>法令または公序良俗に違反する行為</li>
-              <li>犯罪行為に関連する行為</li>
-              <li>当事業のサービスの運営を妨害するおそれのある行為</li>
-              <li>虚偽の情報を登録する行為</li>
-            </ul>
-          </div>
+          <article class="terms-article">
+            <h3 class="terms-article-title">第4条（禁止事項）</h3>
+            <div class="terms-content">
+              <p>ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。当事業は、ユーザーが以下のいずれかに該当すると判断した場合、事前の通知なく本サービスの提供を停止、または契約を解除することができるものとします。</p>
+              <ul class="terms-list">
+                <li>法令または公序良俗に違反する行為</li>
+                <li>犯罪行為に関連する行為</li>
+                <li>当事業のサービスの運営を妨害するおそれのある行為</li>
+                <li>虚偽の情報を登録、または提供する行為</li>
+                <li>当事業、他のユーザー、または第三者の知的財産権、肖像権、プライバシー、名誉その他の権利または利益を侵害する行為</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="terms-article">
+            <h3 class="terms-article-title">第5条（規約の変更）</h3>
+            <div class="terms-content">
+              <p>
+                当事業は、必要と判断した場合には、ユーザーに通知することなくいつでも本規約を変更することができるものとします。なお、本規約の変更後、本サービスの利用を開始した場合には、当該ユーザーは変更後の規約に同意したものとみなします。
+              </p>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -136,74 +164,43 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
-  </div>
-</div>
-
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
 
 </body>
 </html>

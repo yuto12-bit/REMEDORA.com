@@ -1,37 +1,64 @@
-/* File: about.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | REMEDORA 代表紹介と監査方針</title>
-  <meta name="description" content="REMEDORAは、介護・建設業界の採用における「Web監査役」です。成果保証をしない代わりに、計測データと作業ログをすべて開示し、ブラックボックス運用を排除します。">
-  <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="canonical" href="https://remedora.jp/about.html">
+  <title>監査方針・代表紹介 | REMEDORA</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="監査方針・代表紹介 | REMEDORA">
+  <meta property="og:description" content="感覚や推測を排し、データと事実に基づく採用基盤を構築する。REMEDORAの監査方針と行動規範。">
+  <meta property="og:url" content="https://remedora.jp/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="監査方針・代表紹介 | REMEDORA">
+  <meta name="twitter:description" content="感覚や推測を排し、データと事実に基づく採用基盤を構築する。REMEDORAの監査方針。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="感覚や推測を排し、データと事実に基づく採用基盤を構築する。REMEDORAの監査方針と行動規範。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://remedora.jp/about.html">
 </head>
 <body>
-<div id="loading-screen">
+
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
   
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link active text-accent" aria-current="page">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,215 +66,209 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link active">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link active text-accent" aria-current="page">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
 
-    <section class="hero-section">
-      <div class="container reveal">
-        <span class="glass-badge">ROLE & STANCE</span>
-        <h1 class="hero-title">
-          WEB IMPLEMENTATION<br>
-          ENGINEER.
-        </h1>
-        <div class="grid-2">
-          <div class="pc-only"></div>
-          <div>
-            <p class="hero-desc">
-              REMEDORAは、Web専門知識を持たない事業者様の<br>
-              <span class="text-main" style="border-bottom: 1px solid #fff;">「厳格な監査役」</span>兼<span class="text-main" style="border-bottom: 1px solid #fff;">「実装者」</span>です。<br>
-              甘い励ましや魔法のような提案は一切せず、<br>
-              「物理的な不備」を指摘し、それを修復することに責任を持ちます。
-            </p>
-          </div>
+    <header class="container page-header-minimal">
+      <h1>Corporate Policy</h1>
+      <p>監査方針および行動規範</p>
+    </header>
+
+    <section class="container reveal">
+      <div class="corporate-statement">
+        <h2 class="statement-catch">
+          「感覚」を排し、<br>
+          「事実」で導線を修復する。
+        </h2>
+        <div class="statement-text">
+          <p>
+            採用難の根本的な原因は、求人媒体への投資不足ではなく、受け皿となるWeb導線の「物理的な不備」にあります。リンクの不一致、スマートフォンでの表示崩れ、コンプライアンス要件の未記載など、求職者はこれらを瞬時に見抜き、静かに離脱していきます。
+          </p>
+          <p>
+            REMEDORAは、企業が気づかない「サイレント離脱」の要因をデータから特定し、確実な修復を実行する専門機関です。我々は感覚や経験則に頼るのではなく、アクセス解析データと法的要件という「事実」に基づき、確実に機能する採用基盤を構築します。
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reveal">
-        <div class="grid-2">
-          
-          <div>
-            <span class="text-muted" style="letter-spacing: 0.1em; font-size: 0.9rem; display: block; margin-bottom: 16px;">REPRESENTATIVE</span>
-            <h2 class="section-title" style="margin-bottom: 24px;">YUTO</h2>
-            <p class="text-muted" style="margin-bottom: 24px;">
-              介護・建設・整備業など、地域社会を支える小規模事業者を専門に支援。
-              「予算の多寡」ではなく「正しい技術と情報の使い方」で、大手企業と対等に渡り合える採用導線を構築することを任務としています。
-            </p>
-            <p class="text-muted">
-              甘い言葉で契約を迫る営業マンではなく、貴社の採用サイトにおける「法的リスク」と「計測不備」を指摘する監査役として機能します。
-            </p>
-          </div>
-
-          <div class="glass-panel" style="border-left: 4px solid var(--accent-white);">
-            <p style="font-size: 1.25rem; font-weight: 700; margin-bottom: 24px; font-family: sans-serif; line-height: 1.4; color: var(--text-main);">
-              "Design is not just what it looks like.<br>Design is how it works."
-            </p>
-            <p class="text-muted" style="font-size: 0.95rem;">
-              デザインの美しさよりも、「求職者が迷わないか」「法的リスク（2024年4月改正）はないか」「数字で計測できているか」という実利面を最優先に設計を行います。
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Our Promise</h2>
-        <div class="grid-3">
-          
-          <div class="glass-panel">
-            <span style="font-size: 2rem; font-weight: 700; color: var(--text-muted); opacity: 0.3;">01</span>
-            <h3 style="margin: 16px 0;">Transparency</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              「何をやっているか分からない」状態を作りません。Google Analytics (GA4) の閲覧権限はお客様にも共有し、常に同じ数値を見て議論できる状態にします。
-            </p>
-          </div>
-
-          <div class="glass-panel">
-            <span style="font-size: 2rem; font-weight: 700; color: var(--text-muted); opacity: 0.3;">02</span>
-            <h3 style="margin: 16px 0;">Communication</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              原則24時間以内のレスポンスを徹底します。専門用語で煙に巻くことなく、現場視点での平易な言葉でリスクと対策を説明します。
-            </p>
-          </div>
-
-          <div class="glass-panel">
-            <span style="font-size: 2rem; font-weight: 700; color: var(--text-muted); opacity: 0.3;">03</span>
-            <h3 style="margin: 16px 0;">Evidence</h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
-              「やったつもり」を排除します。作業完了時は必ずログと反映箇所のスクリーンショットを提出し、証拠に基づいた納品を行います。
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <h2 class="section-title">Security Policy</h2>
+    <section class="container reveal">
+      <h2 class="text-center u-mb-64" style="font-size: 1.5rem; letter-spacing: 0.05em;">3つの行動規範</h2>
+      
+      <div class="policy-stack">
         
-        <div class="grid-2">
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 16px;">パスワード共有不要の原則</h3>
-            <p class="text-muted" style="margin-bottom: 24px;">
-              REMEDORAは、お客様のGoogleアカウントやIndeedアカウントのパスワードを要求しません。<br>
-              すべて正規の「管理者招待（ユーザー追加）」機能を通じて権限をいただき、作業完了後はいつでも貴社側から解除できる状態を保ちます。
+        <article class="policy-row">
+          <div class="policy-label">Policy 01</div>
+          <div class="policy-content">
+            <h3>客観的データの完全開示</h3>
+            <p>
+              「なぜその施策を行うのか」「結果としてどうなったのか」というプロセスにおいて、ブラックボックスを一切排除します。GA4によるトラッキングデータを共有し、推測ではなく数値的根拠に基づいた作業ログと改善レポートを提出します。
             </p>
-            <ul style="font-size: 0.9rem; color: var(--text-muted); list-style: disc; margin-left: 20px; line-height: 1.8;">
-              <li>Google ビジネスプロフィール：管理者招待</li>
-              <li>Google Analytics：ユーザー追加</li>
-              <li>Indeed / Airワーク：権限付与</li>
-            </ul>
           </div>
-          
-          <div class="glass-panel text-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <span style="font-size: 3rem; margin-bottom: 16px; display: block;">🔒</span>
-            <p style="font-size: 0.9rem; color: var(--text-main);">
-              権限付与の手順書（マニュアル）を完備。<br>
-              ITに詳しくない方でも、3分で安全に設定可能です。
+        </article>
+
+        <article class="policy-row">
+          <div class="policy-label">Policy 02</div>
+          <div class="policy-content">
+            <h3>法令要件への厳格な適合</h3>
+            <p>
+              見栄えの良いデザインや過剰なコピーライティングよりも、実利とコンプライアンスを優先します。2024年4月改正の職業安定法に基づく「労働条件の明示（変更の範囲等）」を制作するWebページ内で徹底し、求職者が抱く法的な懸念を未然に防ぎます。
             </p>
+          </div>
+        </article>
+
+        <article class="policy-row">
+          <div class="policy-label">Policy 03</div>
+          <div class="policy-content">
+            <h3>実務機能の確実な担保</h3>
+            <p>
+              絵に描いた餅の提案で終わらせず、施策の実装までを一貫して担います。各媒体から採用ページへのリンク遷移、スマートフォンの各ブラウザにおける正常な描画、および応募ボタンの動作確認まで、物理的な導線が完全に開通するまで責任を持ちます。
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="container reveal">
+      <div class="ceo-letter">
+        <div>
+          <img src="assets/img/profile-photo-placeholder.jpg" alt="代表：勇翔" class="ceo-photo">
+        </div>
+        <div class="ceo-body">
+          <h3>見えない「穴」を塞ぐために。</h3>
+          <div class="ceo-text">
+            <p>
+              多くの企業が、採用のために多額の広告費を投じています。しかし、そのトラフィックの着地点となる受け皿（WebページやGoogleマップ）が整備されていないため、多くの求職者が応募に至る前に離脱しているのが現実です。
+            </p>
+            <p>
+              我々の使命は、この「見えない導線の穴」を客観的な監査によって特定し、修復することです。<br>
+              正しい計測環境の構築と、法令に準拠した情報開示を通じて、貴社と求職者の間に「適切な信頼」を構築する土台を提供いたします。実務重視のパートナーとして、貴社の採用基盤の強化に尽力いたします。
+            </p>
+          </div>
+          <div class="ceo-sign">
+            勇翔 <span>REMEDORA 代表</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reveal text-center">
-        <h2 style="margin-bottom: 24px;">実務重視のパートナーとして。</h2>
-        <p class="text-muted" style="margin-bottom: 40px;">
-          御社の採用課題に対し、誠実かつ論理的に向き合います。<br>
-          まずは「現状のリスク診断」からご相談ください。
+    <section class="section bg-light" style="border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border);">
+      <div class="container reveal">
+        <h2 class="text-center u-mb-40" style="font-size: 1.5rem; letter-spacing: 0.05em;">セキュリティ・ポリシー</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto; background: var(--c-white); padding: 40px; border: 1px solid var(--c-border);">
+          <h3 class="text-main fw-bold u-mb-24" style="font-size: 1.1rem; border-bottom: 2px solid var(--c-black); padding-bottom: 16px; display: inline-block;">
+            認証情報の非保持原則
+          </h3>
+          <p class="text-body u-mb-24" style="line-height: 1.8;">
+            REMEDORAは、お客様のGoogleアカウントや求人媒体（Indeed等）の<strong>ログインパスワードを一切要求・保持いたしません。</strong><br>
+            すべての作業は、プラットフォームが提供する正規の「管理者招待（ユーザー追加）」機能を通じた権限付与によってのみ実施されます。
+          </p>
+          <ul class="step-list text-small">
+            <li>Google ビジネスプロフィール：管理者としての招待</li>
+            <li>Google Analytics (GA4)：アナリスト権限の追加</li>
+            <li>Indeed / Airワーク等：企業管理画面からの権限付与</li>
+          </ul>
+          <p class="text-muted text-small u-mt-24">
+            ※作業完了後、または契約終了後は、貴社側から直ちに当方の権限を剥奪できる安全な状態を担保します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark text-center">
+      <div class="container reveal">
+        <h2 class="text-white" style="font-size: 2rem; margin-bottom: 24px;">自社の採用基盤を監査する。</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+          まずは「現状のWeb上にある物理的な不備」を特定する無料診断をご利用ください。<br>
+          30分で離脱の要因をリストアップし、修復案をご提示します。
         </p>
-        <a href="contact.html" class="btn btn-primary" data-ga-event="click_about_footer">
-          無料 赤ペン診断を申し込む
+        <a href="contact.html" class="btn btn-outline" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_about_footer">
+          無料・採用導線診断を予約する
         </a>
       </div>
     </section>
 
   </main>
 
+  <aside class="principles-area" aria-label="REMEDORAの基本原則">
+    <div class="container">
+      <h4 class="fw-bold text-main u-mb-40 text-center">REMEDORAの基本原則（守りの約束）</h4>
+      <div class="principles-grid">
+        <article class="principle-item">
+          <strong class="text-accent">1. 成果保証なし</strong>
+          <p>応募数は市場動向に左右されるため、数字の絶対保証は致しません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">2. 職業紹介なし</strong>
+          <p>人材の斡旋・紹介、選考介入、面接日程の調整代行は一切行いません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">3. 思考の証跡開示</strong>
+          <p>ブラックボックスを排除し、作業ログと計測データをすべて開示します。</p>
+        </article>
+      </div>
+    </div>
+  </aside>
+
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
+  <div class="sp-fixed-cta" aria-hidden="false">
+    <a href="contact.html" class="btn btn-primary btn-full" data-ga-event="click_sp_fixed_cta">
+      無料モニター・診断に申し込む
+    </a>
   </div>
-</div>
 
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

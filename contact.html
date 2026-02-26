@@ -1,38 +1,64 @@
-/* File: contact.html */
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | REMEDORA 赤ペン診断・お問い合わせ</title>
-  <meta name="description" content="求人広告費の無駄を特定する「赤ペン診断」のお申し込み、無料モニターへの応募はこちら。強引な営業は一切いたしません。">
-  <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="canonical" href="https://remedora.jp/contact.html">
+  <title>お問い合わせ・診断予約 | REMEDORA</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
+  <meta property="og:site_name" content="REMEDORA">
+  <meta property="og:title" content="お問い合わせ・診断予約 | REMEDORA">
+  <meta property="og:description" content="貴社のWeb採用導線における不備を特定する「無料診断」、および無料モニターへのご応募窓口です。">
+  <meta property="og:url" content="https://remedora.jp/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="お問い合わせ・診断予約 | REMEDORA">
+  <meta name="twitter:description" content="採用導線の無料診断・モニター応募窓口。">
+  <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <meta name="description" content="貴社のWeb採用導線における不備を特定する「無料診断」、および無料モニターへのご応募窓口です。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://remedora.jp/contact.html">
 </head>
 <body>
 
-<div id="loading-screen">
+  <div id="loading-screen" aria-hidden="true">
     <div class="loading-logo"></div>
     <p class="loading-text">REMEDORA</p>
   </div>
 
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/img/logo.png" alt="REMEDORA" height="32" width="auto">
+      <a href="/" class="logo" aria-label="REMEDORA トップページへ">
+        <img src="assets/img/logo.png" alt="REMEDORA" style="height: 28px !important; width: auto !important; object-fit: contain;">
+        <span class="logo__text">レメドラ</span>
       </a>
       
-      <nav class="nav-list">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="monitor.html" class="nav-link text-main">Monitor (無料)</a>
-        <a href="service.html" class="nav-link">Service</a>
-        <a href="results.html" class="nav-link">Results</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="btn btn-primary">赤ペン診断</a>
+      <nav class="nav-list" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="index.html" class="nav-link">ホーム</a></li>
+          <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+          <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+          <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+          <li><a href="about.html" class="nav-link">監査方針</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">無料診断を予約</a>
       </nav>
 
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,196 +66,135 @@
     </div>
   </header>
 
-  <div class="nav-overlay">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="monitor.html" class="nav-link text-main">Free Monitor</a>
-    <a href="service.html" class="nav-link">Service</a>
-    <a href="results.html" class="nav-link">Results</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="company.html" class="nav-link">Company</a>
-    <a href="contact.html" class="nav-link active">Contact</a>
+  <div id="mobile-menu" class="nav-overlay" aria-hidden="true">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="index.html" class="nav-link">ホーム</a></li>
+        <li><a href="monitor.html" class="nav-link">無料モニター</a></li>
+        <li><a href="service.html" class="nav-link">サービス・仕様</a></li>
+        <li><a href="results.html" class="nav-link">証跡レポート</a></li>
+        <li><a href="about.html" class="nav-link">監査方針</a></li>
+        <li><a href="company.html" class="nav-link">会社概要・特商法</a></li>
+        <li><a href="contact.html" class="nav-link active text-accent" aria-current="page">お問い合わせ</a></li>
+      </ul>
+    </nav>
   </div>
 
   <main>
     
-    <section class="hero-section">
+    <header class="contact-header">
       <div class="container reveal">
-        <span class="glass-badge">START DIAGNOSIS</span>
-        <h1 class="hero-title">
-          GET IN TOUCH.
-        </h1>
+        <h1 class="contact-title">お問い合わせ・診断予約</h1>
+        <p class="contact-lead">
+          貴社のWeb採用導線における不備の特定（無料診断）、<br class="pc-only">
+          および各種プランへのご相談・お申し込みを承っております。
+        </p>
+      </div>
+    </header>
+
+    <section class="container reveal">
+      <div class="contact-grid">
         
-        <div class="grid-2" style="align-items: flex-start;">
-          
-          <div>
-            <p class="hero-desc">
-              強引な営業は一切いたしません。<br>
-              貴社のWeb上にある「採用の穴」を特定するための情報を教えてください。<br>
-              30分で改善点をご提示します。
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="contact-card-icon" aria-hidden="true">📝</span>
+            <h2 class="contact-card-title">本申し込み・無料診断</h2>
+          </div>
+          <div class="contact-card-body">
+            <p class="contact-card-text">
+              現状のWeb導線をチェックする「無料診断」のご予約、または「無料モニター」へのエントリーをご希望の企業様はこちらの窓口をご利用ください。<br><br>
+              貴社の現状を正確に把握するため、専用のヒアリングフォームをご用意しております。（所要時間目安：約3分）
             </p>
-            
-            <div class="glass-panel" style="margin-bottom: 24px; padding: 24px;">
-              <span class="text-muted" style="font-size: 0.8rem; letter-spacing: 0.1em; display: block; margin-bottom: 8px;">DIRECT EMAIL</span>
-              <p style="font-size: 1.1rem; font-family: monospace; color: var(--text-main); margin-bottom: 0;">
-                {{EMAIL}}
-              </p>
-            </div>
-
-            <a href="{{LINE_URL}}" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; background-color: #06c755; color: #fff; border: none; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);" data-ga-event="click_contact_line">
-              LINEで気軽に相談する
+          </div>
+          <div class="contact-card-footer text-center">
+            <a href="https://input.remedora.jp" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full" data-ga-event="click_contact_form">
+              専用フォームへ進む
             </a>
-            <p class="text-muted" style="font-size: 0.8rem; margin-top: 16px;">
-              ※ID検索: @{{LINE_ID_PLACEHOLDER}}
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-header">
+            <span class="contact-card-icon" aria-hidden="true">💬</span>
+            <h2 class="contact-card-title">事前のご相談・ご質問</h2>
+          </div>
+          <div class="contact-card-body">
+            <p class="contact-card-text">
+              「自社の業界でも対応可能か確認したい」「現在のHPを見て軽く意見を聞きたい」など、本格的な申し込み前の疑問やご相談にお答えする窓口です。<br><br>
+              公式LINEよりメッセージをお送りください。代表（勇翔）が直接、24時間以内にご返答いたします。
             </p>
           </div>
-
-          <div class="glass-panel" style="border-top: 4px solid var(--accent-white);">
-            <h2 style="font-size: 1.5rem; margin-bottom: 32px;">お問い合わせフォーム</h2>
-            
-            <form action="[TODO: Form Endpoint]" method="POST">
-              <div style="display:none;">
-                <input type="text" name="honeypot_field" tabindex="-1" autocomplete="off">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">ご相談内容 <span class="text-danger">*</span></label>
-                <div style="position: relative;">
-                  <select name="category" class="form-input" required>
-                    <option value="" disabled selected>選択してください</option>
-                    <option value="monitor">【先着3社】無料モニター応募</option>
-                    <option value="diagnosis">無料 赤ペン診断（リスクチェック）</option>
-                    <option value="foundation">土台プラン（簡易HP制作）の相談</option>
-                    <option value="other">その他のお問い合わせ</option>
-                  </select>
-                  <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-main);">▼</div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">貴社名 / 屋号 <span class="text-danger">*</span></label>
-                <input type="text" name="company" class="form-input" required placeholder="例）株式会社〇〇建設">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">ご担当者名 <span class="text-danger">*</span></label>
-                <input type="text" name="name" class="form-input" required placeholder="例）山田 太郎">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">メールアドレス <span class="text-danger">*</span></label>
-                <input type="email" name="email" class="form-input" required placeholder="info@example.com">
-              </div>
-
-              <div class="glass-panel" style="margin-bottom: 32px; background-color: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px;">
-                <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 16px;">▼ 診断・モニター希望の方はご記入ください</p>
-                
-                <div class="form-group">
-                  <label class="form-label">診断対象のURL</label>
-                  <input type="url" name="target_url" class="form-input" placeholder="HPやIndeed等のURL">
-                </div>
-
-                <div class="form-group" style="margin-bottom: 0;">
-                  <label class="form-label">現在利用中の求人媒体</label>
-                  <input type="text" name="current_media" class="form-input" placeholder="例）Indeed, Airワーク, タウンワーク等">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">詳細・ご要望</label>
-                <textarea name="message" class="form-textarea" rows="5" placeholder="現状のお悩みや、連絡のつきやすい時間帯などをご記入ください。"></textarea>
-              </div>
-
-              <div class="form-group">
-                <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 0.9rem; color: var(--text-body);">
-                  <input type="checkbox" required name="privacy_policy" style="margin-top: 4px; transform: scale(1.2); accent-color: var(--accent-white);">
-                  <span>
-                    <a href="privacy.html" target="_blank" style="text-decoration: underline; color: var(--text-main);">プライバシーポリシー</a>に同意します
-                  </span>
-                </label>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;" data-ga-event="submit_contact_form">
-                上記内容で送信する
-              </button>
-            </form>
+          <div class="contact-card-footer text-center">
+            <a href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-full" data-ga-event="click_contact_line">
+              公式LINEを開く
+            </a>
           </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
   </main>
 
+  <aside class="principles-area" aria-label="REMEDORAの基本原則">
+    <div class="container">
+      <h4 class="fw-bold text-main u-mb-40 text-center">REMEDORAの基本原則（守りの約束）</h4>
+      <div class="principles-grid">
+        <article class="principle-item">
+          <strong class="text-accent">1. 成果保証なし</strong>
+          <p>応募数は市場動向に左右されるため、数字の絶対保証は致しません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">2. 職業紹介なし</strong>
+          <p>人材の斡旋・紹介、選考介入、面接日程の調整代行は一切行いません。</p>
+        </article>
+        <article class="principle-item">
+          <strong class="text-accent">3. 思考の証跡開示</strong>
+          <p>ブラックボックスを排除し、作業ログと計測データをすべて開示します。</p>
+        </article>
+      </div>
+    </div>
+  </aside>
+
   <footer class="footer">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <img src="assets/img/logo.png" alt="REMEDORA" height="24" width="auto" style="opacity: 0.6; margin-bottom: 24px;">
-          <p>
-            {{LEGAL_NAME}}<br>
-            代表：{{REPRESENTATIVE}}<br>
-            {{ADDRESS}}
+      <div class="footer-top">
+        <div class="footer-info">
+          <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
+          <p class="footer-company-details u-mt-16">
+            REMEDORA<br>
+            代表：勇翔<br>
+            兵庫県明石市
           </p>
         </div>
-        <div class="grid-2">
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">MENU</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+        <div class="footer-links">
+          <nav aria-label="フッターメニュー（サービス）">
+            <h5 class="footer-heading">MENU</h5>
+            <ul>
               <li><a href="monitor.html">無料モニター</a></li>
-              <li><a href="service.html">Service</a></li>
-              <li><a href="results.html">Results</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="service.html">サービス・仕様</a></li>
+              <li><a href="results.html">証跡レポート</a></li>
+              <li><a href="about.html">監査方針</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
-          </div>
-          <div>
-            <h5 style="margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 0.1em;">LEGAL</h5>
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-              <li><a href="company.html">Company</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Use</a></li>
+          </nav>
+          <nav aria-label="フッターメニュー（リーガル）">
+            <h5 class="footer-heading">LEGAL</h5>
+            <ul>
+              <li><a href="company.html">会社概要・特商法</a></li>
+              <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="terms.html">利用規約</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
-      <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 0.75rem; color: var(--text-muted);">
-        &copy; 2026 REMEDORA. All Rights Reserved.
+      <div class="footer-bottom">
+        <small>&copy; 2026 REMEDORA. All Rights Reserved.</small>
       </div>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
-
-<!-- MAINTENANCE OVERLAY (LINE / IG only) -->
-<div class="maintenance-overlay" role="dialog" aria-modal="true" aria-label="サイト改修中">
-  <div class="maintenance-card">
-    <h1 class="maintenance-title">改修中</h1>
-    <p class="maintenance-text">
-      現在、サイト内容を更新しています。<br>
-      ご相談・無料診断は<strong>公式LINE</strong>からお願いします。
-    </p>
-
-    <div class="maintenance-actions">
-      <!-- ▼あなたの公式LINEリンクに置換 -->
-      <a class="maintenance-btn primary" href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer">
-        公式LINEで相談する
-      </a>
-
-      <!-- ▼あなたのInstagramプロフィールURLに置換 -->
-      <a class="maintenance-btn" href="https://www.instagram.com/remedora__?igsh=aTVqejdkMmI4djhm&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        Instagramを見る
-      </a>
-    </div>
-
-    <p class="maintenance-small">※更新完了までしばらくお待ちください。</p>
-  </div>
-</div>
-
-<script>
-  document.documentElement.classList.add('is-maintenance');
-  document.body.classList.add('is-maintenance');
-  document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
-</script>
-<!-- /MAINTENANCE OVERLAY -->
 
 </body>
 </html>
