@@ -273,15 +273,134 @@ p { margin: 0 0 1.5rem; }
 .editorial-subtitle { font-size: 1.05rem; color: var(--c-gray); margin-bottom: 48px; }
 
 /* Hero Split */
-.hero-section { padding-top: calc(var(--header-height) + 40px); padding-bottom: 60px; }
-.hero-split { display: grid; grid-template-columns: 1fr; gap: 40px; }
-.hero-title-massive { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1.2; margin-bottom: 24px; letter-spacing: -0.04em; }
-.hero-lead { font-size: 1.1rem; line-height: 1.8; color: var(--c-dark); }
-.hero-image-placeholder { width: 100%; aspect-ratio: 4/3; background: var(--c-light); border: 1px solid var(--c-border); }
+/* ==============================================
+   Hero Section (Centered & Background Image)
+============================================== */
+.hero-section.hero-bg-image { 
+  position: relative;
+  padding-top: calc(var(--header-height) + 80px); 
+  padding-bottom: 100px; 
+  min-height: 80vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-image: url('../img/hero-bg.jpg'); 
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  text-align: center;
+}
 
-@media (min-width: 769px) {
-  .hero-section { padding-top: calc(var(--header-height) + 80px); padding-bottom: 100px; }
-  .hero-split { grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; }
+.hero-section.hero-bg-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-section.hero-bg-image .container {
+  position: relative;
+  z-index: 2; 
+}
+
+.hero-centered { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-centered .label-tag {
+  margin-bottom: 24px;
+}
+
+.hero-title-massive { 
+  font-size: clamp(2rem, 5vw, 4rem); 
+  font-weight: 900; 
+  line-height: 1.4; 
+  margin-bottom: 32px; 
+  letter-spacing: 0.05em; 
+  color: var(--c-black);
+}
+
+.hero-lead { 
+  font-size: 1.1rem; 
+  line-height: 1.8; 
+  color: var(--c-dark); 
+  font-weight: bold;
+}
+
+/* ==============================================
+   FOCUS AREA (ターゲット業界リスト) - PC限定
+============================================== */
+.focus-area {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(15, 44, 89, 0.2); 
+  width: 100%;
+  max-width: 600px;
+}
+
+.focus-title {
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: var(--c-gray);
+  margin-bottom: 16px;
+}
+
+.focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.focus-list li {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--c-accent); 
+  position: relative;
+  padding-left: 16px;
+}
+
+.focus-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--c-accent);
+  border-radius: 50%;
+}
+
+/* スマホ表示時の最適化 */
+@media (max-width: 768px) {
+  .hero-section.hero-bg-image { 
+    min-height: 70vh;
+    padding-top: calc(var(--header-height) + 40px); 
+    padding-bottom: 60px; 
+  }
+  .hero-title-massive {
+    font-size: 1.75rem; 
+    line-height: 1.5;
+  }
+  .hero-lead {
+    font-size: 0.95rem;
+  }
+  /* スマホではターゲットエリアを確実に非表示にする */
+  .focus-area, 
+  .pc-only {
+    display: none !important;
+  }
 }
 
 /* Audit List (巨大ナンバリング + 罫線) */
@@ -511,17 +630,72 @@ p { margin: 0 0 1.5rem; }
 .agreement-text { font-size: 0.95rem; line-height: 1.8; color: var(--c-dark); margin: 0; }
 @media (min-width: 769px) { .agreement-item { padding: 48px 0; } }
 
+
 /* 同意確認ボックス（応募前フィルター） */
-.consent-box { background: var(--c-light); border: 2px solid var(--c-black); padding: 32px; max-width: 800px; margin: 0 auto 40px; text-align: left; }
-.consent-title { font-size: 1.1rem; text-align: center; margin-bottom: 24px; font-weight: bold; }
-.consent-checklist { list-style: none; padding: 0; margin: 0; }
-.consent-checklist li { position: relative; padding-left: 32px; margin-bottom: 16px; font-size: 0.9rem; font-weight: bold; }
-.consent-checklist li::before {
-  content: ""; position: absolute; left: 0; top: 2px; width: 18px; height: 18px;
-  border: 2px solid var(--c-black); background: var(--c-white); border-radius: 2px;
+.consent-box { 
+  background: var(--c-light, #f5f5f5); 
+  /* 【修正】親のダークテーマに影響されないよう、文字色を明示的に暗くする */
+  color: var(--c-black, #111111); 
+  border: 2px solid var(--c-black); 
+  padding: 32px; 
+  max-width: 800px; 
+  margin: 0 auto 40px; 
+  text-align: left; 
 }
+
+.consent-title { 
+  font-size: 1.1rem; 
+  text-align: center; 
+  margin-bottom: 24px; 
+  font-weight: 900; 
+  /* 【修正】タイトルの文字色も明示 */
+  color: var(--c-black, #111111);
+}
+
+.consent-checklist { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.consent-checklist li { 
+  position: relative; 
+  padding-left: 36px; /* チェックボックスと文字の間隔を少し広げる */
+  margin-bottom: 16px; 
+  font-size: 0.95rem; 
+  font-weight: bold; 
+  line-height: 1.6;
+  /* 【修正】リストの文字色も明示 */
+  color: var(--c-dark, #333333); 
+}
+
+/* チェックボックスの枠 */
+.consent-checklist li::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 3px; /* 文字の高さに揃える */
+  width: 20px; 
+  height: 20px;
+  border: 2px solid var(--c-black); 
+  background: var(--c-white); 
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+/* 【修正】文字の「✔」をやめ、CSSの線でチェックマークを描画（環境依存のズレを防止） */
 .consent-checklist li::after {
-  content: "✔"; position: absolute; left: 3px; top: 0px; font-size: 1.2rem; color: var(--c-accent); font-weight: 900;
+  content: ""; 
+  position: absolute; 
+  left: 7px; /* 枠の中で中央になるよう配置 */
+  top: 5px; 
+  width: 6px; 
+  height: 10px;
+  /* 右と下に線を引いて... */
+  border-right: 3px solid var(--c-accent); 
+  border-bottom: 3px solid var(--c-accent);
+  /* 45度傾けることで美しいチェックマークにする */
+  transform: rotate(45deg);
 }
 
 /* ==========================================================================
@@ -626,6 +800,7 @@ p { margin: 0 0 1.5rem; }
   display: flex;
   align-items: center;
   gap: 16px;
+  color: var(--c-border);
 }
 .results-heading::before {
   content: "";
@@ -1035,6 +1210,96 @@ p { margin: 0 0 1.5rem; }
 }
 
 
+/* ==============================================
+   Works / Case Study (制作・改善事例)
+============================================== */
+.works-grid { 
+  display: grid; 
+  /* PCでは横並び、スマホでは縦並びになるレスポンシブ設定 */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 24px; 
+  margin-top: 40px;
+}
+
+/* カードの基本スタイル（クリーンで堅牢） */
+.work-item { 
+  position: relative; 
+  background: var(--c-white);
+  border: 1px solid var(--c-border); 
+  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* ホバー時に少し浮き上がる演出 */
+.work-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(15, 44, 89, 0.08);
+}
+
+/* 画像（またはプレースホルダーテキスト）のエリア */
+.work-img { 
+  width: 100%; 
+  height: 200px; 
+  background: #f5f5f5; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-bottom: 1px solid var(--c-border); 
+}
+
+.work-img-text {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.work-info { 
+  padding: 32px 24px; 
+}
+
+.work-title { 
+  font-weight: 900; 
+  font-size: 1.2rem; 
+  margin-bottom: 12px; 
+  color: var(--c-black); 
+}
+
+.work-tag { 
+  font-size: 0.75rem; 
+  font-weight: bold;
+  border: 1px solid var(--c-gray); 
+  color: var(--c-gray); 
+  padding: 4px 10px; 
+  display: inline-block; 
+  margin-bottom: 16px; 
+  letter-spacing: 0.05em; 
+}
+
+.work-desc {
+  font-size: 0.95rem; 
+  color: var(--c-dark); 
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==============================================
+   YOUR PROJECT (空き枠のアピール用ハイライト)
+============================================== */
+.work-item-highlight {
+  /* 監査カラー（ネイビー）の破線で「空き枠」であることを強調 */
+  border: 2px dashed var(--c-accent); 
+}
+
+.work-item-highlight .work-img {
+  background: rgba(15, 44, 89, 0.03); /* ほんのり色をつける */
+  border-bottom: 2px dashed var(--c-accent);
+}
+
+.work-item-highlight .tag-highlight {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+  background: rgba(15, 44, 89, 0.05);
+}
 
 /* ==============================================
    改修中（メンテナンス）ティザー画面
