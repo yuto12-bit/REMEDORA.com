@@ -73,26 +73,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     2. Scroll Reveal
+     2. Scroll Reveal (フェードインアニメーション)
      ========================================================================== */
   const revealElements = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
+  
+  // 発火タイミングの微調整（画面下部から30px入った時点でアニメーション開始）
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -30px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
+        // 【修正】CSSの定義に合わせてクラス名を 'is-visible' に変更
+        entry.target.classList.add('is-visible');
         // 一度発火したら監視を解除してパフォーマンスを確保
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, observerOptions);
 
-  revealElements.forEach(el => observer.observe(el));
+  revealElements.forEach(el => {
+    observer.observe(el);
+  });
 
-  /* ==========================================================================
-     3. Smooth Scroll
-     ※ 厳格監査官の判断：
-     CSS側の `scroll-behavior: smooth` および `scroll-margin-top` の設定と
-     JSのオフセット計算処理が競合し、二重スクロールのバグを引き起こすため削除しました。
-     モダンブラウザではCSSのみで完結させるのがベストプラクティスです。
-     ========================================================================== */
 });
