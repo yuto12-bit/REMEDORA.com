@@ -1528,3 +1528,145 @@ body.is-maintenance .container {
     border-color: var(--c-accent); 
   }
 }
+
+
+/* ==============================================
+   改修中（メンテナンス）ティザー画面
+============================================== */
+/* スクロールを完全にロック */
+html.is-maintenance, body.is-maintenance {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+/* 背後のコンテンツ（文字や画像）を強力にぼかし、操作不能にする */
+body.is-maintenance main,
+body.is-maintenance header,
+body.is-maintenance footer,
+body.is-maintenance .container {
+  filter: blur(20px) grayscale(50%); /* 読解不能にする */
+  opacity: 0.15; /* 存在感だけを残す */
+  pointer-events: none; /* クリック無効 */
+  user-select: none; /* 選択無効 */
+  transition: all 0.5s ease;
+}
+
+/* オーバーレイ本体のフルスクリーン固定 */
+.maintenance-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999; /* サイト内の何よりも前面 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 背景の極細ガラス波紋をうっすらと透かして見せる */
+  background: rgba(255, 255, 255, 0.4); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+/* 中央のメッセージカード（監査役らしい厳格なデザイン） */
+.maintenance-card {
+  background: var(--c-white, #ffffff);
+  border: 1px solid var(--c-black, #111111);
+  box-shadow: 0 30px 60px rgba(15, 44, 89, 0.15);
+  padding: 48px 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  /* 下からスッと浮かび上がる演出 */
+  animation: maintenance-fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  border-radius: 10px;
+}
+
+.maintenance-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--c-accent, #0f2c59);
+  letter-spacing: 0.1em;
+  margin-top: 0;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--c-accent, #0f2c59);
+  padding-bottom: 16px;
+}
+
+/* CSSで「SYSTEM AUDIT」という英語をサブタイトルとして挿入 */
+.maintenance-title::before {
+  content: "SYSTEM AUDIT\A"; 
+  white-space: pre;
+  display: block;
+  font-size: 0.9rem;
+  color: var(--c-gray, #767676);
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+
+.maintenance-text {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--c-dark, #333333);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* 強調部分（公式LINE）にLINEカラーのマーカー線を引く */
+.maintenance-text strong {
+  color: var(--c-black, #111111);
+  background: linear-gradient(transparent 60%, rgba(6, 199, 85, 0.3) 60%);
+}
+
+/* ボタンレイアウト */
+.maintenance-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* 共通ボタンデザイン（ソリッドで堅牢） */
+.maintenance-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px; /* 監査役らしいシャープな角丸 */
+  transition: all 0.3s ease;
+  width: 100%;
+  border: 2px solid var(--c-black, #111111);
+  background: transparent;
+  color: var(--c-black, #111111);
+  letter-spacing: 0.05em;
+}
+
+.maintenance-btn:hover {
+  background: var(--c-light, #f5f5f5);
+  opacity: 1;
+}
+
+/* LINEボタン専用デザイン */
+.maintenance-btn.primary {
+  background: #06c755;
+  border-color: #06c755;
+  color: #ffffff;
+}
+
+.maintenance-btn.primary:hover {
+  background: #05b34c;
+  border-color: #05b34c;
+}
+
+.maintenance-small {
+  font-size: 0.85rem;
+  color: var(--c-gray, #767676);
+  margin: 0;
+}
+
+@keyframes maintenance-fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
