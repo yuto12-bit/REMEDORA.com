@@ -21,7 +21,10 @@
   --c-accent: #0f2c59; /* 監査役の厳格なネイビー */
   --c-danger: #d32f2f;
 
-  --font-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  /* 【追加】3層フォントシステムの定義 */
+  --font-base: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif; /* 本文・実務（ゴシック） */
+  --font-serif: "Noto Serif JP", serif; /* 宣言・監査報告（明朝） */
+  --font-mono: "Space Mono", monospace; /* データ・英数字（等幅） */
 }
 
 /* ==============================================
@@ -174,6 +177,36 @@ a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
 h1, h2, h3, h4 { color: var(--c-black); font-weight: 700; margin: 0; line-height: 1.4; }
 p { margin: 0 0 1.5rem; }
 
+/* 【追加】① 企業姿勢を示す大見出しにのみ明朝体を適用し「報告書・規約」の重みを出す */
+.hero-title-massive,
+.editorial-title,
+.statement-catch,
+.contact-title,
+.legal-title,
+.terms-title,
+.results-title {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+/* 【追加】② 英語タイトル、数字、ラベルなどに等幅フォントを適用して「監査・データ解析感」を出す */
+.page-title,
+.dir-title,
+.focus-title,
+.label-tag,
+.num,
+.audit-number,
+.gantt-day,
+.policy-label,
+.loading-text,
+.log-time,
+.log-type,
+.footer-heading {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
 .container { width: 100%; max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
 .section { padding: 80px 0; }
 .section-border-top { border-top: 1px solid var(--c-border); }
@@ -275,36 +308,78 @@ p { margin: 0 0 1.5rem; }
 
 /* Hero Split */
 /* ==============================================
-   Hero Section (Centered & Background Image)
+   Hero Section (Transparent & Marquee)
 ============================================== */
-.hero-section.hero-bg-image { 
+
+/* --- 真ん中の非対称エディトリアルレイアウト --- */
+.hero-split-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* スマホでは縦並び1列 */
+  gap: 40px;
+  align-items: start;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .hero-split-layout {
+    grid-template-columns: 1.2fr 1fr; /* PCでは左の見出しエリアを少し広く取る */
+    gap: 60px;
+    align-items: end; /* 下端を揃えることで空間に知的で引き締まった印象を生む */
+  }
+}
+
+.hero-split-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 完全に左寄せ */
+}
+
+/* 既存の中央揃えを上書きして左寄せにする */
+.hero-split-left .hero-title-massive {
+  text-align: left;
+  margin-bottom: 0; /* 下の余白はグリッドの整列に任せる */
+}
+
+/* リード文を収納する「仕様書」のようなパネル */
+.lead-panel {
+  border-left: 2px solid var(--c-black);
+  padding-left: 24px;
+}
+
+.panel-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--c-gray);
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+/* 既存の中央揃えを上書きして左寄せにする */
+.hero-split-right .hero-lead {
+  text-align: left;
+  margin: 0;
+}
+
+/* 背景画像やフィルターをなくし、大理石と動くガラス線を完全に見せる */
+.hero-section.hero-transparent { 
   position: relative;
   padding-top: calc(var(--header-height) + 80px); 
-  padding-bottom: 100px; 
+  padding-bottom: 80px; 
   min-height: 80vh; 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  
-  background-image: url('../img/hero-bg.jpg'); 
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  text-align: center;
+  background: transparent; 
+  overflow: hidden; 
 }
 
-.hero-section.hero-bg-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-section.hero-bg-image .container {
+.hero-section.hero-transparent .container {
   position: relative;
   z-index: 2; 
+  margin-bottom: 40px; 
 }
 
 .hero-centered { 
@@ -326,6 +401,7 @@ p { margin: 0 0 1.5rem; }
   margin-bottom: 32px; 
   letter-spacing: 0.05em; 
   color: var(--c-black);
+  text-align: center;
 }
 
 .hero-lead { 
@@ -333,6 +409,132 @@ p { margin: 0 0 1.5rem; }
   line-height: 1.8; 
   color: var(--c-dark); 
   font-weight: bold;
+  text-align: center;
+}
+
+/* --- Heroセクション専用：ローディング画面明けのアニメーション --- */
+/* ローディング画面が消える時間（0.6秒）を考慮し、開始を意図的に遅らせる */
+
+.hero-anim-up {
+  opacity: 0;
+  /* 0.6秒待ってから、0.8秒かけて下から現れる */
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.hero-anim-side {
+  opacity: 0;
+  /* 左側が出終わるタイミング（1.0秒後）に、右からスライドしてくる */
+  animation: heroFadeSide 3s cubic-bezier(0.22, 1, 0.36, 1) 1.0s forwards;
+}
+
+/* --- 悩みバッジを下から登場させる（3番目に出現） --- */
+.hero-anim-bottom {
+  opacity: 0;
+  /* 左側（0.6s開始）、右側（1.0s開始）に続き、1.4s後に下から現れる */
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
+}
+
+@keyframes heroFadeUp {
+  0% { opacity: 0; transform: translateY(30px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heroFadeSide {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+/* --- 流れる悩み 2行版（ガラスの角丸長方形・マーキー） --- */
+/* コンテナ全体にグラデーションマスクをかける */
+.pain-marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* 1行目と2行目の隙間 */
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  padding: 10px 0;
+}
+
+.pain-marquee-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.pain-marquee {
+  display: flex;
+  gap: 24px;
+  padding-right: 24px;
+  width: max-content;
+  /* 1行目は右から左へ（少し遅めにして落ち着きを出す） */
+  animation: marquee-scroll 35s linear infinite; 
+}
+
+/* 2行目専用：逆方向（左から右）かつ、少し速度を変えて単調さを消す */
+.pain-marquee.marquee-reverse {
+  animation: marquee-scroll-reverse 40s linear infinite;
+}
+
+/* PCでマウスを乗せたら一時停止する */
+.pain-marquee-container:hover .pain-marquee {
+  animation-play-state: paused;
+}
+
+/* ガラス感のある角丸長方形バッジ */
+.pain-item {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(15, 44, 89, 0.06);
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--c-black);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.pain-item::before {
+  content: "!";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background: var(--c-black);
+  color: var(--c-white);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  margin-right: 12px;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 逆方向のアニメーションキーフレーム */
+@keyframes marquee-scroll-reverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+/* スマホ表示時の最適化 */
+@media (max-width: 768px) {
+  .pain-marquee-container {
+    gap: 12px;
+  }
+  .pain-item {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+  }
 }
 
 /* ==============================================
@@ -972,92 +1174,120 @@ p { margin: 0 0 1.5rem; }
 }
 
 /* ==========================================================================
-   CONTACT PAGE: INFORMATION DESK (受付窓口レイアウト)
+   CONTACT PAGE: GLASSMORPHISM & ACCORDION (最終洗練・スマホ最適化版)
    ========================================================================== */
 
-/* ミニマルなヘッダー */
-.contact-header { 
-  padding: 120px 0 60px; 
-  text-align: center; 
-  border-bottom: 1px solid var(--c-border); 
-}
-.contact-title { 
-  font-size: clamp(2rem, 4vw, 3rem); 
-  font-weight: 900; 
-  letter-spacing: 0.05em; 
-  color: var(--c-black); 
-  margin-bottom: 16px; 
-}
-.contact-lead { 
-  font-size: 1.05rem; 
-  color: var(--c-dark); 
-  line-height: 1.8; 
-}
+/* --- ヘッダー --- */
+.contact-header { padding: 120px 0 60px; text-align: center; border-bottom: 1px solid var(--c-border); }
+.contact-title { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: 0.05em; color: var(--c-black); margin-bottom: 16px; }
+.contact-lead { font-size: 1.05rem; color: var(--c-dark); line-height: 1.8; }
 
-/* 窓口カードのグリッド */
-.contact-grid { 
-  display: grid; 
-  grid-template-columns: minmax(0, 1fr); 
-  gap: 40px; 
-  margin-top: 80px; 
-  margin-bottom: 100px; 
-}
-@media (min-width: 769px) {
-  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
-}
+/* --- ガラスパネルのラッパー --- */
+.contact-glass-accordion { max-width: 720px; margin: 60px auto 0; display: flex; flex-direction: column; gap: 32px; }
 
-/* ソリッドな窓口カード */
-.contact-card {
-  border: 1px solid var(--c-black);
-  background: var(--c-white);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.contact-card-header {
-  padding: 24px;
-  border-bottom: 1px solid var(--c-border);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: var(--c-light);
-}
-.contact-card-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-.contact-card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 0;
-  color: var(--c-black);
-}
-.contact-card-body {
-  padding: 32px 24px;
-  flex-grow: 1;
-}
-.contact-card-text {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: var(--c-dark);
-  margin-bottom: 32px;
-}
-.contact-card-footer {
-  padding: 0 24px 32px;
-}
-
-/* LINE専用ボタン */
-.btn-line {
-  background-color: #06c755;
-  color: #ffffff;
-  border: 1px solid #06c755;
+/* --- 角丸すりガラスパネル（本体） --- */
+.glass-panel-item {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 40px rgba(15, 44, 89, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 @media (hover: hover) {
-  .btn-line:hover {
-    background-color: #05b34c;
-    border-color: #05b34c;
-    color: #ffffff;
-  }
+  .glass-panel-item:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(15, 44, 89, 0.1); }
+}
+
+/* --- ヘッダー部分（タップ領域） --- */
+.glass-panel-header {
+  width: 100%; padding: 32px 40px; background: transparent; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; transition: background 0.3s ease;
+}
+.header-left { display: flex; align-items: baseline; gap: 16px; text-align: left; }
+.glass-panel-num { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 900; color: var(--c-accent); letter-spacing: 0.1em; opacity: 0.8; }
+.glass-panel-title { font-size: 1.4rem; font-weight: bold; color: var(--c-black); margin: 0; letter-spacing: 0.02em; }
+
+/* --- トグルアイコン --- */
+.header-right { display: flex; align-items: center; justify-content: center; }
+.toggle-icon {
+  position: relative; width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(15, 44, 89, 0.15); display: flex; align-items: center; justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.toggle-icon::before, .toggle-icon::after { content: ""; position: absolute; background: var(--c-black); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.toggle-icon::before { width: 14px; height: 2px; }
+.toggle-icon::after { width: 2px; height: 14px; }
+.glass-panel-header.is-active .toggle-icon { background: var(--c-black); border-color: var(--c-black); }
+.glass-panel-header.is-active .toggle-icon::before { background: var(--c-white); }
+.glass-panel-header.is-active .toggle-icon::after { transform: rotate(90deg) scale(0); background: var(--c-white); }
+
+/* --- 開閉する中身 --- */
+.glass-panel-collapse { max-height: 0; opacity: 0; transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; }
+.glass-panel-collapse.is-open { max-height: 1200px; opacity: 1; }
+
+.glass-panel-body { padding: 0 40px 40px; }
+.acc-text { font-size: 0.95rem; line-height: 1.8; color: var(--c-dark); margin-bottom: 32px; padding-top: 16px; border-top: 1px dashed rgba(15, 44, 89, 0.15); }
+
+/* --- フォーム内部 --- */
+.form-row { display: grid; gap: 24px; margin-bottom: 24px; }
+@media (min-width: 769px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.form-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; color: var(--c-black); }
+.req { background: var(--c-black); color: var(--c-white); font-size: 0.65rem; padding: 2px 6px; margin-left: 8px; vertical-align: middle; }
+
+.audit-form-glass input[type="text"], .audit-form-glass input[type="email"] {
+  width: 100%; padding: 16px; border: 1px solid rgba(15, 44, 89, 0.1); background: rgba(255, 255, 255, 0.6);
+  font-size: 1rem; color: var(--c-black); border-radius: 12px; transition: all 0.3s ease; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+.audit-form-glass input[type="text"]:focus, .audit-form-glass input[type="email"]:focus {
+  outline: none; border-color: var(--c-accent); background: #fff; box-shadow: 0 0 0 4px rgba(15, 44, 89, 0.05);
+}
+
+.checkbox-glass-group {
+  display: flex; flex-wrap: wrap; gap: 16px 24px; background: rgba(255, 255, 255, 0.6);
+  padding: 20px; border: 1px solid rgba(15, 44, 89, 0.1); border-radius: 12px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+.check-label { display: flex; align-items: center; gap: 8px; font-size: 0.9rem !important; cursor: pointer; margin: 0 !important; color: var(--c-dark) !important; font-weight: bold !important; }
+.check-label input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--c-black); }
+
+/* --- プライバシーポリシー同意チェック（スマホ崩れ防止） --- */
+.consent-group {
+  margin-top: 32px; padding-top: 24px; border-top: 1px dashed rgba(15, 44, 89, 0.15);
+  display: flex; justify-content: center; width: 100%;
+}
+.consent-label { display: flex; align-items: center; gap: 8px; font-size: 0.9rem !important; text-align: left; cursor: pointer; }
+.consent-label input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--c-black); }
+.text-link { color: var(--c-accent); text-decoration: underline; font-weight: bold; }
+
+/* --- 送信ボタン・LINEボタン（中央揃え） --- */
+.submit-btn-glass, .glass-btn {
+  width: 100%; max-width: 400px; margin: 16px auto 0; /* 中央配置 */
+  height: 60px; font-size: 1.05rem; letter-spacing: 0.05em; border: none; cursor: pointer;
+  border-radius: 50px; display: flex; align-items: center; justify-content: center; gap: 12px; /* テキストと矢印を中央に */
+  padding: 0 24px;
+}
+.btn-arrow { font-family: var(--font-mono); font-weight: bold; transition: transform 0.3s ease; }
+@media (hover: hover) { .submit-btn-glass:hover .btn-arrow, .glass-btn:hover .btn-arrow { transform: translateX(4px); } }
+.btn-line { background-color: #06c755; color: #ffffff; border: 1px solid #06c755; }
+@media (hover: hover) { .btn-line:hover { background-color: #05b34c; border-color: #05b34c; color: #ffffff; } }
+
+.hp-field { display: none !important; }
+.form-msg { font-size: 0.85rem; font-weight: bold; text-align: center; margin-top: 16px; min-height: 1.5em; }
+.msg-success { color: var(--c-black); }
+.msg-error { color: var(--c-danger); }
+
+/* ==========================================================================
+   SP対応（スマホ用最適化）
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* スマホでは余白を減らして画面内に収める */
+  .glass-panel-header { padding: 24px 20px; }
+  .header-left { gap: 8px; flex-direction: column; }
+  .glass-panel-title { font-size: 1.15rem; }
+  .glass-panel-body { padding: 0 20px 24px; }
+  .acc-text { margin-bottom: 24px; font-size: 0.9rem; }
+  .checkbox-glass-group { padding: 16px; flex-direction: column; gap: 12px; }
 }
 
 /* ==========================================================================
@@ -1528,6 +1758,8 @@ body.is-maintenance .container {
     border-color: var(--c-accent); 
   }
 }
+
+
 
 
 /* ==============================================

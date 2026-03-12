@@ -100,3 +100,79 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+/* ==========================================================================
+     3. Contact Form Submission (GAS Integration)
+     ========================================================================== */
+  const leadForm = document.getElementById('leadForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMessage = document.getElementById('formMessage');
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // スパム対策（ハニーポット）チェック
+      const honeypot = leadForm.elements['honeypot'].value;
+      if (honeypot) {
+        // ボットの場合は送信したフリをして終了
+        return; 
+      }
+
+      // 送信中のUI変更
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '送信中...';
+      formMessage.textContent = '';
+      formMessage.className = 'form-msg';
+
+      const formData = new FormData(leadForm);
+      
+      // ★ ここにご自身のGASの「ウェブアプリのURL」を貼り付けてください ★
+      const gasUrl = 'https://script.google.com/macros/s/AKfycbxJKSC4MENQQbWtCjc7o1dCsQW3S2lFl1Oi-VMxMJaWfKuPOqygkrHe_POBCZf2af-6/exec';
+
+      fetch(gasUrl, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        // ※GASの設定（CORS等）によっては opaque response になる場合がありますが
+        // エラーで弾かれなければ成功とみなします。
+        formMessage.textContent = '送信が完了しました。担当者よりご連絡いたします。';
+        formMessage.classList.add('msg-success');
+        leadForm.reset(); // フォームをクリア
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        formMessage.textContent = '通信エラーが発生しました。時間を置いて再度お試しください。';
+        formMessage.classList.add('msg-error');
+      })
+      .finally(() => {
+        // ボタンの状態を元に戻す
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '無料診断を申し込む <span class="btn-arrow">→</span>';
+      });
+    });
+  }
+
+  /* ==========================================================================
+     4. Glass Panel Accordion Logic
+     ========================================================================== */
+  const glassHeaders = document.querySelectorAll('.glass-panel-header');
+
+  glassHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isActive = header.classList.contains('is-active');
+
+      // クリックされたものが閉じていた場合のみ開く（複数同時展開も可能にする仕様）
+      if (!isActive) {
+        header.classList.add('is-active');
+        header.setAttribute('aria-expanded', 'true');
+        content.classList.add('is-open');
+      } else {
+        header.classList.remove('is-active');
+        header.setAttribute('aria-expanded', 'false');
+        content.classList.remove('is-open');
+      }
+    });
+  });

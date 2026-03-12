@@ -25,13 +25,15 @@
   <meta name="twitter:description" content="採用導線の無料診断・モニター応募・ご相談窓口をご案内しています。">
   <meta name="twitter:image" content="https://remedora.jp/assets/img/ogp-image.jpg">
 
-  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
-  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
   
   <meta name="description" content="貴社のWeb採用導線の現状を確認する「無料診断」や、無料モニターへのご応募、事前のご相談窓口をご案内しています。">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="canonical" href="https://remedora.jp/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -80,11 +82,11 @@
     </nav>
   </div>
 
-  <main>
+    <main>
     
     <header class="contact-header">
       <div class="container reveal">
-        <h1 class="contact-title">お問い合わせ・診断予約</h1>
+        <h1 class="contact-title">お問い合わせ</h1>
         <p class="contact-lead">
           貴社のWeb採用導線の現状を確認する「無料診断」や、<br class="pc-only">
           各種プランのお申し込み、導入前のご相談を承っております。
@@ -92,42 +94,80 @@
       </div>
     </header>
 
-    <section class="container reveal">
-      <div class="contact-grid">
+    <section class="container reveal" style="margin-bottom: 120px;">
+      <div class="contact-glass-accordion">
         
-        <article class="contact-card">
-          <div class="contact-card-header">
-            <span class="contact-card-icon" aria-hidden="true">📝</span>
-            <h2 class="contact-card-title">無料診断・お申し込み</h2>
-          </div>
-          <div class="contact-card-body">
-            <p class="contact-card-text">
-              現状のWeb導線を確認する「無料診断」のご予約や、「無料モニター」へのお申し込みをご希望の場合は、こちらの窓口をご利用ください。<br><br>
-              貴社の状況をスムーズに把握できるよう、専用のフォームをご用意しております。（入力の目安：数分程度）
-            </p>
-          </div>
-          <div class="contact-card-footer text-center">
-            <a href="https://input.remedora.jp" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full" data-ga-event="click_contact_form">
-              専用フォームへ進む
-            </a>
+        <article class="glass-panel-item">
+          <button class="glass-panel-header" aria-expanded="false">
+            <div class="header-left">
+              <span class="glass-panel-num">01.</span>
+              <h2 class="glass-panel-title">無料診断・モニター応募</h2>
+            </div>
+            <div class="header-right">
+              <div class="toggle-icon"></div>
+            </div>
+          </button>
+          
+          <div class="glass-panel-collapse">
+            <div class="glass-panel-body">
+              <p class="acc-text">現状の課題を選択して送信してください。確認次第、ご連絡いたします。</p>
+              
+              <form id="leadForm" class="audit-form-glass">
+                <input type="text" name="honeypot" class="hp-field" tabindex="-1" autocomplete="off">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="companyName">貴社名 <span class="req">必須</span></label>
+                    <input type="text" id="companyName" name="companyName" required placeholder="株式会社〇〇建設">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">メールアドレス <span class="req">必須</span></label>
+                    <input type="email" id="email" name="email" required placeholder="info@example.com">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>主な課題（複数選択可）</label>
+                  <div class="checkbox-glass-group">
+                    <label class="check-label"><input type="checkbox" name="pain" value="応募が来ない"> 応募が来ない</label>
+                    <label class="check-label"><input type="checkbox" name="pain" value="離脱箇所が不明"> 離脱箇所が不明</label>
+                    <label class="check-label"><input type="checkbox" name="pain" value="受け皿がない"> 自社HP・採用ページがない</label>
+                  </div>
+                </div>
+
+                <div class="form-group consent-group">
+                  <label class="check-label consent-label">
+                    <input type="checkbox" name="consent" required>
+                    <span><a href="privacy.html" target="_blank" class="text-link">プライバシーポリシー</a>に同意する </span>
+                  </label>
+                </div>
+                <button type="submit" form="leadForm" class="btn btn-primary btn-full submit-btn-glass" id="submitBtn">
+                  無料診断を申し込む <span class="btn-arrow">→</span>
+                </button>
+
+                <p id="formMessage" class="form-msg"></p>
+              </form>
+            </div>
           </div>
         </article>
 
-        <article class="contact-card">
-          <div class="contact-card-header">
-            <span class="contact-card-icon" aria-hidden="true">💬</span>
-            <h2 class="contact-card-title">事前のご相談・ご質問</h2>
-          </div>
-          <div class="contact-card-body">
-            <p class="contact-card-text">
-              「自社の業界も対象になるか知りたい」「今の求人状況について少し意見を聞きたい」など、お申し込み前のちょっとした疑問やご相談を承る窓口です。<br><br>
-              公式LINEよりお気軽にメッセージをお送りください。代表が直接内容を確認し、順次ご返信いたします。
-            </p>
-          </div>
-          <div class="contact-card-footer text-center">
-            <a href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-full" data-ga-event="click_contact_line">
-              公式LINEを開く
-            </a>
+        <article class="glass-panel-item">
+          <button class="glass-panel-header" aria-expanded="false">
+            <div class="header-left">
+              <span class="glass-panel-num">02.</span>
+              <h2 class="glass-panel-title">事前のご相談・ご質問</h2>
+            </div>
+            <div class="header-right">
+              <div class="toggle-icon"></div>
+            </div>
+          </button>
+          
+          <div class="glass-panel-collapse">
+            <div class="glass-panel-body">
+              <p class="acc-text">「自社の業界も対象になるか」「今の求人状況について少し意見を聞きたい」など、ちょっとした疑問やご相談は公式LINEより承ります。<br><br>代表が直接内容を確認し、順次ご返信いたします。</p>
+              
+              <a href="https://lin.ee/MTjihBI" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-full glass-btn" style="height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; font-size: 1.05rem;" data-ga-event="click_contact_line">
+                公式LINEを開く <span class="btn-arrow">→</span>
+              </a>
+            </div>
           </div>
         </article>
 
@@ -135,6 +175,7 @@
     </section>
 
   </main>
+    
 
   <aside class="principles-area" aria-label="REMEDORAの基本原則">
     <div class="container">
@@ -161,12 +202,20 @@
       <div class="footer-top">
         <div class="footer-info">
           <img src="assets/img/logo.png" alt="REMEDORA" style="height: 24px; width: auto;">
-          <p class="footer-company-details u-mt-16">
+          <p class="footer-company-details u-mt-16" style="line-height: 1.8;">
             REMEDORA<br>
             代表：勇翔<br>
-            兵庫県明石市
+            兵庫県明石市<br>
+            <span style="display: inline-block; margin-top: 8px;">
+              TEL: <a href="tel:050-1784-7183" style="color: inherit; text-decoration: none;">050-1784-7183</a><br>
+              Email: <a href="mailto:remedora.contact@gmail.com" style="color: inherit; text-decoration: underline;">remedora.contact@gmail.com</a>
+            </span>
+          </p>
+          <p class="text-danger" style="font-size: 0.75rem; font-weight: bold; margin-top: 8px;">
+            ※SEO対策・Webシステム等の営業電話は固くお断りいたします。
           </p>
         </div>
+        
         <div class="footer-links">
           <nav aria-label="フッターメニュー（サービス）">
             <h5 class="footer-heading">MENU</h5>
