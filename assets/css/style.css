@@ -761,6 +761,44 @@ p { margin: 0 0 1.5rem; }
 .spec-table .cross { color: var(--c-gray); font-weight: bold; }
 .spec-table .highlight-col { background-color: rgba(15, 44, 89, 0.03); }
 
+/* --- テーブル横スクロールのヒント（スマホ専用） --- */
+.table-scroll-hint {
+  display: none; /* PCでは非表示 */
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--c-gray);
+  margin-bottom: 8px;
+  font-weight: bold;
+  animation: flashHint 2s infinite;
+}
+
+@keyframes flashHint {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* スマホ表示時の設定 */
+@media (max-width: 768px) {
+  .table-scroll-hint {
+    display: block; /* スマホのみ表示 */
+  }
+  
+  /* スクロールバー自体もスマホで見えやすくする */
+  .spec-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+  .spec-table-wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+  .spec-table-wrapper::-webkit-scrollbar-track {
+    background: var(--c-light);
+  }
+  .spec-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--c-gray);
+    border-radius: 4px;
+  }
+}
+
 /* 02. プラン詳細ブロック (フォーマット化) */
 .plan-detail-box { border: 1px solid var(--c-border); margin-bottom: 40px; background: var(--c-white); }
 .plan-detail-header { 
