@@ -176,3 +176,113 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  /* ==========================================================================
+     5. Interactive Audit UI (インデックス切り替え)
+     ========================================================================== */
+  const auditNavBtns = document.querySelectorAll('.audit-nav-btn');
+  const auditPanels = document.querySelectorAll('.audit-panel');
+
+  if (auditNavBtns.length > 0) {
+    auditNavBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 全てのボタンとパネルから is-active を外す
+        auditNavBtns.forEach(b => b.classList.remove('is-active'));
+        auditPanels.forEach(p => p.classList.remove('is-active'));
+
+        // クリックされたボタンをアクティブにする
+        btn.classList.add('is-active');
+
+        // 対応するパネルを表示する
+        const targetId = btn.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.add('is-active');
+        }
+      });
+    });
+  }
+
+  /* ==========================================================================
+     6. Comic Strip Observer (横スクロール漫画のコマ監視)
+     ========================================================================== */
+  const comicPanels = document.querySelectorAll('.comic-panel');
+  
+  if (comicPanels.length > 0) {
+    // セリフのアニメーション用に、テキストをspanで囲む処理を自動実行
+    comicPanels.forEach(panel => {
+      const dialogue = panel.querySelector('.comic-dialogue');
+      if (dialogue) {
+        // 元のHTMLを壊さずにアニメーション用のラッパーを挿入
+        const text = dialogue.innerHTML;
+        dialogue.innerHTML = `<span>${text}</span>`;
+      }
+    });
+
+    // 画面の「中央」にコマが来たら発火させる設定
+    const comicObserverOptions = {
+      root: document.getElementById('comicTrack'), // スクロール領域をトラックに限定
+      rootMargin: '0px -20% 0px -20%', // 左右から20%内側に入った時を「中央」とみなす
+      threshold: 0.5 // コマの半分が見えたら発火
+    };
+
+    const comicObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 画面中央に入ったコマに 'is-reading' クラスを付与してアニメーション発火
+          entry.target.classList.add('is-reading');
+        } else {
+          // 画面から外れたらクラスを外す（再度スクロールした時にまたアニメーションさせるため）
+          entry.target.classList.remove('is-reading');
+        }
+      });
+    }, comicObserverOptions);
+
+    // PC表示等のために、bodyのスクロールに対しても保険で監視しておく
+    const fallbackObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-reading');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    comicPanels.forEach(panel => {
+      comicObserver.observe(panel);
+      fallbackObserver.observe(panel);
+    });
+  }
+
+
+
+
+
+
+  /* ==========================================================================
+     7. Spec Dashboard UI (仕様書のプラン切り替え) 修正する
+     ========================================================================== */
+  const specNavBtns = document.querySelectorAll('.spec-nav-btn');
+  
+  if (specNavBtns.length > 0) {
+    specNavBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 親の dashboard コンテナを取得（02と03が独立して動くようにするため）
+        const dashboard = btn.closest('.spec-dashboard');
+        
+        // 同じダッシュボード内のボタンとパネルをリセット
+        const btns = dashboard.querySelectorAll('.spec-nav-btn');
+        const panels = dashboard.querySelectorAll('.spec-panel');
+        
+        btns.forEach(b => b.classList.remove('is-active'));
+        panels.forEach(p => p.classList.remove('is-active'));
+
+        // クリックしたものをアクティブに
+        btn.classList.add('is-active');
+        const targetId = btn.getAttribute('data-spec');
+        const targetPanel = dashboard.querySelector(`#${targetId}`);
+        if (targetPanel) {
+          targetPanel.classList.add('is-active');
+        }
+      });
+    });
+  }

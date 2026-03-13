@@ -799,47 +799,229 @@ p { margin: 0 0 1.5rem; }
   }
 }
 
-/* 02. プラン詳細ブロック (フォーマット化) */
-.plan-detail-box { border: 1px solid var(--c-border); margin-bottom: 40px; background: var(--c-white); }
-.plan-detail-header { 
-  background: var(--c-light); padding: 16px 24px; border-bottom: 1px solid var(--c-border); 
-  font-size: 1.25rem; font-weight: 900; color: var(--c-black); 
-  display: flex; justify-content: space-between; align-items: center; 
-}
-.plan-detail-body { padding: 24px; }
-.plan-detail-row { 
-  display: grid; gap: 8px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px dashed var(--c-border); 
-}
-.plan-detail-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-@media (min-width: 768px) { 
-  .plan-detail-row { grid-template-columns: 160px 1fr; gap: 24px; } 
-}
-.plan-detail-label { 
-  font-size: 0.85rem; color: var(--c-gray); font-weight: bold; letter-spacing: 0.05em; 
-}
-.plan-detail-content { font-size: 0.95rem; line-height: 1.8; color: var(--c-dark); }
-.plan-detail-content ul { padding-left: 20px; margin: 0; }
-.plan-detail-content li { margin-bottom: 8px; }
+/* ==============================================
+   Service Page: Zero-Interface Typography UI (完全統合・最終完成版)
+============================================== */
 
-/* 03 & 04. 責任・免責事項リスト (アイコン付き) */
-.clause-list { border-top: 1px solid var(--c-border); }
-.clause-item { 
-  display: flex; gap: 16px; padding: 32px 0; border-bottom: 1px solid var(--c-border); 
+/* --- 02 & 03. エッジ・トゥ・エッジ（箱のないアコーディオン全体） --- */
+.brutal-folio-group {
+  border-top: 2px solid var(--c-black);
 }
-.clause-icon { font-size: 1.5rem; line-height: 1.2; flex-shrink: 0; font-weight: bold; }
-.clause-icon.check { color: var(--c-accent); }
-.clause-icon.cross { color: var(--c-danger); }
-.clause-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--c-black); }
-.clause-text { font-size: 0.95rem; color: var(--c-dark); line-height: 1.8; margin: 0; }
 
-/* 05. FAQ (メリハリ) */
-.faq-list { border-top: 1px solid var(--c-border); }
-.faq-item { padding: 32px 0; border-bottom: 1px solid var(--c-border); }
-.faq-q { font-size: 1.05rem; font-weight: 700; color: var(--c-black); margin-bottom: 16px; display: flex; gap: 12px; }
-.faq-q::before { content: "Q."; color: var(--c-accent); font-weight: 900; }
-.faq-a { font-size: 0.95rem; color: var(--c-dark); line-height: 1.8; margin: 0; display: flex; gap: 12px; }
-.faq-a::before { content: "A."; color: var(--c-gray); font-weight: 900; }
+/* ヘッダー（ボタン）のスタイル */
+.folio-header-override {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(15, 44, 89, 0.1) !important;
+  border-radius: 0 !important;
+  /* 左右に余白（24px）を持たせ、画面端への張り付きを防ぐ */
+  padding: 48px 24px !important; 
+  box-shadow: none !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
+}
 
+.folio-header-override:hover { background: rgba(15, 44, 89, 0.02) !important; }
+.folio-header-override.is-active { border-bottom-color: var(--c-black) !important; }
+
+.folio-header-left { display: flex; align-items: baseline; gap: 16px; text-align: left; }
+.folio-num { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 900; color: var(--c-accent); }
+.folio-name { font-size: clamp(1.2rem, 3vw, 1.75rem); font-weight: 900; color: var(--c-black); margin: 0; letter-spacing: 0.02em; }
+.folio-subname { font-size: 0.9rem; color: var(--c-gray); font-weight: normal; margin-left: 8px; }
+
+.folio-header-right { display: flex; align-items: center; gap: 24px; }
+.folio-price { font-family: var(--font-mono); font-size: 1.1rem; font-weight: bold; }
+
+@media (max-width: 768px) {
+  /* スマホでも左右に安全な余白（16px）を確保 */
+  .folio-header-override { padding: 32px 16px !important; } 
+  .folio-header-left { gap: 12px; }
+  .folio-num { font-size: 1.25rem; }
+  .folio-price { display: none; } 
+}
+
+/* --- アコーディオンの各項目（外枠）の余白設定 --- */
+.folio-item {
+  /* 下方向の余白を大幅に拡張（16pxから48pxへ） */
+  margin-bottom: 30px !important; 
+  border-bottom: none !important; /* 余計な線を消して余白を際立たせる */
+}
+
+@media (min-width: 769px) {
+  .folio-item {
+    /* PCではさらに大胆に広げ、1つずつのプランを独立させる */
+    margin-bottom: 80px !important; 
+  }
+}
+
+/* --- 中身の展開エリア --- */
+.folio-collapse-override {
+  background: transparent !important;
+}
+
+.folio-body {
+  /* ヘッダーの左端と文字の開始位置を綺麗に揃える */
+  padding: 48px 24px 80px; 
+}
+
+@media (max-width: 768px) {
+  /* スマホでも左右に16pxの余白を確保 */
+  .folio-body { padding: 32px 16px 64px; }
+}
+
+/* 情報を横に散らして圧迫感を消すグリッド */
+.folio-grid {
+  display: grid;
+  gap: 64px; 
+}
+
+@media (min-width: 769px) {
+  .folio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px; 
+  }
+}
+
+/* 追加オプション用の「PC時のみ2列」にするグリッド */
+.folio-grid-half {
+  gap: 48px; /* オプションは項目が少ないため少し隙間を詰める */
+}
+
+@media (min-width: 769px) {
+  .folio-grid-half {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+}
+
+.folio-col { display: flex; flex-direction: column; }
+.folio-col.border-danger { border-left: 2px solid var(--c-danger); padding-left: 24px; }
+
+/* 見出し（ラベル） */
+.folio-label {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  letter-spacing: 0.05em;
+  padding-left: 0;
+  border-left: none;
+  border-bottom: 1px solid rgba(15, 44, 89, 0.1);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+.folio-label.text-danger { color: var(--c-danger); border-bottom-color: rgba(211, 47, 47, 0.2); }
+
+/* 本文・リスト */
+.folio-text { font-size: 0.95rem; line-height: 2; color: var(--c-dark); margin: 0; }
+.folio-list { list-style: none; padding: 0; margin: 0; }
+.folio-list li { position: relative; padding-left: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.9; color: var(--c-dark); }
+/* 箇条書きのマークを「小さなドット」に変更 */
+.folio-list li::before { content: ""; position: absolute; left: 0; top: 12px; width: 4px; height: 4px; border-radius: 50%; background: var(--c-accent); opacity: 0.6; }
+
+.folio-link { display: inline-block; margin-top: 16px; font-weight: bold; color: var(--c-accent); text-decoration: underline; text-underline-offset: 6px; }
+
+
+/* --- 04 & 05. ブループリントUI (図面風境界線) --- */
+.blueprint-layout { display: grid; gap: 40px; position: relative; padding: 24px 0; }
+
+@media (min-width: 769px) {
+  .blueprint-layout { grid-template-columns: 1fr 2px 1fr; gap: 64px; align-items: stretch; }
+}
+
+.blueprint-line { display: none; }
+@media (min-width: 769px) {
+  .blueprint-line { display: block; background: repeating-linear-gradient(to bottom, var(--c-border) 0, var(--c-border) 8px, transparent 8px, transparent 16px); }
+}
+
+.blueprint-head { 
+  font-family: var(--font-base); 
+  font-size: 1.5rem; 
+  font-weight: 900; 
+  letter-spacing: 0.05em; 
+  margin-bottom: 40px; 
+  line-height: 1.4; 
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--c-black); 
+}
+.blueprint-head.text-accent { border-bottom-color: var(--c-accent); }
+.blueprint-head.text-danger { border-bottom-color: var(--c-danger); }
+
+.blueprint-head span { display: block; font-size: 0.9rem; letter-spacing: 0; margin-top: 8px; opacity: 0.8; font-weight: bold; }
+
+.blueprint-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px; }
+.blueprint-list li { position: relative; padding-left: 32px; }
+.blueprint-list li::before { position: absolute; left: 0; top: -2px; font-family: var(--font-mono); font-size: 1.2rem; font-weight: 900; }
+
+.check-list li::before { content: "✔"; color: var(--c-accent); }
+.cross-list li::before { content: "✕"; color: var(--c-gray); }
+
+.blueprint-list strong { display: block; font-size: 1.05rem; color: var(--c-black); margin-bottom: 8px; }
+.blueprint-list p { font-size: 0.9rem; color: var(--c-dark); line-height: 1.7; margin: 0; }
+
+@media (max-width: 768px) {
+  .blueprint-layout > div:last-child { padding-top: 40px; border-top: 2px dashed rgba(15, 44, 89, 0.2); }
+}
+
+
+
+/* --- 06. Q&A (開閉式ガラスアコーディオン) --- */
+.faq-header-override {
+  padding: 24px;
+}
+
+.glass-faq-q {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--c-black);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.glass-faq-q::before {
+  content: "Q.";
+  color: var(--c-accent);
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.glass-faq-body {
+  padding: 0 24px 24px 24px;
+}
+
+.glass-faq-a {
+  font-size: 0.95rem;
+  color: var(--c-dark);
+  line-height: 1.8;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  border-top: 1px dashed rgba(15, 44, 89, 0.15);
+  padding-top: 20px;
+}
+
+.glass-faq-a::before {
+  content: "A.";
+  color: var(--c-gray);
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .faq-header-override { padding: 20px; }
+  .glass-faq-q { font-size: 0.95rem; }
+  .glass-faq-body { padding: 0 20px 20px 20px; }
+}
 /* ==========================================================================
    MONITOR PAGE: AGREEMENT (契約書・同意書レイアウト)
    ========================================================================== */
@@ -848,29 +1030,269 @@ p { margin: 0 0 1.5rem; }
 .hero-agreement { padding-top: calc(var(--header-height) + 60px); padding-bottom: 60px; border-bottom: 4px solid var(--c-black); text-align: center; }
 .hero-agreement .tag-inverted { background: var(--c-black); color: var(--c-white); font-size: 0.9rem; padding: 8px 16px; margin-bottom: 32px; border: none; }
 
-/* 工程表（ガントチャート風） */
-.monitor-gantt { display: flex; flex-direction: column; gap: 24px; border: 1px solid var(--c-border); background: var(--c-white); padding: 32px; }
-.gantt-row { display: flex; flex-direction: column; gap: 8px; padding-bottom: 24px; border-bottom: 1px dashed var(--c-border); }
-.gantt-row:last-child { border-bottom: none; padding-bottom: 0; }
-.gantt-day { font-family: monospace; font-size: 1.1rem; font-weight: bold; color: var(--c-accent); flex-shrink: 0; }
-.gantt-content h4 { font-size: 1.1rem; margin-bottom: 8px; }
-.gantt-content p { font-size: 0.9rem; color: var(--c-dark); margin: 0; }
+/* ==============================================
+   Monitor Page: Glass Document UI (モニター要項)
+============================================== */
+
+/* --- 01. スケジュール（ガラス・タイムライン） --- */
+.glass-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 24px;
+}
+
+/* 縦のガイドライン */
+.glass-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 2px;
+  background: rgba(15, 44, 89, 0.15); /* うっすらとしたネイビーの線 */
+}
+
+.glass-timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.glass-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 光るノード（点） */
+.glass-timeline-node {
+  position: absolute;
+  left: -24px;
+  top: 12px; /* カードの上端に合わせる */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  border: 3px solid var(--c-white);
+  box-shadow: 0 0 0 4px rgba(15, 44, 89, 0.1);
+  transform: translateX(-50%);
+}
+
+/* ガラスカード本体 */
+.glass-timeline-content {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(15, 44, 89, 0.04);
+  position: relative;
+}
+
+.glass-timeline-meta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.glass-timeline-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--c-black);
+  margin-bottom: 12px;
+}
+
+.glass-timeline-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--c-dark);
+  margin: 0;
+}
+
 @media (min-width: 769px) {
-  .gantt-row { flex-direction: row; gap: 40px; align-items: flex-start; }
-  .gantt-day { width: 140px; text-align: right; border-right: 2px solid var(--c-black); padding-right: 24px; }
+  .glass-timeline { padding-left: 40px; }
+  .glass-timeline::before { left: 15px; }
+  .glass-timeline-node { left: -25px; top: 16px; width: 20px; height: 20px; }
+  .glass-timeline-content { padding: 32px; }
 }
 
-/* 契約条項リスト */
-.agreement-list { counter-reset: agreement; border-top: 2px solid var(--c-black); }
-.agreement-item { padding: 40px 0; border-bottom: 1px solid var(--c-border); display: flex; flex-direction: column; gap: 16px; }
-.agreement-item::before {
-  counter-increment: agreement; content: "第 " counter(agreement) " 条";
-  font-weight: 900; color: var(--c-accent); font-size: 1rem; border-bottom: 1px solid var(--c-accent); display: inline-block; align-self: flex-start;
+/* --- 02. 提供範囲と対象外（ツイン・ガラスパネル） --- */
+.glass-comparison {
+  display: grid;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
 }
-.agreement-title { font-size: 1.25rem; font-weight: bold; }
-.agreement-text { font-size: 0.95rem; line-height: 1.8; color: var(--c-dark); margin: 0; }
-@media (min-width: 769px) { .agreement-item { padding: 48px 0; } }
 
+@media (min-width: 769px) {
+  .glass-comparison { grid-template-columns: 1fr 1fr; }
+}
+
+.glass-comp-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(15, 44, 89, 0.04);
+}
+
+.comp-do {
+  border-top: 4px solid var(--c-accent); /* ネイビーのアクセント */
+}
+
+.comp-dont {
+  border-top: 4px solid var(--c-gray); /* グレーのアクセント */
+  background: rgba(255, 255, 255, 0.4); /* 対象外は少し透明度を上げる */
+}
+
+.comp-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: var(--c-black);
+  border-bottom: 1px dashed var(--c-border);
+  padding-bottom: 16px;
+}
+
+.comp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comp-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--c-dark);
+}
+
+.comp-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* チェックマークとバツ印の擬似要素 */
+.comp-do .comp-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--c-accent);
+  font-weight: bold;
+}
+
+.comp-dont .comp-list li::before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--c-gray);
+  font-weight: bold;
+}
+
+/* --- 03. 適用条件（アラート・ガラスカード） --- */
+.condition-glass-grid {
+  display: grid;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.condition-card {
+  display: flex;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-left: 4px solid var(--c-danger); /* 警告の赤ライン */
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(211, 47, 47, 0.04);
+}
+
+.condition-icon {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--c-danger);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.condition-body {
+  flex-grow: 1;
+}
+
+.condition-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--c-black);
+  margin: 0 0 12px 0;
+}
+
+.condition-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--c-dark);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .condition-card { flex-direction: column; gap: 12px; }
+  .condition-icon { font-size: 1.25rem; }
+}
+
+/* ==============================================
+   Monitor Page: スマホ用 横スワイプ（カルーセル）最適化
+============================================== */
+@media (max-width: 768px) {
+  
+  /* 提供範囲と適用条件のコンテナを横スクロール化 */
+  .glass-comparison,
+  .condition-glass-grid {
+    display: flex; /* グリッドからフレックスに変更して横並びに */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* スクロールバーを隠す */
+    
+    /* 画面端（padding）を突き抜けてスワイプできるようにするハック */
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px; /* 影が切れないように下余白を確保 */
+  }
+
+  /* Webkit系（Safari/Chrome）のスクロールバー非表示 */
+  .glass-comparison::-webkit-scrollbar,
+  .condition-glass-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 個別のカード設定（右端を少し見切れさせる） */
+  .glass-comp-card,
+  .condition-card {
+    flex: 0 0 85vw; /* 画面幅の85%にして次のカードをチラ見せする */
+    scroll-snap-align: center;
+    height: auto; /* 高さを内容に合わせる */
+  }
+
+  /* ツインパネル（提供範囲）の高さを揃えるための微調整 */
+  .glass-comp-card {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /* 同意確認ボックス（応募前フィルター） */
 .consent-box { 
@@ -1411,38 +1833,169 @@ p { margin: 0 0 1.5rem; }
    INDEX PAGE: CONCEPT & DIRECTORY (トップページ専用)
    ========================================================================== */
 
-/* 看板とシャッターの図解ブロック */
-.concept-box {
-  border: 1px solid var(--c-black);
-  padding: 32px 24px;
-  background: var(--c-white);
-  margin-bottom: 40px;
+/* ==============================================
+   Top Page: Comic Strip UI (横スクロールストーリー)
+============================================== */
+.comic-slider-container {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* コンテナを画面全幅に拡張 */
+  padding: 0 24px;
 }
-.concept-illustration {
+
+/* トラック（スワイプ領域） */
+.comic-track {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px dashed var(--c-border);
+  gap: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 40px;
+  /* スクロールバー非表示 */
+  scrollbar-width: none; 
 }
-.ill-step {
-  text-align: center;
-  padding: 24px 16px;
-  background: var(--c-light);
-  border: 1px solid var(--c-border);
+.comic-track::-webkit-scrollbar { display: none; }
+
+/* 漫画の1コマ */
+.comic-panel {
+  flex: 0 0 85vw; /* スマホで右端が少し見切れる幅に設定 */
+  max-width: 400px; /* PCでの最大幅 */
+  scroll-snap-align: center;
+  position: relative;
 }
-.ill-step.danger { border-color: var(--c-danger); background: #fff5f5; }
-.ill-arrow { font-size: 1.5rem; color: var(--c-gray); font-weight: 900; text-align: center; }
-.ill-title { font-weight: 900; font-size: 1.1rem; margin-bottom: 8px; color: var(--c-black); }
-.ill-desc { font-size: 0.85rem; color: var(--c-dark); margin: 0; line-height: 1.6; }
 
 @media (min-width: 769px) {
-  .concept-box { padding: 48px; }
-  .concept-illustration { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; }
-  .ill-step { flex: 1; }
-  .ill-arrow { transform: rotate(-90deg); } /* PC時は横向き矢印の代わり */
+  .comic-track {
+    justify-content: center; /* PCでは中央揃えで全コマ表示 */
+    flex-wrap: wrap; /* 画面に収まらなければ折り返す */
+  }
+  .comic-panel {
+    flex: 0 0 calc(50% - 12px); /* PCでは2列に並べる */
+    max-width: none;
+  }
+  /* 最後の結論パネルは全幅にする */
+  .panel-conclusion {
+    flex: 0 0 100%;
+  }
 }
+
+/* コマの中身（ Brutalist Corporate な太枠デザイン ） */
+.comic-panel-inner {
+  background: var(--c-white);
+  border: 3px solid var(--c-black);
+  border-radius: 8px;
+  padding: 32px 24px;
+  height: 100%;
+  box-shadow: 8px 8px 0 rgba(15, 44, 89, 0.1); /* アメコミ風のソリッドな影 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s ease;
+  opacity: 0.3; /* 初期状態は薄くしておく */
+  transform: scale(0.95);
+}
+
+/* JSによって「今読んでいるコマ」になった時の発火スタイル */
+.comic-panel.is-reading .comic-panel-inner {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 12px 12px 0 rgba(15, 44, 89, 0.15);
+}
+
+.comic-step {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  background: var(--c-light);
+  padding: 4px 12px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 24px;
+  border: 1px solid var(--c-border);
+}
+
+/* セリフ（メインコピー） */
+.comic-dialogue {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.5;
+  color: var(--c-black);
+  margin-bottom: 24px;
+  /* 文字が下からスッと現れるアニメーションの準備 */
+  overflow: hidden;
+}
+
+.comic-dialogue span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.comic-panel.is-reading .comic-dialogue span {
+  transform: translateY(0);
+}
+
+.comic-caption {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--c-dark);
+  margin: 0;
+  border-top: 1px dashed var(--c-border);
+  padding-top: 16px;
+}
+
+/* --- 特殊効果（SCENE 03：絶望） --- */
+.is-shock.is-reading .comic-panel-inner {
+  border-color: var(--c-danger);
+  box-shadow: 12px 12px 0 rgba(211, 47, 47, 0.2);
+  /* ショックで画面が揺れるアニメーション */
+  animation: shockShake 0.4s ease-in-out;
+}
+@keyframes shockShake {
+  0%, 100% { transform: scale(1) translateX(0); }
+  25% { transform: scale(1.02) translateX(-4px); }
+  50% { transform: scale(1.02) translateX(4px); }
+  75% { transform: scale(1.02) translateX(-4px); }
+}
+
+/* --- 特殊効果（SCENE 04：損失） --- */
+.is-loss.is-reading .comic-panel-inner {
+  background: var(--c-light);
+  border-color: var(--c-gray);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.05);
+  filter: grayscale(100%);
+}
+
+/* --- 結論パネル --- */
+.panel-conclusion .comic-panel-inner {
+  background: rgba(15, 44, 89, 0.03); /* 監査カラーの背景 */
+  border: 3px solid var(--c-accent);
+  box-shadow: none;
+}
+.comic-conclusion-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--c-black);
+  margin-bottom: 24px;
+}
+.comic-conclusion-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--c-dark);
+  margin: 0;
+}
+
+/* スワイプヒントの点滅 */
+.comic-swipe-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--c-gray);
+  margin-top: 16px;
+  animation: flashHint 2s infinite;
+}
+@media (min-width: 769px) { .comic-swipe-hint { display: none; } }
 
 /* ディレクトリ（目次）グリッド */
 .directory-grid {
@@ -1467,15 +2020,162 @@ p { margin: 0 0 1.5rem; }
   .directory-item:nth-child(even) { padding-left: 40px; }
 }
 
-/* 解決策フロー表 */
-.solution-table { width: 100%; border-collapse: collapse; border: 1px solid var(--c-black); background: var(--c-white); }
-.solution-table th, .solution-table td { padding: 20px; border-bottom: 1px solid var(--c-border); text-align: left; }
-.solution-table th { width: 30%; background: var(--c-light); font-weight: bold; border-right: 1px solid var(--c-border); }
-.solution-table tr:last-child th, .solution-table tr:last-child td { border-bottom: none; }
-@media (max-width: 768px) {
-  .solution-table th, .solution-table td { display: block; width: 100%; }
-  .solution-table th { border-right: none; border-bottom: 1px dashed var(--c-border); padding-bottom: 8px; }
-  .solution-table td { padding-top: 8px; }
+/* ==============================================
+   Top Page: Interactive Audit UI (インデックス切り替え)
+============================================== */
+.interactive-audit {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- 番号ナビゲーション（ガラス上のスイッチ） --- */
+/* --- 番号ナビゲーション（1画面・横4列等分UI） --- */
+.audit-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 画面幅を正確に4等分する */
+  gap: 8px; /* スマホでは隙間を最小限に */
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(15, 44, 89, 0.1);
+}
+
+.audit-nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 狭い幅に収めるため中央揃えに変更 */
+  padding: 0;
+  transition: all 0.3s ease;
+  opacity: 0.4; /* 非アクティブ時は薄く */
+}
+
+/* アクティブな番号のスタイル */
+.audit-nav-btn.is-active {
+  opacity: 1;
+}
+
+.nav-num {
+  font-family: var(--font-mono);
+  /* スマホ画面に合わせて文字サイズを自動縮小 */
+  font-size: clamp(1.5rem, 5.5vw, 2.5rem); 
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--c-black); 
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.audit-nav-btn.is-active .nav-num {
+  color: var(--c-accent); 
+  -webkit-text-stroke: 0;
+  text-shadow: 0 4px 8px rgba(15, 44, 89, 0.15); 
+  transform: scale(1.1); 
+  transform-origin: center bottom; /* 中央揃えに合わせて中心から拡大 */
+}
+
+.nav-label {
+  /* 文字が折り返さない限界のサイズに自動調整 */
+  font-size: clamp(0.65rem, 2.5vw, 0.85rem); 
+  font-weight: bold;
+  color: var(--c-black);
+  margin-top: 8px;
+  text-align: center;
+  white-space: nowrap; /* 【重要】文字の折り返しを強制的に禁止 */
+  letter-spacing: 0; /* 狭い幅に入れるため字間を詰める */
+}
+
+/* PC表示時の最適化（ゆとりを持たせて左寄せに戻す） */
+@media (min-width: 769px) {
+  .audit-nav {
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+  .audit-nav-btn {
+    align-items: flex-start; /* PCでは左寄せが美しい */
+  }
+  .nav-num {
+    font-size: 3rem;
+  }
+  .audit-nav-btn.is-active .nav-num {
+    transform-origin: left bottom;
+  }
+  .nav-label {
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+  }
+}
+
+/* --- コンテンツエリア（箱なし・背景なし） --- */
+.audit-content-area {
+  min-height: 180px; /* 切り替え時のガタつき防止 */
+  position: relative;
+}
+
+.audit-panel {
+  display: none; /* 初期状態は非表示 */
+}
+
+.audit-panel.is-active {
+  display: block;
+  animation: panelFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes panelFadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.audit-panel-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--c-black);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.audit-panel-note {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--c-gray);
+  font-weight: normal;
+  margin-left: 12px;
+}
+
+.audit-panel-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--c-dark);
+  margin: 0;
+}
+
+/* --- 特別枠（常に表示・うっすらガラス感） --- */
+.audit-special {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px dashed rgba(15, 44, 89, 0.2);
+  position: relative;
+}
+
+.special-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: bold;
+  background: var(--c-black);
+  color: var(--c-white);
+  padding: 4px 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+}
+
+.audit-special-note {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--c-danger);
+  font-weight: bold;
+  margin-top: 16px;
 }
 
 
