@@ -1648,75 +1648,105 @@ body, main, .section, .container, .reveal { overflow: visible !important; }
   background: var(--c-accent);
 }
 
-/* --- 01. レポート比較（ダブル・スティッキー＆完全不透明化） --- */
+/* ==============================================
+   01. レポート比較（ダブル・スティッキー＆SP圧縮化）
+============================================== */
 body, main, .section, .container, .reveal, .report-scroll-container {
   overflow: visible !important; 
 }
 
-/* スクロールコンテナの基本設定 */
-.report-scroll-container {
-  position: relative;
-  /* Afterが止まっている時間を確保するための余白 */
-  padding-bottom: 20vh; 
-}
+/* --- ベース配置 --- */
+.report-scroll-container { position: relative; padding-bottom: 20vh; }
+@media (min-width: 769px) { .report-scroll-container { max-width: 800px; margin: 0 auto; } }
 
-@media (min-width: 769px) {
-  .report-scroll-container { max-width: 800px; margin: 0 auto; }
-}
+/* タイトル周りの基本余白 */
+.results-heading-wrapper { margin-bottom: 24px; }
+.results-heading { margin-bottom: 16px; font-size: 1.5rem; font-weight: 900; }
+.results-desc { color: var(--c-dark); font-weight: bold; line-height: 1.8; margin: 0; }
 
-/* ★ 1段階目：Beforeを固定するラッパー */
-.sticky-wrapper {
-  position: -webkit-sticky !important; 
-  position: sticky !important;
-  /* ヘッダーの高さ＋少しの余白で止まる */
-  top: calc(var(--header-height) + 24px) !important; 
-  z-index: 1;
-}
+/* Sticky動作の基盤 */
+.sticky-wrapper { position: -webkit-sticky !important; position: sticky !important; top: calc(var(--header-height, 60px) + 16px) !important; z-index: 1; }
+.overlay-wrapper { position: relative; z-index: 2; margin-top: 80vh; height: 120vh; }
 
-/* Beforeパネル本体 */
-.report-panel-before {
-  background: rgba(245, 245, 245, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 40px 24px; 
-  opacity: 0.7; 
-  filter: grayscale(50%);
-}
+.report-panel-before { background: rgba(245, 245, 245, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 40px 24px; opacity: 0.7; filter: grayscale(50%); }
+.overlay-panel { background: var(--c-white) !important; box-shadow: 0 -20px 60px rgba(15, 44, 89, 0.15); border-top: 4px solid var(--c-accent); border-radius: 20px; padding: 40px 24px; position: -webkit-sticky !important; position: sticky !important; top: calc(var(--header-height, 60px) + 16px) !important; }
 
-/* ★ Afterパネルの親枠（ここでスクロール距離＝タメを作る） */
-.overlay-wrapper {
-  position: relative;
-  z-index: 2;
-  /* Beforeが固定された後、この距離をスクロールすると被さってくる */
-  margin-top: 80vh; 
-  /* Afterパネル自体を止まらせるための「遊び」の高さ */
-  height: 180vh; 
-}
+/* パネル内の共通要素ベースサイズ */
+.visual-funnel { margin-bottom: 40px; }
+.clean-list { margin-bottom: 40px; }
+.f-large { font-size: 1.2rem; }
+.panel-note { font-size: 0.9rem; margin-top: 16px; }
 
-/* ★ 2段階目：Afterパネル本体（完全に透けない白＋ストップ機能） */
-.overlay-panel {
-  /* 【改善】背景を完全な白（不透明）に変更 */
-  background: var(--c-white) !important; 
-  box-shadow: 0 -20px 60px rgba(15, 44, 89, 0.15);
-  border-top: 4px solid var(--c-accent); 
-  border-radius: 20px;
-  padding: 40px 24px; 
-  
-  /* 【改善】被さった後、Afterパネル自身もピタッと止まる */
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  /* Beforeパネルのタイトルごと覆い隠す位置でストップ */
-  top: calc(var(--header-height) + 24px) !important; 
-}
-
+/* PC用の余白 */
 @media (min-width: 769px) {
   .report-panel-before, .overlay-panel { padding: 48px 48px; }
 }
 
+
+/* ==============================================
+   ★ SP専用：超圧縮サイズ設定（料金表と同等の密度）
+============================================== */
 @media (max-width: 768px) {
-  .report-panel-before, .overlay-panel { padding: 32px 16px; } 
+  
+  /* タイトル周りの圧縮 */
+  .results-heading-wrapper { margin-bottom: 16px; }
+  .results-heading { font-size: 1.2rem; margin-bottom: 8px; }
+  .results-desc { font-size: 0.85rem; line-height: 1.6; }
+
+  /* パネル自体の余白圧縮 */
+  .report-panel-before, .overlay-panel { 
+    padding: 20px 16px !important; 
+    border-radius: 12px;
+  }
+
+  /* バッジの圧縮 */
+  .panel-badge { font-size: 0.75rem; padding: 4px 8px; margin-bottom: 16px; }
+  
+  /* Before: モックデータの圧縮 */
+  .raw-row { font-size: 0.8rem; padding: 6px 0; }
+  .panel-note { font-size: 0.75rem; margin-top: 8px; }
+
+  /* After: ファネルの圧縮（横並びを強制し、極限まで圧縮） */
+  .visual-funnel { 
+    margin-bottom: 20px; 
+    display: flex; 
+    flex-direction: row; /* 縦並びを解除し横並びに強制 */
+    align-items: center; 
+    justify-content: space-between;
+    gap: 4px; /* 要素間の隙間を極小化 */
+  }
+  .funnel-step { 
+    padding: 8px 4px; /* 左右の余白を削る */
+    flex: 1; /* 3つのステップが均等に幅を取るようにする */
+    text-align: center; 
+    max-width: none; /* 前回のmax-width制限を解除 */
+  }
+  .f-num { font-size: 1.15rem; display: block; line-height: 1.2; }
+  /* スマホで文字が折り返して崩れないよう white-space: nowrap を指定 */
+  .f-label { font-size: 0.65rem; display: block; white-space: nowrap; margin-top: 4px; }
+  
+  /* 矢印の調整（横向きの形を維持し、潰れないようにする） */
+  .f-arrow { 
+    width: 16px; 
+    height: auto; 
+    margin: 0; 
+    flex-shrink: 0; 
+  }
+  
+  /* After: リストの圧縮 */
+  .clean-list { margin-bottom: 20px; }
+  .clean-list li { font-size: 0.85rem; padding: 8px 12px; margin-bottom: 8px; }
+  .f-large { font-size: 1rem; }
+
+  /* After: アクションボックスの圧縮 */
+  .action-box { padding: 16px 12px; }
+  .action-label { font-size: 0.7rem; margin-bottom: 8px; }
+  .action-box p { font-size: 0.8rem; line-height: 1.6; }
+  
+  /* Sticky位置の微調整（画面の狭さに合わせて上部ギリギリで止める） */
+  .sticky-wrapper, .overlay-panel {
+    top: calc(var(--header-height, 60px) + 8px) !important;
+  }
 }
 
 /* （中略：ラベルバッジ、タイトル、図解、リスト、アクション箱のスタイルは前のターンと同じでOK） */
