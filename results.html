@@ -84,80 +84,106 @@
 
   <main>
     
-    <section class="results-hero">
+    <section class="results-hero" style="background: transparent;">
       <div class="container">
-        <h1 class="results-title">レポート・作業ログ（サンプル）</h1>
-        <p class="results-lead">
+        <h1 class="results-title" style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem);">
+          Insight &<br>Improvement.
+        </h1>
+        <p class="results-lead" style="font-size: 1.1rem; line-height: 1.8;">
           改善プロセスでご提出する報告書や作業記録のサンプルです。<br>
           データをどのように整理し、改善の検討につなげているかをご紹介します。
         </p>
       </div>
     </section>
 
-    <section class="section">
+   <section class="section" style="background: transparent;">
       <div class="container reveal">
-        <h2 class="results-heading">01. アクセス状況レポートの例</h2>
-        <p class="u-mb-40">専門用語をできるだけ減らし、求職者の行動を「店舗への来店」などに例えて、現状を把握しやすい形に整理してご報告します。</p>
 
-        <div class="report-comparison">
+        <div class="report-scroll-container">
           
-          <div class="data-panel-raw">
-            <div class="data-panel-title">
-              <span aria-hidden="true">✖</span> 一般的なアクセス解析データ
+          <div class="sticky-wrapper">
+            <div class="results-heading-wrapper" style="margin-bottom: 24px;">
+              <h2 class="results-heading" style="margin-bottom: 16px;">01. アクセス状況レポートの例</h2>
+              <p style="color: var(--c-dark); font-weight: bold; line-height: 1.8;">専門用語をできるだけ減らし、求職者の行動を「店舗への来店」などに例えて、現状を把握しやすい形に整理してご報告します。</p>
             </div>
-            <ul class="raw-list">
-              <li><span>Users:</span> <span>142</span></li>
-              <li><span>Sessions:</span> <span>165</span></li>
-              <li><span>Bounce Rate:</span> <span>68.5%</span></li>
-              <li><span>Avg. Session Duration:</span> <span>00:01:20</span></li>
-              <li><span>Conversion Rate:</span> <span>1.2%</span></li>
-            </ul>
-            <p style="margin-top: 24px; color: var(--c-danger); font-size: 0.9rem;">※専門用語が多く、課題が直感的に把握しにくい形式</p>
-          </div>
-
-          <div class="dashboard-mockup">
-            <div class="dashboard-header">
-              <span>REMEDORA レポート（例）</span>
-              <span style="font-weight: normal; font-size: 0.9rem;">202X年X月度</span>
+            
+            <div class="report-panel-before">
+              <div class="panel-badge bad">✖ 一般的なアクセス解析データ</div>
+              <div class="raw-data-mock">
+                <div class="raw-row"><span>Users</span> <span>142</span></div>
+                <div class="raw-row"><span>Sessions</span> <span>165</span></div>
+                <div class="raw-row"><span>Bounce Rate</span> <span>68.5%</span></div>
+                <div class="raw-row"><span>Avg. Session Duration</span> <span>00:01:20</span></div>
+                <div class="raw-row"><span>Conversion Rate</span> <span>1.2%</span></div>
+              </div>
+              <p class="panel-note text-danger fw-bold" style="font-size: 0.9rem;">※専門用語が多く、課題が直感的に把握しにくい形式</p>
             </div>
-            <div class="dashboard-body">
+          </div> <div class="overlay-wrapper">
+            <div class="report-panel-after overlay-panel">
+              <div class="panel-badge good">REMEDORA レポート（例） / 202X年X月度</div>
               
-              <div class="visual-flow">
-                <div class="flow-step-box">
-                  <span class="num">150</span>
-                  <span class="label">入店(PV)</span>
+              <div class="visual-funnel u-mb-40">
+                <div class="funnel-step">
+                  <span class="f-num">150</span>
+                  <span class="f-label">入店 (PV)</span>
                 </div>
-                <span class="flow-arrow">→</span>
-                <div class="flow-step-box">
-                  <span class="num">45</span>
-                  <span class="label">商品閲覧</span>
+                <div class="f-arrow"></div>
+                <div class="funnel-step">
+                  <span class="f-num">45</span>
+                  <span class="f-label">商品閲覧</span>
                 </div>
-                <span class="flow-arrow">→</span>
-                <div class="flow-step-box" style="border-color: var(--c-danger); background: #fff5f5;">
-                  <span class="num" style="color: var(--c-danger);">2</span>
-                  <span class="label">レジ通過</span>
+                <div class="f-arrow text-danger" style="border-color: var(--c-danger);"></div>
+                <div class="funnel-step f-danger">
+                  <span class="f-num text-danger">2</span>
+                  <span class="f-label text-danger">レジ通過</span>
                 </div>
               </div>
 
-              <ul class="translated-list">
-                <li>
-                  <span>お店に来た人（LP閲覧数）</span>
-                  <span class="highlight">150人</span>
-                </li>
-                <li>
-                  <span>募集要項まで読んだ人</span>
-                  <span>45人 (30%)</span>
-                </li>
-                <li style="color: var(--c-danger);">
-                  <span>応募フォームで離脱した人</span>
-                  <span>43人 (カゴ落ち)</span>
-                </li>
+              <ul class="clean-list u-mb-40">
+                <li><strong>お店に来た人（LP閲覧数）</strong>：<span class="text-accent" style="font-size: 1.2rem;">150人</span></li>
+                <li><strong>募集要項まで読んだ人</strong>：45人 (30%)</li>
+                <li class="text-danger"><strong>応募フォームで離脱した人</strong>：43人 (カゴ落ち)</li>
               </ul>
 
-              <div class="next-action">
-                → 改善案の例：応募フォームの入力項目を削減し、入力途中での離脱（カゴ落ち）を防ぐテストを行います。
+              <div class="action-box">
+                <span class="action-label">NEXT ACTION</span>
+                <p>→ 改善案の例：応募フォームの入力項目を削減し、入力途中での離脱（カゴ落ち）を防ぐテストを行います。</p>
               </div>
+            </div>
+          </div> </div>
+      </div>
+    </section>
 
+    <section class="section" style="background: transparent;">
+      <div class="container reveal">
+        <div class="editorial-header">
+          <h2 class="editorial-title">02. 作業ログ・改善プロセスの例</h2>
+          <p class="editorial-subtitle">どのような意図で施策を行ったのか、背景となる仮説と結果の確認プロセスを記録として共有します。</p>
+        </div>
+
+        <div class="glass-log-timeline u-mt-40">
+          
+          <div class="log-item">
+            <div class="log-node node-hypo">仮説</div>
+            <div class="log-content glass-card">
+              <div class="log-meta">[202X-10-01 10:15:32] HYPOTHESIS</div>
+              <p class="log-text">スマホ表示時、応募ボタンが画面外にあり、気付かれにくい状態になっている可能性がある。</p>
+            </div>
+          </div>
+
+          <div class="log-item">
+            <div class="log-node node-act">実行</div>
+            <div class="log-content glass-card border-accent">
+              <div class="log-meta">[202X-10-01 14:20:11] ACTION</div>
+              <p class="log-text fw-bold">画面下部に固定で表示される「応募ボタン」を実装。視認性を高める配色を採用して様子を見る。</p>
+            </div>
+          </div>
+
+          <div class="log-item">
+            <div class="log-node node-res">結果</div>
+            <div class="log-content glass-card">
+              <div class="log-meta">[202X-10-08 09:00:45] RESULT</div>
+              <p class="log-text">実装後7日間の計測結果（例）：ボタンのタップ率が <strong class="text-accent">0.8% → 2.4%</strong> へ向上したため、この配置を継続して様子を見る。</p>
             </div>
           </div>
 
@@ -165,67 +191,34 @@
       </div>
     </section>
 
-    <section class="terminal-section">
+    <section class="section" style="background: transparent;">
       <div class="container reveal">
-        <h2 class="results-heading text-white">02. 作業ログ・改善プロセスの例</h2>
-        <p class="text-white u-mb-40" style="opacity: 0.8;">どのような意図で施策を行ったのか、背景となる仮説と結果の確認プロセスを記録として共有します。</p>
-
-        <div class="results-terminal">
-          <div class="terminal-header">
-            <div class="terminal-dots"><span></span><span></span><span></span></div>
-            remedora_audit.log — -bash — 80x24
+        
+        <div class="policy-box">
+          <div class="policy-header">
+            <span class="policy-num">03.</span>
+            <h2 class="policy-title">計測データの共有</h2>
           </div>
-          <div class="terminal-body">
-            
-            <div class="log-entry">
-              <span class="log-time">[202X-10-01 10:15:32]</span>
-              <span class="log-type hypo">HYPOTHESIS</span>
-              <span class="log-message">スマホ表示時、応募ボタンが画面外にあり、気付かれにくい状態になっている可能性がある。</span>
-            </div>
-            
-            <div class="log-entry">
-              <span class="log-time">[202X-10-01 14:20:11]</span>
-              <span class="log-type act">ACTION</span>
-              <span class="log-message">画面下部に固定で表示される「応募ボタン」を実装。視認性を高める配色を採用して様子を見る。</span>
-            </div>
-            
-            <div class="log-entry">
-              <span class="log-time">[202X-10-08 09:00:45]</span>
-              <span class="log-type res">RESULT</span>
-              <span class="log-message">実装後7日間の計測結果（例）：ボタンのタップ率が 0.8% → 2.4% へ向上したため、この配置を継続して様子を見る。</span>
-            </div>
-
-            <div class="log-entry" style="opacity: 0.5;">
-              <span class="log-time">[202X-10-08 09:05:22]</span>
-              <span class="log-message">_</span> </div>
-
+          
+          <div class="policy-body">
+            <p class="policy-text">
+              REMEDORAでは、可能な範囲でGA4などの計測データをお客様にもご確認いただける状態での進行を推奨しています。<br>
+              実際の数値状況を共有し、状況を把握しながら次の改善策をご一緒に検討いたします。
+            </p>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container reveal">
-        <div class="transparency-box">
-          <div class="transparency-icon">🔓</div>
-          <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 16px;">計測データの共有</h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-            REMEDORAでは、可能な範囲でGA4などの計測データをお客様にもご確認いただける状態での進行を推奨しています。<br>
-            実際の数値状況を共有し、状況を把握しながら次の改善策をご一緒に検討いたします。
-          </p>
-        </div>
       </div>
     </section>
 
     <section class="section section-dark text-center">
       <div class="container reveal">
-        <h2 class="text-white" style="font-size: 2rem; margin-bottom: 24px;">まずは自社の現状を確認する</h2>
-        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h2 class="text-white" style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 24px; font-weight: 900;">まずは自社の現状を確認する</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
           貴社の現在の求人情報やWeb上の見え方を確認し、<br>
           取りこぼしが起きていそうな箇所とその改善案を無料でご提示します。
         </p>
-        <a href="contact.html" class="btn btn-outline" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_results_footer">
+        <a href="contact.html" class="btn btn-outline btn-large" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_results_footer">
           無料相談・診断を予約する
         </a>
       </div>

@@ -84,121 +84,164 @@
 
   <main>
 
-    <header class="container page-header-minimal">
-      <h1>Corporate Policy</h1>
-      <p>REMEDORAの事業方針・姿勢</p>
+    <header class="container page-header-minimal" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative;">
+      <div class="header-content" style="margin-top: -10vh;">
+        <h1 style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem);">Corporate<br>Policy.</h1>
+        <p>REMEDORAの事業方針・姿勢</p>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span class="scroll-text">SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
     </header>
 
-    <section class="container reveal">
-      <div class="corporate-statement">
-        <h2 class="statement-catch">
-          推測に頼らず、<br>
-          事実から採用導線を整える。
-        </h2>
-        <div class="statement-text">
-          <p>
-            求人を出しても応募に至らない原因の一つに、受け皿となるWeb上の「情報不足や導線の分かりにくさ」があります。リンクの切れ、スマートフォンでの読みにくさ、必要な労働条件の記載漏れなど、小さな懸念が重なることで、求職者は検討を見送ってしまいます。
-          </p>
-          <p>
-            REMEDORAは、そうした「見過ごされがちな離脱の要因」をデータから把握し、求職者に自社の魅力が伝わりやすい状態へと改善するWebサービスです。経験則や推測だけで判断するのではなく、アクセス状況や法令要件といった「事実」に基づき、実務に即した採用のWeb環境を整えます。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container reveal">
-      <h2 class="text-center u-mb-64" style="font-size: 1.5rem; letter-spacing: 0.05em;">3つの事業方針</h2>
-      
-      <div class="policy-stack">
+    <section id="statement-scroll-area" style="height: 350vh; position: relative; background: transparent;">
+      <div class="sticky-viewport">
         
-        <article class="policy-row">
-          <div class="policy-label">Policy 01</div>
-          <div class="policy-content">
-            <h3>根拠と作業プロセスの共有</h3>
-            <p>
-              施策の理由や結果について、ブラックボックス化を防ぎます。Google アナリティクス 4（GA4）の計測データを共有し、どのようなデータに基づいて改善を行ったのか、作業内容と数値を分かりやすくご報告します。
-            </p>
-          </div>
-        </article>
-
-        <article class="policy-row">
-          <div class="policy-label">Policy 02</div>
-          <div class="policy-content">
-            <h3>法令に配慮した情報整備</h3>
-            <p>
-              見栄えや過剰な宣伝文句よりも、求職者にとって誠実な情報開示を優先します。2024年4月施行の職業安定法改正に伴う「従事すべき業務の変更の範囲」などの明示事項を制作ページ内に組み込み、求職者の不安を和らげます。
-            </p>
-          </div>
-        </article>
-
-        <article class="policy-row">
-          <div class="policy-label">Policy 03</div>
-          <div class="policy-content">
-            <h3>応募へのスムーズな導線確保</h3>
-            <p>
-              提案だけで終わらせず、Web上の設定実務まで一貫してサポートします。求人媒体から採用ページへの連携、スマートフォンでの読みやすさ、応募ボタンの正常な動作確認など、求職者が迷わず行動できる導線を丁寧に整えます。
-            </p>
-          </div>
-        </article>
+        <div class="st-item js-st-item ">
+          <h2 class="statement-catch-sp">
+            推測に頼らず、<br>事実から採用導線を整える。
+          </h2>
+        </div>
+        
+        <div class="st-item js-st-item">
+          <p>求人を出しても応募に至らない原因の一つに、受け皿となるWeb上の「情報不足や導線の分かりにくさ」があります。</p>
+        </div>
+        
+        <div class="st-item js-st-item">
+          <p>リンクの切れ、スマートフォンでの読みにくさ、必要な労働条件の記載漏れなど、小さな懸念が重なることで、求職者は検討を見送ってしまいます。</p>
+        </div>
+        
+        <div class="st-item js-st-item">
+          <p>REMEDORAは、そうした「見過ごされがちな離脱の要因」をデータから把握し、求職者に自社の魅力が伝わりやすい状態へと改善するWebサービスです。</p>
+        </div>
+        
+        <div class="st-item js-st-item">
+          <p>経験則や推測だけで判断するのではなく、アクセス状況や法令要件といった「事実」に基づき、実務に即した採用のWeb環境を整えます。</p>
+        </div>
 
       </div>
     </section>
 
-    <section class="container reveal">
-      <div class="ceo-letter">
-        <div>
-          <img src="assets/img/profile-photo-placeholder.jpg" alt="代表：勇翔" class="ceo-photo">
+    <section class="section" style="background: var(--c-light); padding-top: 80px; overflow: visible;">
+      <div class="container reveal" style="overflow: visible;">
+        
+        <div class="policy-stack-grid">
+          
+          <div class="policy-layer layer-1">
+            <h2 class="policy-title">3つの事業方針</h2>
+            <article class="policy-card card-base">
+              <div class="policy-num">01</div>
+              <div class="policy-content">
+                <h3>根拠と作業プロセスの共有</h3>
+                <p>施策の理由や結果について、ブラックボックス化を防ぎます。Google アナリティクス 4（GA4）の計測データを共有し、どのようなデータに基づいて改善を行ったのか、作業内容と数値を分かりやすくご報告します。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="policy-layer layer-2">
+            <article class="policy-card card-overlay overlay-2">
+              <div class="policy-num">02</div>
+              <div class="policy-content">
+                <h3>法令に配慮した情報整備</h3>
+                <p>見栄えや過剰な宣伝文句よりも、求職者にとって誠実な情報開示を優先します。2024年4月施行の職業安定法改正に伴う「従事すべき業務の変更の範囲」などの明示事項を制作ページ内に組み込み、求職者の不安を和らげます。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="policy-layer layer-3">
+            <article class="policy-card card-overlay overlay-3" style="border-top-color: var(--c-black);">
+              <div class="policy-num" style="color: var(--c-black);">03</div>
+              <div class="policy-content">
+                <h3>応募へのスムーズな導線確保</h3>
+                <p>提案だけで終わらせず、Web上の設定実務まで一貫してサポートします。求人媒体から採用ページへの連携、スマートフォンでの読みやすさ、応募ボタンの正常な動作確認など、求職者が迷わず行動できる導線を丁寧に整えます。</p>
+              </div>
+            </article>
+          </div>
+
         </div>
-        <div class="ceo-body">
-          <h3>取りこぼしを防ぐ、実務のサポートを。</h3>
-          <div class="ceo-text">
-            <p>
+
+      </div>
+    </section>
+
+    <section class="section" style="background: transparent; padding: 80px 0;">
+      <div class="container">
+        <div class="ceo-chat-section">
+          
+          <div class="ceo-intro-simple">
+            <img src="assets/img/profile-photo-placeholder.jpg" alt="代表：勇翔" class="ceo-chat-photo-center">
+            <div class="ceo-name-badge-center">
+              <span class="ceo-role-badge">REMEDORA 代表</span>
+              <span class="ceo-name-text">勇翔</span>
+            </div>
+          </div>
+          
+          <div class="chat-timeline">
+            <div class="chat-bubble js-chat-bubble catch-bubble">
+              取りこぼしを防ぐ、<br>実務のサポートを。
+            </div>
+            <div class="chat-bubble js-chat-bubble">
               採用活動において求人を出すことは重要ですが、その情報の受け皿となるWebページやGoogleマップが整理されていないと、興味を持った求職者が応募前に離脱してしまう可能性があります。
-            </p>
-            <p>
-              私はこの「情報不足による取りこぼし」を、Webの仕組みとデータを使って少しでも減らしたいと考えています。<br>
-              大掛かりなシステム導入ではなく、今ある情報の整理とデータ計測を通じて、貴社と求職者が正しく出会える状態を作るお手伝いをいたします。小さな事業者だからこそできる、地に足の着いた実務サポートを提供いたします。
-            </p>
+            </div>
+            <div class="chat-bubble js-chat-bubble">
+              私はこの「情報不足による取りこぼし」を、Webの仕組みとデータを使って少しでも減らしたいと考えています。
+            </div>
+            <div class="chat-bubble js-chat-bubble">
+              大掛かりなシステム導入ではなく、今ある情報の整理とデータ計測を通じて、貴社と求職者が正しく出会える状態を作るお手伝いをいたします。
+            </div>
+            <div class="chat-bubble js-chat-bubble">
+              小さな事業者だからこそできる、地に足の着いた実務サポートを提供いたします。
+            </div>
           </div>
-          <div class="ceo-sign">
-            勇翔 <span>REMEDORA 代表</span>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section bg-light" style="border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border);">
+    <section class="section bg-light" style="border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); padding: 60px 0;">
       <div class="container reveal">
-        <h2 class="text-center u-mb-40" style="font-size: 1.5rem; letter-spacing: 0.05em;">セキュリティ・ポリシー</h2>
-        
-        <div style="max-width: 800px; margin: 0 auto; background: var(--c-white); padding: 40px; border: 1px solid var(--c-border);">
-          <h3 class="text-main fw-bold u-mb-24" style="font-size: 1.1rem; border-bottom: 2px solid var(--c-black); padding-bottom: 16px; display: inline-block;">
-            ログイン情報の非保持について
-          </h3>
-          <p class="text-body u-mb-24" style="line-height: 1.8;">
-            REMEDORAでは、セキュリティの観点からお客様のGoogleアカウントや求人サイトの<strong>ログインパスワードはお預かりいたしません。</strong><br>
-            作業を行う際は、各サービスに備わっている「権限の付与（ユーザー追加など）」の機能を利用して進行する方針をとっております。
+        <div class="app-settings-wrapper">
+          <div class="app-settings-header">
+            <h2 class="sec-title-sp">セキュリティ・ポリシー</h2>
+            <p class="sec-subtitle-sp">ログイン情報の非保持について</p>
+          </div>
+          <p class="app-settings-desc">
+            REMEDORAでは、セキュリティの観点からお客様のGoogleアカウントや求人サイトの<strong>ログインパスワードはお預かりいたしません。</strong>作業を行う際は、各サービスに備わっている「権限の付与」の機能を利用して進行いたします。
           </p>
-          <ul class="step-list text-small">
-            <li>Google ビジネスプロフィール：管理者権限などの付与</li>
-            <li>GA4：閲覧・編集権限などの付与</li>
-            <li>求人サービス：利用可能な範囲での作業権限付与</li>
+          <ul class="app-list-ui">
+            <li>
+              <div class="app-list-text">
+                <strong>Google ビジネスプロフィール</strong>
+                <span>管理者権限などの付与</span>
+              </div>
+            </li>
+            <li>
+              <div class="app-list-text">
+                <strong>Google アナリティクス (GA4)</strong>
+                <span>閲覧・編集権限などの付与</span>
+              </div>
+            </li>
+            <li>
+              <div class="app-list-text">
+                <strong>各種求人サービス</strong>
+                <span>利用可能な範囲での作業権限付与</span>
+              </div>
+            </li>
           </ul>
-          <p class="text-muted text-small u-mt-24">
-            ※作業完了後やサポート終了時には、貴社側でいつでも当方の権限を解除していただけます。
-          </p>
+          <p class="app-settings-note">※作業完了後やサポート終了時には、貴社側でいつでも当方の権限を解除していただけます。</p>
         </div>
       </div>
     </section>
 
     <section class="section section-dark text-center">
       <div class="container reveal">
-        <h2 class="text-white" style="font-size: 2rem; margin-bottom: 24px;">まずは現状の確認から。</h2>
-        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h2 class="text-white" style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 24px; font-weight: 900;">まずは現状の確認から。</h2>
+        <p class="text-white u-mb-40" style="opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
           貴社の現在の求人情報やWeb上の見え方を確認し、<br>
           取りこぼしが起きていそうな箇所とその改善案を無料でご提示します。
         </p>
-        <a href="contact.html" class="btn btn-outline" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_about_footer">
+        <a href="contact.html" class="btn btn-outline btn-large" style="color: var(--c-white); border-color: var(--c-white);" data-ga-event="click_about_footer">
           無料相談・診断を予約する
         </a>
       </div>
@@ -225,6 +268,8 @@
       </div>
     </div>
   </aside>
+
+  
 
   <footer class="footer">
     <div class="container">
@@ -272,11 +317,6 @@
     </div>
   </footer>
 
-  <div class="sp-fixed-cta" aria-hidden="false">
-    <a href="contact.html" class="btn btn-primary btn-full" data-ga-event="click_sp_fixed_cta">
-      無料相談・診断に申し込む
-    </a>
-  </div>
 
   <script src="assets/js/main.js"></script>
 

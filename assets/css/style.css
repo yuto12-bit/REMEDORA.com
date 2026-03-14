@@ -749,7 +749,9 @@ p { margin: 0 0 1.5rem; }
 .doc-section { margin-bottom: 100px; scroll-margin-top: calc(var(--header-height) + 40px); }
 .doc-section-title { font-size: 1.75rem; border-bottom: 1px solid var(--c-border); padding-bottom: 16px; margin-bottom: 40px; letter-spacing: 0.05em; font-weight: 900; }
 
-/* 01. 緻密な比較テーブル */
+/* ==============================================
+   01. 緻密な比較テーブル (スマホ縦サイズ極限圧縮版)
+============================================== */
 .spec-table-wrapper { overflow-x: auto; margin-bottom: 40px; border: 1px solid var(--c-border); }
 .spec-table { width: 100%; min-width: 700px; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
 .spec-table th, .spec-table td { padding: 20px; border-bottom: 1px solid var(--c-border); border-right: 1px solid var(--c-border); }
@@ -763,7 +765,7 @@ p { margin: 0 0 1.5rem; }
 
 /* --- テーブル横スクロールのヒント（スマホ専用） --- */
 .table-scroll-hint {
-  display: none; /* PCでは非表示 */
+  display: none; 
   text-align: right;
   font-size: 0.8rem;
   color: var(--c-gray);
@@ -777,18 +779,19 @@ p { margin: 0 0 1.5rem; }
   50% { opacity: 1; }
 }
 
-/* スマホ表示時の設定 */
+/* ==============================================
+   スマホ表示時の設定（縦サイズを削り1画面に収める）
+============================================== */
 @media (max-width: 768px) {
   .table-scroll-hint {
-    display: block; /* スマホのみ表示 */
+    display: block;
   }
   
-  /* スクロールバー自体もスマホで見えやすくする */
   .spec-table-wrapper {
     -webkit-overflow-scrolling: touch;
   }
   .spec-table-wrapper::-webkit-scrollbar {
-    height: 6px;
+    height: 4px; /* スクロールバーを細くして場所を取らせない */
   }
   .spec-table-wrapper::-webkit-scrollbar-track {
     background: var(--c-light);
@@ -796,6 +799,51 @@ p { margin: 0 0 1.5rem; }
   .spec-table-wrapper::-webkit-scrollbar-thumb {
     background: var(--c-gray);
     border-radius: 4px;
+  }
+
+  /* テーブルのサイズ感圧縮 */
+  .spec-table {
+    min-width: 520px; /* 横スクロールはするが、元の700pxより縮めてコンパクトに */
+    font-size: 0.75rem; /* 全体の文字サイズを縮小 */
+  }
+  
+  /* セルの余白と行間を極限まで削る */
+  .spec-table th, .spec-table td {
+    padding: 10px 8px; /* 縦の余白をPC時の半分に */
+    line-height: 1.3;
+  }
+  
+  /* ヘッダーの調整 */
+  .spec-table thead th {
+    font-size: 0.8rem;
+    padding: 12px 8px;
+    white-space: normal; /* 折り返しを許容して横幅を節約 */
+  }
+  
+  /* 左側の項目列の幅調整 */
+  .spec-table tbody th {
+    width: 28%;
+    font-size: 0.75rem;
+  }
+  
+  /* 記号やバッジの縮小 */
+  .spec-table .check { font-size: 1rem; }
+  .spec-table .cross { font-size: 0.9rem; }
+  .spec-table .label-tag {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+    margin: 4px 0 0 !important; /* 上の隙間を詰める */
+  }
+  
+  /* HTML直書きのインラインスタイル（1.5remなど）を強制上書きして縦幅の膨張を防ぐ */
+  .spec-table strong { font-size: 1.05rem !important; }
+  
+  /* smallタグ（補足文）をブロック化して改行させ、スッキリ見せる */
+  .spec-table small { 
+    display: block; 
+    font-size: 0.65rem; 
+    margin-top: 2px; 
+    line-height: 1.2;
   }
 }
 
@@ -1361,46 +1409,171 @@ p { margin: 0 0 1.5rem; }
   transform: rotate(45deg);
 }
 
-/* ==========================================================================
-   ABOUT PAGE: CORPORATE GOVERNANCE (アニュアルレポート・白書風レイアウト)
-   ========================================================================== */
+/* ==============================================
+   About Page: Supreme Dynamic UX (最終完成版)
+============================================== */
 
-/* ミニマルなページヘッダー */
-.page-header-minimal { padding: 120px 0 60px; text-align: center; }
-.page-header-minimal h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: 0.1em; margin-bottom: 16px; text-transform: uppercase; }
-.page-header-minimal p { color: var(--c-gray); letter-spacing: 0.05em; font-size: 0.95rem; font-weight: bold; }
+/* ★親要素の制限解除（Stickyの作動に必須） */
+body, main, .section, .container, .reveal { overflow: visible !important; }
 
-/* 企業声明（コーポレート・ステートメント） */
-.corporate-statement { padding: 80px 0; border-top: 1px solid var(--c-black); border-bottom: 1px solid var(--c-black); margin-bottom: 100px; }
-.statement-catch { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.6; margin-bottom: 40px; text-align: center; letter-spacing: 0.02em; color: var(--c-black); }
-.statement-text { max-width: 720px; margin: 0 auto; font-size: 1rem; line-height: 2; color: var(--c-dark); }
+/* --- 1. ヒーローエリア（スクロール促し追加） --- */
+.page-header-minimal { text-align: center; }
+.page-header-minimal p { color: var(--c-gray); font-weight: bold; letter-spacing: 0.05em; margin: 0; }
 
-/* 行動規範（ポリシー）のスタックレイアウト */
-.policy-stack { display: flex; flex-direction: column; margin-bottom: 100px; }
-.policy-row { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--c-border); padding: 60px 0; }
-.policy-row:last-child { border-bottom: 1px solid var(--c-border); }
-.policy-label { font-size: 0.85rem; font-weight: 900; color: var(--c-accent); letter-spacing: 0.1em; margin-bottom: 24px; text-transform: uppercase; }
-.policy-content h3 { font-size: 1.5rem; margin-bottom: 24px; font-weight: bold; color: var(--c-black); }
-.policy-content p { font-size: 1rem; line-height: 1.9; color: var(--c-dark); margin: 0; }
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.7;
+  animation: scrollBounce 2s infinite;
+}
+.scroll-text { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--c-dark); }
+.scroll-line { width: 1px; height: 40px; background: var(--c-dark); }
 
-@media (min-width: 769px) { 
-  .policy-row { grid-template-columns: 240px 1fr; gap: 60px; } 
-  .policy-label { margin-bottom: 0; }
+@keyframes scrollBounce {
+  0%, 100% { transform: translate(-50%, 0); opacity: 0.5; }
+  50% { transform: translate(-50%, 10px); opacity: 1; }
 }
 
-/* CEOレター（代表メッセージ） */
-.ceo-letter { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; background: var(--c-light); padding: 40px; border: 1px solid var(--c-border); margin-bottom: 100px; }
-.ceo-photo { width: 100%; max-width: 320px; aspect-ratio: 3/4; object-fit: cover; filter: grayscale(100%) contrast(1.1); margin: 0 auto; }
-.ceo-body { display: flex; flex-direction: column; justify-content: center; }
-.ceo-body h3 { font-size: 1.5rem; margin-bottom: 32px; font-weight: bold; color: var(--c-black); }
-.ceo-text { font-size: 0.95rem; line-height: 2; color: var(--c-dark); margin-bottom: 24px; }
-.ceo-sign { margin-top: 24px; font-weight: 900; font-size: 1.1rem; border-top: 1px solid var(--c-border); padding-top: 24px; }
-.ceo-sign span { font-size: 0.85rem; color: var(--c-gray); font-weight: normal; margin-left: 12px; }
-
-@media (min-width: 769px) { 
-  .ceo-letter { grid-template-columns: 280px 1fr; gap: 80px; padding: 80px; } 
-  .ceo-photo { margin: 0; }
+/* --- 2. ステートメント（同一座標クロスフェード） --- */
+.sticky-viewport {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
 }
+
+.st-item {
+  position: absolute;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 24px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  z-index: 1;
+  text-align: center;
+}
+
+.st-item.is-active { opacity: 1; visibility: visible; transform: translateY(0); z-index: 2; }
+.statement-catch-sp { font-size: clamp(1.75rem, 5vw, 2.75rem); font-weight: 900; line-height: 1.5; color: var(--c-black); letter-spacing: 0.05em; margin: 0; }
+.st-item p { font-size: 1.15rem; line-height: 2.2; color: var(--c-dark); font-weight: bold; margin: 0; }
+
+
+/* --- 3. 3つの事業方針（Grid同期レイヤー・見栄え完全改善） --- */
+.policy-stack-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  /* 親全体のスクロール距離（カード出現＋タメ時間） */
+
+}
+
+/* すべてのレイヤーを同じセルに強制配置し、下端を揃える */
+.policy-layer {
+  grid-row: 1;
+  grid-column: 1;
+  position: relative;
+  height: 100%; 
+}
+
+/* 後から来るレイヤーの背景がスクロールを邪魔しないようイベントオフ */
+.layer-1 { z-index: 1; }
+.layer-2 { z-index: 2; pointer-events: none; }
+.layer-3 { z-index: 3; pointer-events: none; }
+
+/* タイトルの固定設定 */
+.policy-title {
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(var(--header-height, 60px) + 16px);
+  z-index: 10;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  color: var(--c-black);
+  margin: 0 0 32px 0;
+  background: var(--c-light); /* 裏のカードを隠すための同色背景 */
+  padding: 16px 0;
+}
+
+/* 全カード共通の固定設定 */
+.policy-card {
+  position: -webkit-sticky;
+  position: sticky;
+  /* すべてのカードがタイトル下の同じ位置でピタッと止まる */
+  top: calc(var(--header-height, 60px) + 90px); 
+  pointer-events: auto; 
+  background: var(--c-white);
+  border: 1px solid rgba(15, 44, 89, 0.1);
+  border-radius: 20px;
+  padding: 40px 24px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 769px) { .policy-card { flex-direction: row; padding: 48px; align-items: flex-start; } }
+
+/* スクロール時間差の魔法：カードごとの位置を margin-top でズラす */
+.card-base { margin-top: 0; background: rgba(245, 245, 245, 0.95); }
+.overlay-2 { margin-top: 80vh; border-top: 4px solid var(--c-accent); }
+.overlay-3 { margin-top: 160vh; border-top: 4px solid var(--c-black); }
+
+/* カード内のテキストデザイン */
+.policy-num { font-family: var(--font-mono); font-size: 3rem; font-weight: 900; color: var(--c-accent); line-height: 1; flex-shrink: 0; }
+.policy-content h3 { font-size: 1.4rem; font-weight: 900; color: var(--c-black); margin-bottom: 16px; }
+.policy-content p { font-size: 1rem; line-height: 2; color: var(--c-dark); margin: 0; font-weight: bold; }
+
+
+/* --- 4. 代表メッセージ（画像中央＆LINE風・時間差ポップイン） --- */
+.ceo-chat-section { max-width: 600px; margin: 0 auto; }
+.ceo-intro-simple { text-align: center; margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; }
+.ceo-chat-photo-center { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 30px rgba(15, 44, 89, 0.1); margin-bottom: 16px; border: 4px solid var(--c-white); }
+.ceo-name-badge-center { display: flex; flex-direction: column; align-items: center; }
+.ceo-role-badge { font-size: 0.75rem; font-weight: bold; color: var(--c-accent); margin-bottom: 4px;}
+.ceo-name-text { font-size: 1.3rem; font-weight: 900; color: var(--c-black); letter-spacing: 0.1em; }
+
+.chat-timeline { display: flex; flex-direction: column; gap: 24px; padding: 40px 24px; background: rgba(15, 44, 89, 0.03); border-radius: 24px; }
+
+@keyframes linePop {
+  0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+  60% { opacity: 1; transform: scale(1.02) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.js-chat-bubble { opacity: 0; transform-origin: left top; }
+.js-chat-bubble.is-visible { animation: linePop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+.chat-bubble { background: var(--c-white); padding: 16px 20px; border-radius: 0 20px 20px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-size: 0.95rem; line-height: 1.9; color: var(--c-dark); font-weight: bold; align-self: flex-start; max-width: 90%; }
+.chat-bubble.catch-bubble { font-size: 1.2rem; font-weight: 900; color: var(--c-black); border-left: 4px solid var(--c-accent); }
+
+
+/* --- 5. セキュリティ・ポリシー（絵文字なし App Settings UI） --- */
+.app-settings-wrapper { max-width: 600px; margin: 0 auto; }
+.app-settings-header { text-align: center; margin-bottom: 40px; }
+.sec-title-sp { font-size: 1.5rem; font-weight: 900; color: var(--c-black); margin: 0 0 8px 0; letter-spacing: 0.05em; }
+.sec-subtitle-sp { font-size: 0.95rem; color: var(--c-accent); font-weight: bold; margin: 0; }
+.app-settings-desc { font-size: 0.95rem; line-height: 1.9; color: var(--c-dark); margin-bottom: 32px; font-weight: bold; }
+.app-list-ui { list-style: none; padding: 0; margin: 0 0 24px 0; background: var(--c-white); border-radius: 16px; border: 1px solid var(--c-border); overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+.app-list-ui li { padding: 16px 20px; border-bottom: 1px solid var(--c-border); }
+.app-list-ui li:last-child { border-bottom: none; }
+.app-list-text strong { display: block; font-size: 1rem; color: var(--c-black); margin-bottom: 4px; font-weight: 900; }
+.app-list-text span { display: block; font-size: 0.85rem; color: var(--c-dark); font-weight: bold; }
+.app-settings-note { font-size: 0.85rem; color: var(--c-gray); font-weight: bold; margin: 0; text-align: center; }
+
 
 /* ==========================================================================
    COMPANY PAGE: LEGAL DOCUMENT (公的文書・リーガルレイアウト)
@@ -1432,17 +1605,19 @@ p { margin: 0 0 1.5rem; }
   .legal-table { border-top: 1px solid var(--c-black); }
 }
 
-/* ==========================================================================
-   RESULTS PAGE: DASHBOARD & LOGS (ダッシュボード・分析ログの顔)
-   ========================================================================== */
+/* ==============================================
+   Results Page: Scroll-Telling UI (完全監査改善版)
+============================================== */
 
-/* ミニマルなヒーローエリア */
+/* ミニマルなヒーローエリア（透明化・抜け感拡張） */
 .results-hero {
   padding: 120px 0 60px;
   border-bottom: 1px solid var(--c-border);
   text-align: center;
+  /* 監査改善: 背景を透明にし、サイト全体のガラス背景を活かす */
+  background: transparent; 
   background-image: radial-gradient(var(--c-border) 1px, transparent 1px);
-  background-size: 20px 20px; /* 方眼紙のようなグリッド背景 */
+  background-size: 20px 20px;
 }
 .results-title {
   font-size: clamp(2rem, 4vw, 3rem);
@@ -1473,164 +1648,283 @@ p { margin: 0 0 1.5rem; }
   background: var(--c-accent);
 }
 
-/* 01. レポート比較セクション (Before/After) */
-.report-comparison {
-  display: grid;
-  gap: 40px;
-}
-@media (min-width: 992px) {
-  .report-comparison {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+/* --- 01. レポート比較（ダブル・スティッキー＆完全不透明化） --- */
+body, main, .section, .container, .reveal, .report-scroll-container {
+  overflow: visible !important; 
 }
 
-/* Before: 一般的なデータパネル（わざと見づらく） */
-.data-panel-raw {
-  border: 1px solid var(--c-border);
-  background: var(--c-light);
-  padding: 24px;
-  font-family: monospace;
-  color: var(--c-gray);
-}
-.data-panel-title {
-  font-weight: bold;
-  margin-bottom: 16px;
-  color: var(--c-dark);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.raw-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.raw-list li {
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* After: 翻訳ダッシュボード（見やすく） */
-.dashboard-mockup {
-  border: 2px solid var(--c-accent);
-  background: var(--c-white);
-  box-shadow: 0 10px 30px rgba(15, 44, 89, 0.1);
-  overflow: hidden;
-}
-.dashboard-header {
-  background: var(--c-accent);
-  color: var(--c-white);
-  padding: 12px 24px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dashboard-body {
-  padding: 32px;
-}
-/* 簡易的な図解プレースホルダー */
-.visual-flow {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 2px dashed var(--c-border);
-  text-align: center;
-}
-.flow-step-box {
+/* スクロールコンテナの基本設定 */
+.report-scroll-container {
   position: relative;
-  width: 80px;
-  height: 80px;
-  background: var(--c-light);
-  border: 2px solid var(--c-border);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-}
-.flow-step-box .num { font-size: 1.5rem; line-height: 1; color: var(--c-accent); }
-.flow-step-box .label { font-size: 0.7rem; color: var(--c-gray); }
-.flow-arrow { font-size: 1.5rem; color: var(--c-border); }
-
-.translated-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.translated-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--c-border);
-  font-weight: bold;
-}
-.translated-list .highlight { color: var(--c-accent); font-size: 1.2rem; }
-.next-action {
-  margin-top: 24px;
-  padding: 16px;
-  background: rgba(15, 44, 89, 0.05);
-  border-left: 4px solid var(--c-accent);
-  font-weight: bold;
+  /* Afterが止まっている時間を確保するための余白 */
+  padding-bottom: 20vh; 
 }
 
-/* 02. ログセクション（ターミナル風） */
+@media (min-width: 769px) {
+  .report-scroll-container { max-width: 800px; margin: 0 auto; }
+}
+
+/* ★ 1段階目：Beforeを固定するラッパー */
+.sticky-wrapper {
+  position: -webkit-sticky !important; 
+  position: sticky !important;
+  /* ヘッダーの高さ＋少しの余白で止まる */
+  top: calc(var(--header-height) + 24px) !important; 
+  z-index: 1;
+}
+
+/* Beforeパネル本体 */
+.report-panel-before {
+  background: rgba(245, 245, 245, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px 24px; 
+  opacity: 0.7; 
+  filter: grayscale(50%);
+}
+
+/* ★ Afterパネルの親枠（ここでスクロール距離＝タメを作る） */
+.overlay-wrapper {
+  position: relative;
+  z-index: 2;
+  /* Beforeが固定された後、この距離をスクロールすると被さってくる */
+  margin-top: 80vh; 
+  /* Afterパネル自体を止まらせるための「遊び」の高さ */
+  height: 180vh; 
+}
+
+/* ★ 2段階目：Afterパネル本体（完全に透けない白＋ストップ機能） */
+.overlay-panel {
+  /* 【改善】背景を完全な白（不透明）に変更 */
+  background: var(--c-white) !important; 
+  box-shadow: 0 -20px 60px rgba(15, 44, 89, 0.15);
+  border-top: 4px solid var(--c-accent); 
+  border-radius: 20px;
+  padding: 40px 24px; 
+  
+  /* 【改善】被さった後、Afterパネル自身もピタッと止まる */
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  /* Beforeパネルのタイトルごと覆い隠す位置でストップ */
+  top: calc(var(--header-height) + 24px) !important; 
+}
+
+@media (min-width: 769px) {
+  .report-panel-before, .overlay-panel { padding: 48px 48px; }
+}
+
+@media (max-width: 768px) {
+  .report-panel-before, .overlay-panel { padding: 32px 16px; } 
+}
+
+/* （中略：ラベルバッジ、タイトル、図解、リスト、アクション箱のスタイルは前のターンと同じでOK） */
+.panel-badge { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 900; padding: 6px 16px; display: inline-block; border-radius: 50px; margin-bottom: 24px; letter-spacing: 0.1em; }
+.panel-badge.bad { background: var(--c-gray); color: var(--c-white); }
+.panel-badge.good { background: var(--c-accent); color: var(--c-white); }
+
+.panel-title-large { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 900; color: var(--c-black); margin-bottom: 32px; }
+
+/* Before用 モックデータ */
+.raw-data-mock { font-family: var(--font-mono); font-size: 0.9rem; color: var(--c-dark); margin-bottom: 24px; border: 1px solid var(--c-border); background: var(--c-white); padding: 16px; }
+.raw-row { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--c-border); padding: 8px 0; }
+.raw-row:last-child { border-bottom: none; }
+
+/* After用 図解ファネル */
+.visual-funnel { display: flex; justify-content: space-between; align-items: center; background: rgba(15, 44, 89, 0.03); padding: 24px; border-radius: 12px; }
+.funnel-step { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+.f-num { font-family: var(--font-mono); font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 900; color: var(--c-accent); line-height: 1; margin-bottom: 8px; }
+.f-label { font-size: 0.8rem; font-weight: bold; color: var(--c-dark); }
+.f-arrow { width: 24px; height: 2px; background: var(--c-border); position: relative; flex-shrink: 0; margin: 0 12px; }
+.f-arrow::after { content: ""; position: absolute; right: 0; top: -4px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 6px solid var(--c-border); }
+.funnel-step.f-danger .f-num { color: var(--c-danger); }
+.funnel-step.f-danger .f-label { color: var(--c-danger); }
+
+/* リスト・ネクストアクション箱 (文字つめ解消・行間拡張) */
+.overlay-panel li {
+  line-height: 1.8; /* 行間拡張 */
+  margin-bottom: 12px; /* 項目間拡張 */
+}
+
+.action-box { background: rgba(15, 44, 89, 0.05); border-left: 4px solid var(--c-accent); padding: 24px; position: relative; }
+.action-label { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 900; color: var(--c-accent); letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
+.action-box p { font-size: 0.95rem; font-weight: bold; color: var(--c-black); line-height: 1.9; margin: 0; }
+
+
+/* --- 02. 作業ログ（ガラス・タイムラインUI） --- */
 .terminal-section {
-  background-color: #1a1a1a; /* ほぼ黒 */
-  color: #e0e0e0;
+  /* 監査改善: 黒背景廃止、透明化 */
+  background-color: transparent; 
+  color: var(--c-dark); /* 文字色をダークへ */
   padding: 80px 0;
 }
-.results-terminal {
-  background: #000;
-  border: 1px solid #333;
-  border-radius: 6px;
-  overflow: hidden;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.terminal-header {
-  background: #333;
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  color: #aaa;
-  display: flex;
-  gap: 8px;
-}
-.terminal-dots span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #555; }
-.terminal-body {
-  padding: 24px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.log-entry {
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.log-time { color: #666; }
-.log-type { font-weight: bold; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
-.log-type.hypo { background: #0d47a1; color: #fff; } /* 仮説: 青 */
-.log-type.act { background: #e65100; color: #fff; }  /* 実行: オレンジ */
-.log-type.res { background: #1b5e20; color: #fff; }  /* 結果: 緑 */
-.log-message { color: #ddd; }
 
-/* データ透明性 */
-.transparency-box {
-  text-align: center;
-  padding: 60px;
-  border: 4px solid var(--c-border);
-  background: var(--c-white);
+.glass-log-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 16px;
 }
-.transparency-icon {
-  font-size: 4rem;
-  margin-bottom: 24px;
-  color: var(--c-accent);
+
+@media (min-width: 769px) { .glass-log-timeline { padding-left: 32px; } }
+
+/* 左の通し線 */
+.glass-log-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 35px;
+  width: 2px;
+  background: rgba(15, 44, 89, 0.1);
+}
+
+@media (min-width: 769px) { .glass-log-timeline::before { left: 59px; } }
+
+.log-item {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 769px) { .log-item { gap: 40px; margin-bottom: 64px; } }
+.log-item:last-child { margin-bottom: 0; }
+
+/* 左側の状態ノード（ラベル） */
+.log-node {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--c-white);
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 769px) { .log-node { width: 56px; height: 56px; font-size: 0.85rem; } }
+
+.node-hypo { background: rgba(15, 44, 89, 0.15); color: var(--c-accent); font-weight: 900; } /* 監査改善: 背景薄く、文字をアクセントカラーへ */
+.node-act { background: var(--c-black); }
+.node-res { background: var(--c-accent); }
+
+/* ガラスカード（ログ本文） */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  /* 監査改善: 左右に余白（20px）を持たせ、端への張り付きを防ぐ */
+  padding: 24px; 
+  box-shadow: 0 8px 32px rgba(15, 44, 89, 0.04);
+  flex-grow: 1;
+}
+
+.glass-card.border-accent {
+  border-left: 4px solid var(--c-accent);
+}
+
+.log-meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--c-gray); margin-bottom: 12px; letter-spacing: 0.05em; }
+.log-text { font-size: 0.95rem; line-height: 1.9; color: var(--c-dark); margin: 0; }
+
+
+/* --- 03. 計測データの共有 (エディトリアル・ポリシーUI) --- */
+
+.policy-box {
+  /* 前のセクションからの余白をたっぷり取る */
+  padding: 120px 0 80px; 
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .policy-box { padding: 80px 0 60px; } 
+}
+
+/* タイトル部分の横並び設定 */
+.policy-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.policy-num {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 900;
+  color: var(--c-accent); /* REMEDORAカラーで強調 */
+}
+
+.policy-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); 
+  font-weight: 900; 
+  color: var(--c-black);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* 本文エリア（左側のダブルライン装飾） */
+.policy-body {
+  position: relative;
+  padding-left: 32px; /* 左線の内側の余白 */
+  margin-left: 8px; /* 線の開始位置をタイトルの開始位置と微調整 */
+}
+
+@media (max-width: 768px) {
+  .policy-body { padding-left: 24px; margin-left: 4px; }
+}
+
+/* 1本目の線（背景となる細いグレー線） */
+.policy-body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(15, 44, 89, 0.15);
+}
+
+/* 2本目の線（先頭だけを強調する太いアクセント線） */
+.policy-body::after {
+  content: "";
+  position: absolute;
+  left: -2px; /* 少し左にはみ出させる */
+  top: 0;
+  height: 48px; /* 最初の2行分だけ強調 */
+  width: 5px;
+  background: var(--c-accent);
+}
+
+.policy-text {
+  font-size: 1.05rem; 
+  line-height: 2; 
+  color: var(--c-dark);
+  margin: 0;
+  font-weight: bold;
+}
+
+/* フッター・リーガルメニュー (監査改善: 文字つめ解消) */
+.footer-links ul {
+  line-height: 2; /* 行間拡張 */
+  margin-bottom: 16px; /* MENU/LEGAL間の隙間拡張 */
+}
+
+/* SP固定CTA (監査改善: 張り付き防止padding追加) */
+.sp-fixed-cta {
+  background: transparent !important; /* 背景透明 */
+  box-shadow: none !important; /* 影を消してガラス背景を活かす */
+  /* 監査改善: 左右に余白（16px）を確保、iOSセーフエリア対応 */
+  padding: 16px 16px env(safe-area-inset-bottom) !important;
 }
 
 /* ==========================================================================
@@ -1996,6 +2290,22 @@ p { margin: 0 0 1.5rem; }
   animation: flashHint 2s infinite;
 }
 @media (min-width: 769px) { .comic-swipe-hint { display: none; } }
+
+/* --- 漫画セクション：ページネーションバッジ --- */
+.comic-pagination {
+  position: absolute;
+  top: -10px;
+  right: 24px;
+  background: var(--c-white);
+  border: 2px solid var(--c-black);
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 900;
+  z-index: 10;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+@media (min-width: 769px) { .comic-pagination { display: none; } } /* PCでは全表示なので隠す */
 
 /* ディレクトリ（目次）グリッド */
 .directory-grid {

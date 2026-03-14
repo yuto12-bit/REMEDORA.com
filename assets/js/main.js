@@ -229,10 +229,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const comicObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // 画面中央に入ったコマに 'is-reading' クラスを付与してアニメーション発火
           entry.target.classList.add('is-reading');
+          
+          // ★追加：現在のページ番号を更新
+          const index = Array.from(comicPanels).indexOf(entry.target);
+          document.getElementById('comicCurrent').textContent = index + 1;
+          document.getElementById('comicTotal').textContent = comicPanels.length;
         } else {
-          // 画面から外れたらクラスを外す（再度スクロールした時にまたアニメーションさせるため）
           entry.target.classList.remove('is-reading');
         }
       });
@@ -286,3 +289,68 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ==============================================
+   About Page: Dynamic UX Behaviors (最終版)
+============================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // 1. ステートメント：スクロール進捗によるクロスフェード
+  const scrollArea = document.getElementById('statement-scroll-area');
+  const stItems = document.querySelectorAll('.js-st-item');
+  
+  if (scrollArea && stItems.length > 0) {
+    window.addEventListener('scroll', () => {
+      const rect = scrollArea.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // 親枠のスクロール進捗率を計算（固定前はマイナスの数値になる）
+      let progress = -rect.top / (rect.height - windowHeight);
+      
+      if (progress < 0) {
+        // ★固定される前（Heroエリアをスクロール中）はすべて透明にしておく
+        stItems.forEach(item => item.classList.remove('is-active'));
+      } else {
+        // ★ピタッと固定された瞬間（progress >= 0）に表示アニメーションを発火
+        progress = Math.min(1, progress);
+        const totalItems = stItems.length;
+        const activeIndex = Math.min(Math.floor(progress * totalItems), totalItems - 1);
+        
+        stItems.forEach((item, index) => {
+          if (index === activeIndex) {
+            item.classList.add('is-active'); 
+          } else {
+            item.classList.remove('is-active'); 
+          }
+        });
+      }
+    });
+  }
+
+  // 2. 代表メッセージ：LINE風チャットの時間差ポップイン
+  let chatDelayQueue = 0; 
+  const chatObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // 時間差で発火させる
+        setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, chatDelayQueue);
+        
+        chatDelayQueue += 600; // 0.6秒（600ms）間隔でゆっくり表示
+        chatObserver.unobserve(entry.target);
+        
+        // スクロールが一通り終わったらキューをリセット
+        setTimeout(() => { chatDelayQueue = 0; }, 800); 
+      }
+    });
+  }, {
+    rootMargin: "0px 0px -10% 0px", 
+    threshold: 0
+  });
+
+  document.querySelectorAll('.js-chat-bubble').forEach(bubble => {
+    chatObserver.observe(bubble);
+  });
+
+});
