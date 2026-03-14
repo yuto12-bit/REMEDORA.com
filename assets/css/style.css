@@ -1765,7 +1765,7 @@ body, main, .section, .container, .reveal, .report-scroll-container {
 .visual-funnel { display: flex; justify-content: space-between; align-items: center; background: rgba(15, 44, 89, 0.03); padding: 24px; border-radius: 12px; }
 .funnel-step { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
 .f-num { font-family: var(--font-mono); font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 900; color: var(--c-accent); line-height: 1; margin-bottom: 8px; }
-.f-label { font-size: 0.8rem; font-weight: bold; color: var(--c-dark); }
+.f-label { font-size: 0.65rem; font-weight: bold; color: var(--c-dark); }
 .f-arrow { width: 24px; height: 2px; background: var(--c-border); position: relative; flex-shrink: 0; margin: 0 12px; }
 .f-arrow::after { content: ""; position: absolute; right: 0; top: -4px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 6px solid var(--c-border); }
 .funnel-step.f-danger .f-num { color: var(--c-danger); }
